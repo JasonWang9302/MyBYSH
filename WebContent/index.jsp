@@ -8,8 +8,8 @@
 <title>Insert title here</title>
 </head>
 <body>
-<a href="employee_all">所有员工 </a>
-<a href="employee_toAdd">添加员工 </a>
+<!-- <a href="employee_all">所有员工 </a>
+<a href="employee_toAdd">添加员工 </a> -->
 
 
 

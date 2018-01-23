@@ -21,7 +21,7 @@
         
 		<!-- <global-allowed-methods>regex:.*</global-allowed-methods> -->
 
-		<action name="index">
+		<!-- <action name="index">
 			<result>index.jsp</result>
 		</action>
 		<action name="employee_*" class="employeeAction" method="{1}">
@@ -39,7 +39,7 @@
 			</result>
 			<result name="add" type="redirectAction">employee_all</result>
 			<allowed-methods>all,delete,toAdd,add,verifyName,toEdit,edit</allowed-methods>
-		</action>
+		</action> -->
 
 
 	</package>
