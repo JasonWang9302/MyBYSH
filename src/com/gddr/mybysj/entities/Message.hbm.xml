@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2018-1-23 16:59:22 by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="com.gddr.mybysj.entities.Message" table="t_MESSAGE">
+        <id name="messageId" type="java.lang.Integer">
+            <column name="MESSAGEID" />
+            <generator class="native" />
+        </id>
+        <many-to-one name="project" class="com.gddr.mybysj.entities.Project">
+            <column name="PROJECT_id" />
+        </many-to-one>
+        <many-to-one name="sender" class="com.gddr.mybysj.entities.User">
+            <column name="SENDER_id" />
+        </many-to-one>
+        <many-to-one name="receiver" class="com.gddr.mybysj.entities.User" >
+            <column name="RECEIVER" />
+        </many-to-one>
+        <property name="messageContext" type="java.lang.String">
+            <column name="MESSAGE_CONTEXT" />
+        </property>
+        <property name="sendeTime" type="java.util.Date">
+            <column name="SENDE_TIME" />
+        </property>
+    </class>
+</hibernate-mapping>

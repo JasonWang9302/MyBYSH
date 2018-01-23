@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2018-1-23 16:59:22 by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="com.gddr.mybysj.entities.Project" table="t_PROJECT">
+        <id name="proId" type="java.lang.Integer">
+            <column name="PRO_ID" />
+            <generator class="native" />
+        </id>
+        <property name="proName" type="java.lang.String">
+            <column name="PRO_NAME" />
+        </property>
+        <property name="proDesc" type="java.lang.String">
+            <column name="PRO_DESC" />
+        </property>
+        <many-to-one name="category" class="com.gddr.mybysj.entities.Category">
+            <column name="CATEGORY_id" />
+        </many-to-one>
+        <property name="preDeliveryTime" type="java.util.Date">
+            <column name="PRE_DELIVERY_TIME" />
+        </property>
+        <many-to-one name="publisher" class="com.gddr.mybysj.entities.User">
+            <column name="PUBLISHER_id" />
+        </many-to-one>
+        <many-to-one name="servicer" class="com.gddr.mybysj.entities.User">
+            <column name="SERVICER_id" />
+        </many-to-one>
+        <many-to-one name="rfp" class="com.gddr.mybysj.entities.Enclosure">
+            <column name="RFP_id" />
+        </many-to-one>
+        <property name="state" type="java.lang.Integer">
+            <column name="STATE" />
+        </property>
+        <property name="deleteFlag" type="java.lang.Integer">
+            <column name="DELETE_FLAG" />
+        </property>
+        <property name="endTime" type="java.util.Date">
+            <column name="END_TIME" />
+        </property>
+    </class>
+</hibernate-mapping>

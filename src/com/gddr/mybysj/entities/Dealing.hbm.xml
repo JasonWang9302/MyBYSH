@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2018-1-23 16:59:22 by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="com.gddr.mybysj.entities.Dealing" table="t_DEALING">
+        <id name="dealingId" type="java.lang.Integer">
+            <column name="DEALING_ID" />
+            <generator class="native" />
+        </id>
+        <many-to-one name="project" class="com.gddr.mybysj.entities.Project">
+            <column name="PROJECT_id" />
+        </many-to-one>
+        <property name="dealingName" type="java.lang.String">
+            <column name="DEALING_NAME" />
+        </property>
+        <property name="dealingAmount" type="java.lang.Double">
+            <column name="DEALINGAMOUNT" />
+        </property>
+        <property name="dealingTime" type="java.util.Date">
+            <column name="DEALING_TIME" />
+        </property>
+        <many-to-one name="payer" class="com.gddr.mybysj.entities.User">
+            <column name="PAYER_id" />
+        </many-to-one>
+        <many-to-one name="payee" class="com.gddr.mybysj.entities.User">
+            <column name="PAYEE_id" />
+        </many-to-one>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2018-1-23 16:59:22 by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="com.gddr.mybysj.entities.Bid" table="t_BID">
+        <id name="bidId" type="java.lang.Integer">
+            <column name="BID_ID" />
+            <generator class="native" />
+        </id>
+        <many-to-one name="project" class="com.gddr.mybysj.entities.Project" >
+            <column name="PROJECT_id" />
+        </many-to-one>
+        <many-to-one name="servicer" class="com.gddr.mybysj.entities.User">
+            <column name="SERVICER_id" />
+        </many-to-one>
+        <many-to-one name="bidDoc" class="com.gddr.mybysj.entities.Enclosure" >
+            <column name="BID_DOC" />
+        </many-to-one>
+        <property name="status" type="java.lang.Integer">
+            <column name="STATUS" />
+        </property>
+        <property name="deleteFlag" type="java.lang.Integer">
+            <column name="DELETE_FLAG" />
+        </property>
+    </class>
+</hibernate-mapping>

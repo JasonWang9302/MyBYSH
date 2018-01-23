@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2018-1-23 16:59:22 by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="com.gddr.mybysj.entities.Comment" table="t_COMMENT">
+        <id name="commId" type="java.lang.Integer">
+            <column name="COMMID" />
+            <generator class="native" />
+        </id>
+        <property name="commContext" type="java.lang.String">
+            <column name="COMM_CONTEXT" />
+        </property>
+        <many-to-one name="project" class="com.gddr.mybysj.entities.Project">
+            <column name="PROJECT_id" />
+        </many-to-one>
+        <many-to-one name="servicer" class="com.gddr.mybysj.entities.User">
+            <column name="SERVICER_id" />
+        </many-to-one>
+        <many-to-one name="gradeCategory" class="com.gddr.mybysj.entities.GradeCategory">
+            <column name="GRADE_CATEGORY_id" />
+        </many-to-one>
+        <property name="commTime" type="java.util.Date">
+            <column name="COMM_TIME" />
+        </property>
+    </class>
+</hibernate-mapping>
