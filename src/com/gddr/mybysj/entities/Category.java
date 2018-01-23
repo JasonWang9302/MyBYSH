@@ -1,5 +1,9 @@
 package com.gddr.mybysj.entities;
-
+/**
+ * 项目类别类
+ * @author Administrator
+ *
+ */
 public class Category {
  private Integer cateId;
  private String cateName;

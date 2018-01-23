@@ -1,5 +1,9 @@
 package com.gddr.mybysj.entities;
-
+/**
+ * 管理员表
+ * @author Administrator
+ *
+ */
 public class Admin {
 
 	private Integer adminId;

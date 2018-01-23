@@ -3,7 +3,7 @@ package com.gddr.mybysj.entities;
 import java.util.Date;
 
 /**
- * 交易记录表 记录资金流转
+ * 交易记录类 记录资金流转
  * @author Administrator
  *
  */

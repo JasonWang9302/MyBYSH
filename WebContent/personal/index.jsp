@@ -14,7 +14,7 @@
     <div class="layui-layout layui-layout-admin kit-layout-admin">
         
         
-<!--         最上面那一栏 -->
+<!--  最上面那一栏 -->
         <div class="layui-header">
             <div class="layui-logo">个人中心</div>
             <div class="layui-logo kit-logo-mobile">K</div>

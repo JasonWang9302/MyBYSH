@@ -1,7 +1,11 @@
 package com.gddr.mybysj.entities;
 
 import java.util.Date;
-
+/**
+ * 项目类
+ * @author Administrator
+ *
+ */
 public class Project {
 
 	private Integer proId;

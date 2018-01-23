@@ -3,7 +3,7 @@ package com.gddr.mybysj.entities;
 import java.util.Date;
 
 /**
- * 评论表
+ * 评论实体类
  * 
  * @author Administrator
  *

@@ -1,5 +1,9 @@
 package com.gddr.mybysj.entities;
-
+/**
+ * 附件实体
+ * @author Administrator
+ *
+ */
 public class Enclosure {
 	private Integer enclId;
 	private String trueName;

@@ -1,5 +1,7 @@
 package com.gddr.mybysj.entities;
-
+/**
+ * 留言类
+ */
 import java.util.Date;
 
 public class Message {

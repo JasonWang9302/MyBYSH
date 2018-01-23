@@ -1,6 +1,6 @@
 package com.gddr.mybysj.entities;
 /**
- * 评价类别表  
+ * 评价类别实体类
  * @author Administrator
  *
  */

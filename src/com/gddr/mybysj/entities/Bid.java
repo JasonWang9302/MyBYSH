@@ -1,5 +1,9 @@
 package com.gddr.mybysj.entities;
-
+/**
+ * 投标实体类
+ * @author Administrator
+ *
+ */
 public class Bid {
 
     private Integer bidId;

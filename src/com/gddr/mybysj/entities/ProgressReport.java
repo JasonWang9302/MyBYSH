@@ -1,9 +1,8 @@
 package com.gddr.mybysj.entities;
-
 import java.util.Date;
 
 /**
- * 进度汇报
+ * 进度汇报实体类
  * 
  * @author Administrator
  *

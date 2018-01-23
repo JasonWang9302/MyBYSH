@@ -1,5 +1,9 @@
 package com.gddr.mybysj.entities;
-
+/**
+ * 用户表
+ * @author Administrator
+ *
+ */
 public class User {
 	private Integer userId;
 	private String userName;
