@@ -12,12 +12,15 @@
 
 <body>
     <div class="layui-layout layui-layout-admin kit-layout-admin">
+        
+        
+<!--         最上面那一栏 -->
         <div class="layui-header">
             <div class="layui-logo">个人中心</div>
             <div class="layui-logo kit-logo-mobile">K</div>
             <ul class="layui-nav layui-layout-left kit-nav">
-                <li class="layui-nav-item"><a href="javascript:;">控制台</a></li>
-                <li class="layui-nav-item"><a href="javascript:;">商品管理</a></li>
+                <li class="layui-nav-item"><a href="javascript:;">首页</a></li>
+                <li class="layui-nav-item"><a href="javascript:;">发布项目</a></li>
             </ul>
             <ul class="layui-nav layui-layout-right kit-nav">
                 <li class="layui-nav-item">
@@ -33,28 +36,31 @@
             </ul>
         </div>
 
+
+
+
+
         <div class="layui-side layui-bg-black kit-side">
             <div class="layui-side-scroll">
-                <div class="kit-side-fold"><i class="fa fa-navicon" aria-hidden="true"></i></div>
-				
-				
+                <div class="kit-side-fold"><i class="fa fa-navicon" aria-hidden="true">换个图标</i></div>
                 <!-- 左侧导航区域（可配合layui已有的垂直导航） -->
                 <ul class="layui-nav layui-nav-tree" lay-filter="kitNavbar" kit-navbar>
+                    
                     <li class="layui-nav-item">
-                        <a class="" href="javascript:;"><i class="fa fa-plug" aria-hidden="true"></i><span> 基本元素</span></a>
+                        <a class="" href="javascript:;"><i class="fa fa-plug" aria-hidden="true"></i><span> 账号管理</span></a>
                         <dl class="layui-nav-child">
                             <dd>
                                 <a href="javascript:;" kit-target data-options="{url:'personal/test.jsp',icon:'&#xe6c6;',title:'表格',id:'1'}">
-                                    <i class="layui-icon">&#xe6c6;</i><span> 表格</span></a>
+                                    <i class="layui-icon">&#xe6c6;</i><span>密码修改</span></a>
                             </dd>
                             <dd>
-                                <a href="javascript:;" data-url="personal/form.jsp" data-icon="fa-user" data-title="表单" kit-target data-id='2'><i class="fa fa-user" aria-hidden="true"></i><span> 表单</span></a>
+                                 <a href="javascript:;" data-url="personal/nav.jsp" data-icon="&#xe628;" data-title="导航栏" kit-target data-id='3'><i class="layui-icon">&#xe628;</i><span> 导航栏</span></a>
                             </dd>
                             <dd>
                                 <a href="javascript:;" data-url="personal/nav.jsp" data-icon="&#xe628;" data-title="导航栏" kit-target data-id='3'><i class="layui-icon">&#xe628;</i><span> 导航栏</span></a>
                             </dd>
                             <dd>
-                                <a href="javascript:;" data-url="personal/list4.jsp" data-icon="&#xe614;" data-title="列表四" kit-target data-id='4'><i class="layui-icon">&#xe614;</i><span> 列表四</span></a>
+                                <a href="javascript:;" data-url="personal/nav.jsp" data-icon="&#xe614;" data-title="列表四" kit-target data-id='4'><i class="layui-icon">&#xe614;</i><span> 列表四</span></a>
                             </dd>
                             <dd>
                                 <a href="javascript:;" kit-target data-options="{url:'https://www.baidu.com',icon:'&#xe658;',title:'百度一下',id:'5'}"><i class="layui-icon">&#xe658;</i><span> 百度一下</span></a>
@@ -65,7 +71,7 @@
 					
 					
                     <li class="layui-nav-item layui-nav-itemed">
-                        <a href="javascript:;"><i class="fa fa-plug" aria-hidden="true"></i><span> 组件</span></a>
+                        <a href="javascript:;"><i class="fa fa-plug" aria-hidden="true"></i><span>我的发布</span></a>
                         <dl class="layui-nav-child">
                             <dd><a href="javascript:;" kit-target data-options="{url:'personal/navbar.jsp',icon:'&#xe658;',title:'Navbar',id:'6'}"><i class="layui-icon">&#xe658;</i><span> Navbar</span></a></dd>
                             <dd><a href="javascript:;" kit-target data-options="{url:'personal/tab.jsp',icon:'&#xe658;',title:'TAB',id:'7'}"><i class="layui-icon">&#xe658;</i><span> Tab</span></a></dd>
@@ -76,8 +82,9 @@
 					
 					
 					
+					
 					  <li class="layui-nav-item layui-nav-itemed">
-                        <a href="javascript:;"><i class="fa fa-plug" aria-hidden="true"></i><span> 组件</span></a>
+                        <a href="javascript:;"><i class="fa fa-plug" aria-hidden="true"></i><span>我的任务</span></a>
                         <dl class="layui-nav-child">
                             <dd><a href="javascript:;" kit-target data-options="{url:'personal/aaa.jsp',icon:'&#xe658;',title:'aaa',id:'6'}"><i class="layui-icon">&#xe658;</i><span> Navbar</span></a></dd>
                             <dd><a href="javascript:;" kit-target data-options="{url:'personal/aaa.jsp',icon:'&#xe658;',title:'aaa',id:'6'}"><i class="layui-icon">&#xe658;</i><span> Navbar</span></a></dd>
@@ -85,24 +92,17 @@
                             <dd><a href="javascript:;" kit-target data-options="{url:'personal/onelevel.jsp',icon:'&#xe658;',title:'OneLevel',id:'50'}"><i class="layui-icon">&#xe658;</i><span> OneLevel</span></a></dd>
                             <dd><a href="javascript:;" kit-target data-options="{url:'personal/app.jsp',icon:'&#xe658;',title:'App',id:'8'}"><i class="layui-icon">&#xe658;</i><span> app.js主入口</span></a></dd>
                         </dl>
-                    </li>
-					
+                      </li>
+                      
+					  
 					
 					
 					 <li class="layui-nav-item">
-                       
-                         <a href="javascript:;" kit-target data-options="{url:'personal/ddd.jsp',icon:'&#xe658;',title:'Ddd',id:'8'}"><i class="layui-icon">&#xe658;</i><span> ddd.jsp</span></a>
-				   </li>
+                         <a href="javascript:;" kit-target data-options="{url:'personal/ddd.jsp',icon:'&#xe658;',title:'Ddd',id:'8'}"><i class="layui-icon">&#xe658;</i><span>留言板</span></a>
+				     </li>
 					
 										
-                    <li class="layui-nav-item">
-                        <%-- <a href="javascript:;" data-url="/components/table/table.jsp" data-name="table" kit-loader><i class="fa fa-plug" aria-hidden="true"></i><span> 表格(page)</span></a> --%>
-                        <%-- <a href="javascript:;" data-url="" data-name="table" kit-loader><i class="fa fa-plug" aria-hidden="true"></i><span> 表格(page)</span></a> --%>
-                    </li>
-                    <li class="layui-nav-item">
-                        <%-- <a href="javascript:;" data-url="/views/form.jsp" data-name="form" kit-loader><i class="fa fa-plug" aria-hidden="true"></i><span> 表单(page)</span></a> --%>
-                       <%--  <a href="javascript:;" data-url="" data-name="form" kit-loader><i class="fa fa-plug" aria-hidden="true"></i><span> 表单(page)</span></a> --%>
-                    </li>
+                  
                 </ul>
             </div>
         </div>
@@ -117,8 +117,8 @@
 
         <div class="layui-footer">
             <!-- 底部固定区域 -->
-            2017 &copy;
-            <a href="">kit.zhengjinfan.cn/</a> MIT license
+            2018 &copy;
+            <a href="">软件众包平台个人中心/</a> WPC license
         </div>
         
     </div>

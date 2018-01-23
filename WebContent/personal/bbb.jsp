@@ -5,57 +5,12 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link rel="stylesheet" href="./resource/plugins/layui/css/layui.css" media="all">
+</head>
+
+<body>
 
 
-<a href="ccc.jsp">ccc</a>
+</body>
 
-
-<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><a href="bbb.jsp">bbb</a>
-
-
-<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><a href="bbb.jsp">bbb</a>
-
-
-<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><a href="bbb.jsp">bbb</a>
-
-
-<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><a href="bbb.jsp">bbb</a>
-
-
-<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><a href="bbb.jsp">bbb</a>
-
-
-<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><a href="bbb.jsp">bbb</a>
-
-
-<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><a href="bbb.jsp">bbb</a>
-
-
-<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><a href="bbb.jsp">bbb</a>
-
-
-<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><a href="bbb.jsp">bbb</a>
-
-
-<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><a href="bbb.jsp">bbb</a>
-
-
-<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><a href="bbb.jsp">bbb</a>
-
-
-<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><a href="bbb.jsp">bbb</a>
-
-
-<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><a href="bbb.jsp">bbb</a>
-
-
-<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><a href="bbb.jsp">bbb</a>
-
-
-<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><a href="bbb.jsp">bbb</a>
-
-
-<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><a href="ccc.jsp">ccc</a>
-
-
-<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+</html>
