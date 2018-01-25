@@ -1,0 +1,407 @@
+
+	
+	/*ȥ�������Ĭ����ʽ*/
+	*{
+		margin: 0;
+		padding: 0;
+	}
+	
+	html{
+		overflow-x:hidden;
+		}
+	
+	.header{
+		height: 80px;
+		background-color:#F5F5F5 ;
+	}
+	.box1{
+		width: 1000px;
+		margin: 0 auto;
+		padding-bottom:20px ;
+	}
+	.logo{
+		float: left;
+	}
+	.dh{
+		width: 423px;
+		height: 79px;
+		float: right;
+	}
+	.dh ul{
+		list-style: none;
+		
+	}
+	.dh li{
+		float: left;
+	}
+	
+	.workq{
+		width: 100%;
+		margin-top: -10px;
+		overflow: hidden;
+	    background-image: url(img/worlkq_bg.png);
+	}
+	#tit{
+		margin: 20px 0;
+	}
+	.work_img{
+		width: 100%;
+		margin: 10px auto;
+		overflow: hidden;
+		margin-left: 10px;
+		
+	}
+	.work_img li{
+		float: left;
+		width: 25%;
+		overflow: hidden;
+	}
+	.work_img li img{
+		
+		border: 10px solid #555555;
+		align-content: center;
+	}
+	
+	.work_img li img:hover{
+		
+		border: 10px solid #8DC73F;
+	}
+	
+	#navimg2:hover{
+		src: url(img/navimg_22.png);
+	}
+		
+	.as1{
+		width: 100%;
+		background-color:#343535;
+		overflow: auto;
+	}
+	
+	.as2{
+		width: 1000px;
+		height: 230px;
+		background: url(img/about_us.png) no-repeat;
+		margin: 0 auto;
+		overflow: auto;
+	}
+	
+	.as_left{
+		width: 330px;
+		float: left;
+		margin-left: 80px;
+		margin-top: 100px;
+		font-size: 12px;
+	
+		
+	    
+	}
+	.as_left p{
+		color: #888888;	
+	}
+	
+	.as_right{
+		width: 500px;
+		float: right;
+		margin-top: 60px;
+	}
+	
+	.a1{
+		width: 25%;
+		margin: 10px;
+	}
+	.a2{
+		margin-left: 35px;
+	}
+	
+	
+	.xwq{
+		width: 100%;
+		height: 90px;
+		background-color: #F5F5F5;
+		overflow: auto;
+	}
+	.xw{
+		width: 1000px;
+		margin: 0px auto;
+		overflow: auto;
+	}
+	
+	.xw_img{
+		float: left;
+		
+	}
+	.xw1{
+		float: left;
+		padding-top: 18px;
+	}
+	.xw1_img{
+		float: left;
+	}
+	.xw1_p{
+		float: left;
+		margin: 5px 10px;
+	}
+	
+	.xw2{
+		padding-top: 18px;
+		width: 490px;
+		float: right;
+	}
+	
+	
+	
+	.footer{
+		background-color: #DBDBDB;
+		height: 300px;
+		border-top:#DBDBDB  solid 1px;
+	}
+	
+	.footer_content{
+		width: 1000px;
+		height: 225px;
+		margin: 30px auto;
+		overflow: auto;
+	}
+	
+	.footConLeft{
+		width: 50%;
+		height: 100%;
+		float: left;
+		
+		background-color: #DBDBDB;
+	}
+	
+	.footConRight{
+		width: 500px;
+		height: 100%;
+		float: right;
+		overflow: hidden;
+		background-color: #DBDBDB;
+	}
+	
+    .input{
+		display: block;
+		background-color:#CCCCCC ;
+		height: 30px;
+		padding-left:8px ;
+		color:#999999;
+		border: 0;
+	}
+	.textarea{
+	   display: block;
+	   width: 100%;
+	   height: 100px;
+	   color:#999999;
+	   background-color:#CCCCCC ;
+	   border: 0;
+	   font-size:14px ;
+	   padding-left:8px ;
+	   margin-top: -30px;
+	}
+	
+	.name1{
+		float: left;
+		width: 240px;
+	}
+	
+	.phone1{
+		width: 240px;
+		float: right;
+	}
+	
+	.mail1{
+		margin: 15px 0px;
+		width: 100%;
+		
+	}
+
+	.tjan{
+		width: 120px;
+		height: 35px;
+		text-align: center;
+		color: #DBDBDB;
+	    display: block;
+		background-color:#999999;
+		border: 0;
+		margin: -10px auto;
+	}
+	.lxfs{
+		width: 300px;
+		height: 225px;
+		color: #A69292;
+		float: left;
+		background: #DBDBDB;
+		
+	}
+	
+	.lxfs  a{
+		
+		text-decoration:none ;
+		color: #A69292;
+	}
+	
+	.lxfs  a:hover{
+		
+		color: #8DC73F;
+	}
+	.ewm img{
+		float: left;
+		display: block;
+		margin-left: 20px;
+		width: 165px;
+		height: 165px;
+	}
+	
+	
+	
+/*	work css*/
+
+    .box01{
+	width: 100%;
+	background: #222222;
+    }
+
+    .work_title{
+	width:1360px;
+	margin: 0 auto;
+	}
+	
+	
+	
+	.work_content{
+	width: 100%;
+	/*border: 1px solid #A69292;*/
+	padding: 1px;
+	/*height: 2000px;*/
+	background: #F5F5F5;
+	}
+	
+	.box02{
+		width: 1000px;
+		height: 250px;
+	
+		margin: 50px auto;
+	
+		
+	}
+	.box02 ul{
+		height: 250px;
+		padding: 1px;
+	list-style: none;
+		/*background: aqua;*/
+	}
+	.box02 li{
+		width: 280px;
+	    height: 250px;
+		padding: 10px 10px 0 10px;
+	    float: left;
+		background: #FFFFFF;
+	}
+	.box02 a{
+		display: block;
+		width: 280px;
+		color: #565656;
+		text-decoration:none ;
+		
+		/*height: 100%;*/
+	}
+	
+	.box02 li:hover,a:hover{
+	color: white;
+    background-color:#8DC73F ;
+	}
+	
+	.box02 img{
+		width: 280px;
+		height: 180px;
+	}
+	
+	.box03{
+		width: 1000px;
+		margin: 50px auto;
+	
+		overflow: auto;		
+	}
+	
+	.box03 input{
+	
+		float: left;
+		font-family: "����";
+		color: #888888;
+		margin-right: 20px;
+		background-color: #DBDBDB;
+		border: 0;
+		padding: 7px 15px;
+	}
+	.box03 input:hover{
+		color: white;
+		background-color: #8DC73F;
+	}
+	.center_li{
+		
+		margin: 0 45px;
+		
+	}
+	
+	.title1{
+		margin-left:10px ;
+		font-size: 20px;
+		font-family: "����" ;
+	}
+	.title2{
+		margin-left:10px ;
+		font-size: 15px;
+	}
+#we{
+		font-size: 15px;
+		color: darkred;
+		/*float: left;*/
+	}
+
+
+
+/*子导航*/
+.flq{
+		width: 100%;
+		background-color:#CCCCCC;
+		overflow: hidden;
+		height: 30px;
+	}
+	
+	.ul{
+		width:650px;
+		height: 30px;
+		margin: 0 auto;
+	}
+	ul{
+		list-style: none;
+		width:100%;
+		height: 30px;
+		align-content: center;
+	}
+	.ul li{
+		float: left;
+		/*background-color: #8DC73F;*/
+		width: 90px;
+		height: 30px;
+		margin-left: 6px;
+		margin-right:10px ;
+		
+	}
+	.ul a{
+		width: 90px;
+		height: 30px;
+		color: #444444;
+		display: block;
+		text-decoration: none;
+		font-size: 12px;
+		text-align: center;
+		padding-top:6px;
+	}
+	.dh2:hover{
+		color: white;
+	}
+	#xuanzhong{
+		color: white;
+		background-color:#8DC73F;
+	}

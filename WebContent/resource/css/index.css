@@ -1,0 +1,324 @@
+
+
+
+*{margin:0;padding:0;list-style-type:none;}
+a,img{border:0;}
+body{font:12px/180% Arial, Helvetica, sans-serif, "新宋体";}
+
+/* banner */
+.banner{height:600px;width:100%;overflow:hidden;}
+/*.banner .d1{width:100%;height:600px;display:block;top:80px;}*/
+.banner .d1{width:100%;height:600px;display:block;position:absolute;left:0px;top:80px;}
+/*���div*/
+
+
+.banner .d2{width:100%;height:30px;clear:both;position:absolute;z-index:100;left:630px;top:640px;}
+.banner .d2 ul{margin:0 auto;display:inline;}
+.banner .d2 li{width:17px;height:15px;overflow:hidden;cursor:pointer;background:url(../img/img1.png) no-repeat center;float:left;margin:0 3px;display:inline;}
+.banner .d2 li.nuw{background:url(../img/img1_1.png) no-repeat center;}
+
+
+
+
+
+	*{
+		margin: 0;
+		padding: 0;
+	}
+	
+	html{
+		overflow-x:hidden;
+		}
+	
+	.header{
+		height: 80px;
+		background-color:#F5F5F5 ;
+	}
+	.box1{
+		width: 1000px;
+		margin: 0 auto;
+		padding-bottom:20px ;
+	}
+	.logo{
+		float: left;
+	}
+	.dh{
+		width: 423px;
+		float: right;
+	}
+	.dh ul{
+		list-style: none;
+		
+	}
+	.dh li{
+		float: left;
+	}
+	
+	.workq{
+		width: 100%;
+		margin-top: -10px;
+		overflow: hidden;
+	    background-image: url(../img/worlkq_bg.png);
+	}
+	#tit{
+		margin: 20px 0;
+	}
+	.work_img{
+		width: 100%;
+		margin: 10px auto;
+		overflow: hidden;
+		margin-left: 10px;
+		
+	}
+	.work_img li{
+		float: left;
+		width: 25%;
+		overflow: hidden;
+	}
+	.work_img li img{
+		
+		border: 10px solid #555555;
+		align-content: center;
+	}
+	
+	.work_img li img:hover{
+		
+		border: 10px solid #8DC73F;
+	}
+	
+	#navimg2:hover{
+		src: url(../img/navimg_22.png);
+	}
+		
+	.as1{
+		width: 100%;
+		background-color:#343535;
+		overflow: auto;
+	}
+	
+	.as2{
+		width: 1000px;
+		height: 230px;
+		background: url(../img/about_us.png) no-repeat;
+		margin: 0 auto;
+		overflow: auto;
+	}
+	
+	.as_left{
+		width: 330px;
+		float: left;
+		margin-left: 80px;
+		margin-top: 100px;
+		font-size: 12px;
+	
+		
+	    
+	}
+	.as_left p{
+		color: #888888;	
+	}
+	
+	.as_right{
+		width: 500px;
+		float: right;
+		margin-top: 60px;
+	}
+	
+	.a1{
+		width: 25%;
+		margin: 10px;
+	}
+	.a2{
+		margin-left: 35px;
+	}
+	
+	
+	.xwq{
+		width: 100%;
+		height: 90px;
+		background-color: #F5F5F5;
+		overflow: auto;
+	}
+	.xw{
+		width: 1000px;
+		margin: 0px auto;
+		overflow: auto;
+	}
+	
+	.xw_img{
+		float: left;
+		
+	}
+	.xw1{
+		float: left;
+		padding-top: 18px;
+	}
+	.xw1_img{
+		float: left;
+	}
+	.xw1_p{
+		float: left;
+		margin: 5px 10px;
+	}
+	
+	.xw2{
+		padding-top: 18px;
+		width: 490px;
+		float: right;
+	}
+	
+	
+	/*footer��ʽ��ʼ*/
+	.footer{
+		background-color: #DBDBDB;
+		height: 300px;
+		border-top:#DBDBDB  solid 1px;
+	}
+	
+	.footer_content{
+		width: 1000px;
+		height: 225px;
+		margin: 30px auto;
+		overflow: auto;
+	}
+	
+	.footConLeft{
+		width: 50%;
+		height: 100%;
+		float: left;
+		
+		background-color: #DBDBDB;
+	}
+	
+	.footConRight{
+		width: 500px;
+		height: 100%;
+		float: right;
+		overflow: hidden;
+		background-color: #DBDBDB;
+	}
+	
+	.input{
+		display: block;
+		background-color:#CCCCCC ;
+		height: 30px;
+		padding-left:8px ;
+		color:#999999;
+		border: 0;
+	}
+	.textarea{
+	   display: block;
+	   width: 100%;
+	   height: 100px;
+	   color:#999999;
+	   background-color:#CCCCCC ;
+	   border: 0;
+	   font-size:14px ;
+	   padding-left:8px ;
+	   margin-top: -30px;
+	}
+	
+	
+	.name1{
+		float: left;
+		width: 240px;
+	}
+	
+	.phone1{
+		width: 240px;
+		float: right;
+	}
+	
+	.mail1{
+		margin: 15px 0px;
+		width: 100%;
+		
+	}
+	
+	
+	
+/*�ı���*/
+	.tjan{
+		width: 120px;
+		height: 35px;
+		text-align: center;
+		color: #DBDBDB;
+	    display: block;
+		background-color:#999999;
+		border: 0;
+		float: right;
+		margin-top: -10px;
+		margin-right: 200px;
+	}
+	
+	
+	
+	.lxfs{
+		width: 300px;
+		height: 225px;
+		color: #A69292;
+		float: left;
+		background: #DBDBDB;
+		
+	}
+	
+	.lxfs  a{
+		
+		text-decoration:none ;
+		color: #A69292;
+	}
+	
+	
+	
+	.xw1  a:hover{
+		
+		color: #8DC73F;
+	}
+	
+	
+		.xw1  a{
+		font-size: 16px;
+		text-decoration:none ;
+		color: #A69292;
+	}
+	
+
+
+.xw2  a:hover{
+		
+		color: #8DC73F;
+	}
+	
+	
+		.xw2  a{
+		font-size: 16px;
+		text-decoration:none ;
+		color: #A69292;
+	}
+	
+	
+	
+	
+	
+	
+	.ewm img{
+		float: left;
+		display: block;
+		margin-left: 20px;
+		width: 165px;
+		height: 165px;
+	}
+	
+	
+                                         /*�¼�*/
+	#we{
+		font-size: 15px;
+		color: darkred;
+		/*float: left;*/
+	}
+
+	
+	
+	
+	/*footer��ʽ����*/
+

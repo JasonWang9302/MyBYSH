@@ -1,0 +1,218 @@
+/*去除浏览器默认样式*/
+	*{
+		margin: 0;
+		padding: 0;
+	}
+	
+	html{
+		overflow-x:hidden;
+		}
+	
+	.header{
+		height: 80px;
+		background-color:#F5F5F5 ;
+	}
+	.box1{
+		width: 1000px;
+		margin: 0 auto;
+	}
+	.logo{
+		float: left;
+	}
+	.dh{
+		width: 423px;
+		float: right;
+	}
+	.dh ul{
+		list-style: none;
+		
+	}
+	.dh li{
+		float: left;
+	}
+	
+	.workq{
+		width: 100%;
+		margin-top: -10px;
+		overflow: hidden;
+	    background-image: url(img/worlkq_bg.png);
+	}
+	#tit{
+		margin: 20px 0;
+	}
+	.work_img{
+		width: 100%;
+		margin: 10px auto;
+		overflow: hidden;
+		margin-left: 10px;
+		
+	}
+	.work_img li{
+		float: left;
+		width: 25%;
+		overflow: hidden;
+	}
+	.work_img li img{
+		
+		border: 10px solid #555555;
+		align-content: center;
+	}
+	
+	.work_img li img:hover{
+		
+		border: 10px solid #8DC73F;
+	}
+	
+	#navimg2:hover{
+		src: url(img/navimg_22.png);
+	}
+	
+	.as1{
+		width: 100%;
+		background-color:#343535;
+		
+	}
+	
+	
+	.as{
+		width: 1365px;
+		height: 230px;
+		background: url(img/about_us.png) no-repeat;
+		margin: 0 auto;
+	
+	}
+	.t{
+		background-color: #F5F5F5;
+		height: 90px;
+		
+	}
+	
+	.footer{
+		background-color: #DBDBDB;
+		height: 300px;
+		border-top:#DBDBDB  solid 1px;
+		
+	}
+	
+   .contact_content{
+     width: 100%;
+     height:590px;
+     margin-top: 10px;
+   background: #222222;
+   }
+   .contact_content img{
+	width: 1366px;
+	margin: -10px auto;
+   }
+   
+   
+   
+	.footer_content{
+		width: 1000px;
+		height: 225px;
+		margin: 30px auto;
+		overflow: auto;
+	}
+	
+	.footConLeft{
+		width: 50%;
+		height: 100%;
+		float: left;
+		
+		background-color: #DBDBDB;
+	}
+	
+	.footConRight{
+		width: 500px;
+		height: 100%;
+		float: right;
+		overflow: hidden;
+		background-color: #DBDBDB;
+	}
+	.input{
+		display: block;
+		background-color:#CCCCCC ;
+		height: 30px;
+		padding-left:8px ;
+		color:#999999;
+		border: 0;
+	}
+	.textarea{
+	   display: block;
+	   width: 100%;
+	   height: 100px;
+	   color:#999999;
+	   background-color:#CCCCCC ;
+	   border: 0;
+	   font-size:14px ;
+	   padding-left:8px ;
+	   margin-top: -30px;
+	}
+	
+	.name1{
+		float: left;
+		width: 240px;
+	}
+	
+	.phone1{
+		width: 240px;
+		float: right;
+	}
+	
+	.mail1{
+		margin: 15px 0px;
+		width: 100%;
+		
+	}
+		
+	.tjan{
+		width: 120px;
+		height: 35px;
+		text-align: center;
+		color: #DBDBDB;
+	    display: block;
+		background-color:#999999;
+		border: 0;
+		float: right;
+		margin-top: -10px;
+		margin-right: 200px;
+	}
+	
+	.lxfs{
+		width: 300px;
+		height: 225px;
+		color: #A69292;
+		float: left;
+		background: #DBDBDB;
+		
+	}
+	
+	.lxfs  a{
+		
+		text-decoration:none ;
+		color: #A69292;
+	}
+	
+	.lxfs  a:hover{
+		
+		color: #8DC73F;
+	}
+	.ewm img{
+		float: left;
+		display: block;
+		margin-left: 20px;
+		width: 165px;
+		height: 165px;
+	}
+	
+#we{
+		font-size: 15px;
+		color: darkred;
+		/*float: left;*/
+	}
+	
+	
+	#tj:hover{
+		color: white;
+		background-color: #8DC73F;
+	}
