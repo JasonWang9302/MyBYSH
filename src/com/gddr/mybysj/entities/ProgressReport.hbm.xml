@@ -14,9 +14,9 @@
         <property name="progRepDesc" type="java.lang.String">
             <column name="PROG_REP_DESC" />
         </property>
-        <many-to-one name="progRepFile" class="com.gddr.mybysj.entities.Enclosure">
-            <column name="PROG_REP_FILE_id" />
-        </many-to-one>
+        <property name="progRepFile" type="java.lang.String">
+            <column name="PROG_REP_FILE" />
+        </property>
         <many-to-one name="project" class="com.gddr.mybysj.entities.Project">
             <column name="PROJECT_id" />
         </many-to-one>

@@ -14,9 +14,9 @@
         <many-to-one name="servicer" class="com.gddr.mybysj.entities.User">
             <column name="SERVICER_id" />
         </many-to-one>
-        <many-to-one name="bidDoc" class="com.gddr.mybysj.entities.Enclosure" >
+        <property name="bidDoc" type="java.lang.Integer" >
             <column name="BID_DOC" />
-        </many-to-one>
+        </property>
         <property name="status" type="java.lang.Integer">
             <column name="STATUS" />
         </property>

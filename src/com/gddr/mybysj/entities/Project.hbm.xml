@@ -26,9 +26,9 @@
         <many-to-one name="servicer" class="com.gddr.mybysj.entities.User">
             <column name="SERVICER_id" />
         </many-to-one>
-        <many-to-one name="rfp" class="com.gddr.mybysj.entities.Enclosure">
-            <column name="RFP_id" />
-        </many-to-one>
+        <property name="rfp" type="java.lang.String">
+            <column name="RFP" />
+        </property>
         <property name="state" type="java.lang.Integer">
             <column name="STATE" />
         </property>

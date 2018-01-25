@@ -11,7 +11,7 @@ public class ProgressReport {
 	private Integer progRepId;
 	private String progRepName;
 	private String progRepDesc;
-	private Enclosure progRepFile;
+	private String progRepFile;
 	private Project project;
 	private Integer isAcceptFile;
 	private Date commitTime;
@@ -20,7 +20,7 @@ public class ProgressReport {
 		super();
 	}
 
-	public ProgressReport(String progPRepName, String progRepDesc, Enclosure progRepFile, Project project,
+	public ProgressReport(String progPRepName, String progRepDesc, String progRepFile, Project project,
 			Integer isAcceptFile, Date commitTime) {
 		super();
 		this.progRepName = progPRepName;
@@ -31,7 +31,7 @@ public class ProgressReport {
 		this.commitTime = commitTime;
 	}
 
-	public ProgressReport(Integer progRepId, String progPRepName, String progRepDesc, Enclosure progRepFile,
+	public ProgressReport(Integer progRepId, String progPRepName, String progRepDesc, String progRepFile,
 			Project project, Integer isAcceptFile, Date commitTime) {
 		super();
 		this.progRepId = progRepId;
@@ -67,11 +67,11 @@ public class ProgressReport {
 		this.progRepDesc = progRepDesc;
 	}
 
-	public Enclosure getProgRepFile() {
+	public String getProgRepFile() {
 		return progRepFile;
 	}
 
-	public void setProgRepFile(Enclosure progRepFile) {
+	public void setProgRepFile(String progRepFile) {
 		this.progRepFile = progRepFile;
 	}
 
