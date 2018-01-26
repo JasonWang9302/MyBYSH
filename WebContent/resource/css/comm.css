@@ -1,0 +1,181 @@
+/* 去掉浏览器整体样式 */
+* {
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+}
+
+a, img {
+	border: 0;
+}
+
+body {
+	font: 12px/180% Arial, Helvetica, sans-serif, "新宋体";
+	background-color: #f6f6f6;
+}
+
+/* 导航 */
+* {
+	margin: 0;
+	padding: 0;
+}
+
+html {
+	overflow-x: hidden;
+}
+
+.header {
+	height: 80px;
+	background-color: #F5F5F5;
+}
+
+.box1 {
+	width: 1000px;
+	margin: 0 auto;
+	padding-bottom: 20px;
+}
+
+.logo {
+	float: left;
+}
+
+
+#login {
+	
+	/* width: 300px; */
+	margin: 0px auto;
+	padding: 10px 0px;
+	float: right;
+}
+
+#login #yh{
+	
+	/* width:100px; */
+	float: right;
+	background-color: #F5F5F5;
+}
+#login #dlzc{
+	
+	/* width:100px; */
+	margin:20px;
+	float: right;
+}
+
+.dh {
+	width: 355px;
+	float: right;
+}
+
+.dh ul {
+	list-style: none;
+}
+
+.dh li {
+	float: left;
+}
+
+
+/* 	foot */
+.footer {
+	background-color: #DBDBDB;
+	height: 300px;
+	border-top: #DBDBDB solid 1px;
+}
+
+.footer_content {
+	width: 1000px;
+	height: 225px;
+	margin: 30px auto;
+	overflow: auto;
+}
+
+.footConLeft {
+	width: 50%;
+	height: 100%;
+	float: left;
+	background-color: #DBDBDB;
+}
+
+.footConRight {
+	width: 500px;
+	height: 100%;
+	float: right;
+	overflow: hidden;
+	background-color: #DBDBDB;
+}
+
+.input {
+	display: block;
+	background-color: #CCCCCC;
+	height: 30px;
+	padding-left: 8px;
+	color: #999999;
+	border: 0;
+}
+
+.textarea {
+	display: block;
+	width: 100%;
+	height: 100px;
+	color: #999999;
+	background-color: #CCCCCC;
+	border: 0;
+	font-size: 14px;
+	padding-left: 8px;
+	margin-top: -30px;
+}
+
+.name1 {
+	float: left;
+	width: 240px;
+}
+
+.phone1 {
+	width: 240px;
+	float: right;
+}
+
+.mail1 {
+	margin: 15px 0px;
+	width: 100%;
+}
+
+.tjan {
+	width: 120px;
+	height: 35px;
+	text-align: center;
+	color: #DBDBDB;
+	display: block;
+	background-color: #999999;
+	border: 0;
+	float: right;
+	margin-top: -10px;
+	margin-right: 200px;
+}
+
+.lxfs {
+	width: 300px;
+	height: 225px;
+	color: #A69292;
+	float: left;
+	background: #DBDBDB;
+}
+
+.lxfs  a {
+	text-decoration: none;
+	color: #A69292;
+}
+
+.ewm img {
+	float: left;
+	display: block;
+	margin-left: 20px;
+	width: 165px;
+	height: 165px;
+}
+
+#we {
+	font-size: 15px;
+	color: darkred;
+	/*float: left;*/
+}

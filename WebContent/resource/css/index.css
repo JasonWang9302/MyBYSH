@@ -9,7 +9,7 @@ body{font:12px/180% Arial, Helvetica, sans-serif, "新宋体";}
 .banner{height:600px;width:100%;overflow:hidden;}
 /*.banner .d1{width:100%;height:600px;display:block;top:80px;}*/
 .banner .d1{width:100%;height:600px;display:block;position:absolute;left:0px;top:80px;}
-/*���div*/
+
 
 
 .banner .d2{width:100%;height:30px;clear:both;position:absolute;z-index:100;left:630px;top:640px;}
@@ -53,6 +53,11 @@ body{font:12px/180% Arial, Helvetica, sans-serif, "新宋体";}
 	.dh li{
 		float: left;
 	}
+	/* .dh .login{
+	   margin: 30px 1000px; 
+	   float: right;
+	   padding: 50px 10px;
+	} */
 	
 	.workq{
 		width: 100%;
@@ -237,7 +242,7 @@ body{font:12px/180% Arial, Helvetica, sans-serif, "新宋体";}
 	
 	
 	
-/*�ı���*/
+
 	.tjan{
 		width: 120px;
 		height: 35px;
@@ -310,7 +315,7 @@ body{font:12px/180% Arial, Helvetica, sans-serif, "新宋体";}
 	}
 	
 	
-                                         /*�¼�*/
+
 	#we{
 		font-size: 15px;
 		color: darkred;

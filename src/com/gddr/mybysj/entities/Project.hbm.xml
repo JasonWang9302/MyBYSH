@@ -14,6 +14,10 @@
         <property name="proDesc" type="java.lang.String">
             <column name="PRO_DESC" />
         </property>
+        <property name="createTime" type="java.util.Date">
+            <column name="CREATE_TIME" />
+        </property>
+        
         <many-to-one name="category" class="com.gddr.mybysj.entities.Category">
             <column name="CATEGORY_id" />
         </many-to-one>
@@ -38,5 +42,13 @@
         <property name="endTime" type="java.util.Date">
             <column name="END_TIME" />
         </property>
+        <property name="compensationRate" type="java.lang.Integer">
+            <column name="compensation_rate" />
+        </property>
+        <property name="projectFund" type="java.lang.Double">
+            <column name="project_fund" />
+        </property>
+        
+        
     </class>
 </hibernate-mapping>

@@ -8,7 +8,31 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title></title>
 
+
+ 
+
+
+
+
 <link rel="stylesheet" type="text/css" href="resource/css/index.css" />
+<script src="resource/plugins/layui/layui.js"></script>
+ 
+<script>
+layui.use('element', function(){
+	  var element = layui.element; //导航的hover效果、二级菜单等功能，需要依赖element模块
+	  
+	  //监听导航点击
+	  element.on('nav(demo)', function(elem){
+	    //console.log(elem)
+	    layer.msg(elem.text());
+	  });
+	});
+</script>
+
+
+
+
+
 
 <script type="text/javascript" src="resource/js/js1.js" /></script>
 <!--轮播js-->
