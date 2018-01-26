@@ -1,13 +1,15 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<%@ taglib prefix="s" uri="/struts-tags"%>
+    <%@ taglib prefix="s" uri="/struts-tags"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<!-- 引入基路径设置 -->
+<%@ include file="basepath.jsp" %>
     <title>KIT ADMIN</title>
-    <link rel="stylesheet" href="./resource/plugins/layui/css/layui.css" media="all">
-    <link rel="stylesheet" href="./resource/build/css/app.css" media="all">
+    <link rel="stylesheet" href="resource/plugins/layui/css/layui.css" media="all">
+    <link rel="stylesheet" href="resource/build/css/app.css" media="all">
 </head>
 
 <body>
@@ -19,20 +21,20 @@
             <div class="layui-logo">个人中心</div>
             <div class="layui-logo kit-logo-mobile">K</div>
             <ul class="layui-nav layui-layout-left kit-nav">
-                <li class="layui-nav-item"><a href="javascript:;">首页</a></li>
+                <li class="layui-nav-item"><a href="index">首页</a></li>
                 <li class="layui-nav-item"><a href="javascript:;">发布项目</a></li>
             </ul>
             <ul class="layui-nav layui-layout-right kit-nav">
                 <li class="layui-nav-item">
                     <a href="javascript:;">
-                        <img src="" class="layui-nav-img"> Van
+                        <!-- <img src="" class="layui-nav-img"> --> 当前用户：${session.currUser.userName}
                     </a>
                     <dl class="layui-nav-child">
                         <dd><a href="javascript:;">基本资料</a></dd>
                         <dd><a href="javascript:;">安全设置</a></dd>
                     </dl>
                 </li>
-                <li class="layui-nav-item"><a href="javascript:;"><i class="fa fa-sign-out" aria-hidden="true"></i> 注销</a></li>
+                <li class="layui-nav-item"><a href="user-logout"><i class="fa fa-sign-out" aria-hidden="true"></i> 注销</a></li>
             </ul>
         </div>
 
@@ -126,11 +128,11 @@
         var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");
         document.write(unescape("%3Cspan id='cnzz_stat_icon_1264021086'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s22.cnzz.com/z_stat.php%3Fid%3D1264021086%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));
     </script>
-    <script src="./resource/plugins/layui/layui.js"></script>
+    <script src="resource/plugins/layui/layui.js"></script>
     <script>
         var message;
         layui.config({
-            base: './resource/build/js/'
+            base: 'resource/build/js/'
         }).use(['app', 'message'], function() {
             var app = layui.app,
                 $ = layui.jquery,
@@ -145,7 +147,7 @@
                 layer.open({
                     title: false,
                     type: 1,
-                    content: '<img src="./resource/build/images/pay.png" />',
+                    content: '<img src="resource/build/images/pay.png" />',
                     area: ['500px', '250px'],
                     shadeClose: true
                 });

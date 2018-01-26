@@ -12,10 +12,12 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <base href="<%=basePath%>"></base>
+
 <title>Insert title here</title>
+
 </head>
 <body>
-<div class="header">
+	<div class="header">
 		<div class="box1">
 			<div class="logo">
 				<a href="#"><img src="resource/img/logo1.png" /></a>
@@ -36,7 +38,19 @@
 					<li><a href="contact.jsp"><img onMouseOver="nav(this)"
 							onMouseOut="nav1(this)" id="navimg6"
 							src="resource/img/navimg_61.png" /></a></li>
-					<li><div style="margin:auto;padding:30px 10px;"><a style="size: 30px;" href="login.jsp">登录/注册 </a></div></li>
+					<li><div style="margin: auto; padding: 30px 10px;">
+
+							
+							<s:if test="#session.currUser==null">
+							<a href="user-toLogin">登录/注册 </a>
+							</s:if>
+							<s:else>
+                       <a style="size: 30px;" href="personal/index.jsp">${session.currUser.userName}</a> 
+
+							</s:else>
+
+
+						</div></li>
 				</ul>
 			</div>
 

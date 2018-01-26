@@ -6,8 +6,44 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <script type="text/javascript" src="resource/js/jquery-1.9.0.min.js"></script>
-<script type="text/javascript" src="resource/images/login.js"></script>
+<script type="text/javascript" src="resource/js/login.js"></script>
 <link href="resource/css/login2.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript">
+	/* 注册成功的提示 */
+	var msg = "${requestScope.tipMessage}";
+	if (msg != "") {
+		alert(msg);
+	}
+
+	/* 用户名是否存在验证 */
+	$(function() {
+		$("#user").change(function() {
+			/*  alert("发送ajax请求"); */
+			var val = $(this).val().trim();
+			var $this = $(this);
+			if (val != "") {
+				$this.nextAll("font").remove();
+				var url = "user-verifyUserName?userName=" + val;
+				var args = {
+					"time" : new Date()
+				};
+				$.post(url, args, function(data) {
+					if (data == "no") {
+						$this.after("<font  color='red'><b id='bky'>用户名已存在</b></font>");
+
+						/* 	ts.val("用户名"); */
+					} else {
+						/* $this.after("<font color='green'><b>用户名可用</b></font>"); */
+
+					}
+				})
+
+			}
+
+		})
+
+	})
+</script>
 </head>
 <body>
 	<h1>
@@ -39,22 +75,24 @@
 
 
 					<div class="login_form">
-						<form action="" name="loginform" accept-charset="utf-8"
-							id="login_form" class="loginForm" method="post">
-							<input type="hidden" name="did" value="0" /> <input type="hidden"
-								name="to" value="log" />
+						<form action="user-doLogin" name="loginform"
+							accept-charset="utf-8" id="login_form" class="loginForm"
+							method="post">
+							<input type="hidden" name="did" value="0" /> <input
+								type="hidden" name="to" value="log" />
 							<div class="uinArea" id="uinArea">
 								<label class="input-tips" for="u">帐号：</label>
 								<div class="inputOuter" id="uArea">
 
-									<input type="text" id="u" name="username" class="inputstyle" />
+									<input type="text" id="u" name="userName" class="inputstyle" />
 								</div>
 							</div>
 							<div class="pwdArea" id="pwdArea">
 								<label class="input-tips" for="p">密码：</label>
 								<div class="inputOuter" id="pArea">
 
-									<input type="password" id="p" name="p" class="inputstyle" />
+									<input type="password" id="p" name="password"
+										class="inputstyle" />
 								</div>
 							</div>
 
@@ -71,26 +109,34 @@
 			<!--登录end-->
 		</div>
 
+
+
+
+
+
+
+
+
 		<!--注册-->
 		<div class="qlogin" id="qlogin" style="display: none;">
 
 			<div class="web_login">
-				<form name="form2" id="regUser" accept-charset="utf-8" action=""
-					method="post">
+				<form name="form2" id="regUser" accept-charset="utf-8"
+					action="user-doReg" method="post">
 					<input type="hidden" name="to" value="reg" /> <input type="hidden"
 						name="did" value="0" />
 					<ul class="reg_form" id="reg-ul">
 						<div id="userCue" class="cue">快速注册请注意格式</div>
 						<li><label for="user" class="input-tips2">用户名：</label>
 							<div class="inputOuter2">
-								<input type="text" id="user" name="user" maxlength="16"
+								<input type="text" id="user" name="userName" maxlength="16"
 									class="inputstyle2" />
 							</div></li>
 
 						<li><label for="passwd" class="input-tips2">密码：</label>
 							<div class="inputOuter2">
-								<input type="password" id="passwd" name="passwd" maxlength="16"
-									class="inputstyle2" />
+								<input type="password" id="passwd" name="password"
+									maxlength="16" class="inputstyle2" />
 							</div></li>
 						<li><label for="passwd2" class="input-tips2">确认密码：</label>
 							<div class="inputOuter2">
@@ -103,7 +149,7 @@
 							for="qq" class="input-tips2">手机号：</label>
 							<div class="inputOuter2">
 
-								<input type="text" id="qq" name="qq" maxlength="10"
+								<input type="text" id="qq" name="phone" maxlength="11"
 									class="inputstyle2" />
 							</div>
 
@@ -113,8 +159,7 @@
 							<div class="inputArea">
 								<input type="button" id="reg"
 									style="margin-top: 10px; margin-left: 85px;"
-									class="button_blue" value="同意协议并注册" /> <a href="#" class="zcxy"
-									target="_blank">注册协议</a>
+									class="button_blue" value="同意协议并注册" />
 							</div>
 
 						</li>
