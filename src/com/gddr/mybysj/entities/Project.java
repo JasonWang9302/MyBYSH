@@ -20,7 +20,7 @@ public class Project {
 	private Integer state;//状态 01234 待审核  招标中   待开始   进行中    待结算    已完成
 	private Integer deleteFlag;//逻辑删标记   0 未删除   1 被发布者删了
 	private Date endTime;//结束时间 最后操作的时间 包括状态改变  逻辑删等；
-	private Integer compensationRate;
+	private Integer compensationRate;//赔率
 	private Double  projectFund;
 	public Project() {
 		super();

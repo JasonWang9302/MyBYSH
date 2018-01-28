@@ -46,7 +46,7 @@
 				<label class="layui-form-label" style="margin-left: -20px;"><img
 					alt="" src="resource/images/must.png">项目名称：</label>
 				<div class="layui-input-block" style="margin-left: 0px;">
-					<input type="text" name="proName" lay-verify="required"
+					<input type="text" name="username" lay-verify="required"
 						placeholder="请输入" autocomplete="off" class="layui-input">
 				</div>
 			</div>
@@ -68,13 +68,11 @@
 
 			<div class="layui-form-item">
 				<label class="layui-form-label" style="margin-left: -30px;"><img
-					alt="" src="resource/images/must.png">项目类别:</label><br>
-				<br>
+					alt="" src="resource/images/must.png">项目类别:</label><br> <br>
 				<br>
 				<div class="layui-input-block" style="margin-left: 0px;">
-					<input type="radio" name="category" value="男" title="男" checked=""
-						class="layui-input"> 
-					<input type="radio" name="category"
+					<input type="radio" name="sex" value="男" title="男" checked=""
+						class="layui-input"> <input type="radio" name="sex"
 						value="女" title="女" class="layui-input">
 
 				</div>
@@ -85,30 +83,46 @@
 				<label class="layui-form-label" style="margin-left: -30px;"><img
 					alt="" src="resource/images/must.png">验证日期:</label>
 				<div class="layui-input-block" style="margin-left: 0px;">
-					<input type="text" name="preDeliveryTime" id="date" lay-verify="date"
+					<input type="text" name="date" id="date" lay-verify="date"
 						placeholder="yyyy-MM-dd" autocomplete="off" class="layui-input">
 				</div>
 			</div>
 			<!-- 招标书 -->
 			<div class="layui-form-item">
 				<label class="layui-form-label" style="margin-left: -20px;"><img
-					alt="" src="resource/images/must.png">上传招标:</label><br>
-				<br>
+					alt="" src="resource/images/must.png">上传招标:</label><br> <br>
 				<br>
 				<div class="layui-upload">
 
 					<div class="layui-input-block" style="margin-left: 0px;">
 						<button type="button" class="layui-btn layui-btn-normal"
-							id="test8">选择文件</button>
+							id="test8" name="file">选择文件</button>
 						<button type="button" class="layui-btn" id="test9">开始上传</button>
 
 					</div>
 				</div>
 			</div>
-			
-			<!-- 标书的saveName -->
-			<input type="text" id="rfp" name="rfp"/>
-			
+
+			<a href="uploadAction-upload">uploadAction</a>
+
+			<%-- 			<label class="layui-form-label" style="margin-left: -20px;"><img
+				alt="" src="resource/images/must.png">上传招标:</label><br> <br>
+			<br>
+
+			 <s:form action="uploadAction" method="post" enctype="multipart/form-data">
+
+				<s:file name="file" label="标书："></s:file>
+				<s:submit value="提交"></s:submit>
+
+			</s:form> --%>
+
+
+
+
+
+
+
+
 			<!-- 项目资金 -->
 			<div class="layui-form-item">
 				<label class="layui-form-label" style="margin-left: -20px;"><img
@@ -124,7 +138,7 @@
 				<label class="layui-form-label" style="margin-left: -20px;"><img
 					alt="" src="resource/images/must.png">违约赔率:</label>
 				<div class="layui-input-block" style="margin-left: 0px;">
-					<input type="password" name="compensationRate" lay-verify="pass"
+					<input type="password" name="password" lay-verify="pass"
 						placeholder="请输入密码" autocomplete="off" class="layui-input">
 				</div>
 				<div class="layui-form-mid layui-word-aux">请填写6到12位密码</div>
@@ -134,9 +148,12 @@
 				<label class="layui-form-label" style="margin-left: -30px;"><img
 					alt="" src="resource/images/must.png">其他描述</label>
 				<div class="layui-input-block" style="margin-left: 0px;">
-					<textarea placeholder="请输入内容" name="proDesc" class="layui-textarea"></textarea>
+					<textarea placeholder="请输入内容" class="layui-textarea"></textarea>
 				</div>
 			</div>
+
+
+
 
 			<div class="layui-form-item">
 				<button class="layui-btn" lay-submit="" lay-filter="demo2">跳转式提交</button>
@@ -146,8 +163,14 @@
 
 	</div>
 	<!-- 内容部分结束 -->
+	<s:form action="uploadAction-upload" method="post"
+		enctype="multipart/form-data">
 
+		<s:file name="file" label="标书："></s:file>
+		<s:submit value="提交"></s:submit>
 
+	</s:form>
+	<a href="uploadAction-upload">heheheh</a>
 
 	<!-- 引入底部 -->
 	<%@ include file="comm-foot.jsp"%>
@@ -210,22 +233,21 @@
 								elem : '#test8',
 								url : 'uploadAction-upload',
 								auto : false,
-								multiple: true,
+								//,multiple: true
 								accept : 'file',
-								size : 100*1024,
+								size : 50000,
 								bindAction : '#test9',
 								done : function(res, index, upload) {
 									//假设code=0代表上传成功
 									if (res.code == 0) {
 										//do something （比如将res返回的图片链接保存到表单的隐藏域）
-										console.log(res.data[0].src);
-										$("#test8").after(res.msg);
-										//为rfp隐藏域赋值
-										$("#rfp").val(res.data[0].src);
+										console.log(res.data.src);
+										
 									}
 
 								}
 							});
+
 						});
 	</script>
 </body>
