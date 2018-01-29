@@ -85,7 +85,7 @@
 					<li><a href="project-toPublish"><img onMouseOver="nav(this)"
 							onMouseOut="nav1(this)" id="navimg3"
 							src="resource/img/navimg_31.png" /></a></li>
-					<li><a href="index.jsp"><img onMouseOver="nav(this)"
+					<li><a href="projectList.jsp"><img onMouseOver="nav(this)"
 							onMouseOut="nav1(this)" id="navimg4"
 							src="resource/img/navimg_41.png" /></a></li>
 					<li><a href="work.jsp"><img onMouseOver="nav(this)"

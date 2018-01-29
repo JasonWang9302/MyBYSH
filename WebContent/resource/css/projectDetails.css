@@ -1,0 +1,43 @@
+#wzdhDiv{
+	width: 1000px;
+	margin:20px auto;
+	/* border: 1px solid; */
+}
+
+
+/* 项目列表项 */
+.proListItem{
+	background-color: #FFF;
+	width: 1000px;
+	height: 180px;
+	
+	margin:20px auto;
+	/* border: 1px solid; */
+	
+}
+
+/* 列表项左边文字 */
+.proItemLeft{
+	margin: 30px;
+/* 	background-color: #ff8080; */
+	width: 600px;
+	height: 130px;
+	float: left;
+}
+/* 右边价钱 状态 */
+.proItemRigth{
+/* 	background-color: #80ff00; */
+	width:220px;
+	height:60px;
+	margin: 30px 0px;
+	float: right;
+	padding: 40px 0px;
+}
+
+#projectDetails{
+	background-color: #FFF;
+	width: 940px;
+	height: 500px;
+	padding:30px;
+	margin:20px auto;
+}

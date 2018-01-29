@@ -27,6 +27,7 @@ html {
 .header {
 	height: 80px;
 	background-color: #F5F5F5;
+	border-bottom: 1px solid #dadada;
 }
 
 .box1 {

@@ -30,6 +30,7 @@
 			</result> <result name="add" type="redirectAction">employee_all</result> 
 			<allowed-methods>all,delete,toAdd,add,verifyName,toEdit,edit</allowed-methods> 
 			</action> -->
+			
 		<action name="index">
 			<result>/index.jsp</result>
 		</action>
@@ -37,28 +38,22 @@
 		<action name="user-*" class="userAction" method="{1}">
 			<result name="toLogin">/login.jsp</result>
 			<result name="index">/index.jsp</result>
-
 			<result type="stream" name="verifyName">
 				<param name="contentType">text/html</param>
 				<param name="inputName">inputStream</param>
 			</result>
 		</action>
-		
-		
-		
+
+
+
 		<!-- 项目 -->
 		<action name="project-*" class="projectAction" method="{1}">
-		<result name="publish" type="chain">project-toPublish</result>
-		<result name="toPublish">/pubpro.jsp</result>
-		
-		
+			<result name="publish" type="chain">project-toPublish</result>
+			<result name="toPublish">/pubpro.jsp</result>
 		</action>
-		
-		
-		
-		
-
 	</package>
+	
+	
 	<package name="resultJson" namespace="/" extends="json-default">
 		<!-- 定义新的拦截器栈, 配置 prepare 拦截器栈的 alwaysInvokePrepare 参数值为 false -->
 		<interceptors>
@@ -78,7 +73,6 @@
 			</result>
 			<allowed-methods>upload</allowed-methods>
 		</action>
-
 	</package>
 
 
