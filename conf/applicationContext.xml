@@ -58,6 +58,8 @@
 	<bean id="FileUploadAction" class="com.gddr.mybysj.action.FileUploadAction"
 		scope="prototype">
 	</bean>
+	<bean id="projectAction" class="com.gddr.mybysj.action.ProjectAction" scope="prototype">
+	</bean>
 
 
 </beans>

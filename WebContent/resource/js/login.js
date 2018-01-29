@@ -86,7 +86,7 @@ $(document)
 											return false;
 										}
 
-										if ($('#user').val().length < 4
+										if ($('#user').val().length <1
 												|| $('#user').val().length > 16) {
 
 											$('#user').focus().css({

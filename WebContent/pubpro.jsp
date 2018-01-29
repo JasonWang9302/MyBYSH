@@ -15,6 +15,13 @@
 	margin-left: 0px;
 }
 </style>
+<script type="text/javascript">
+/* 注册成功的提示 */
+var msg = "${requestScope.tip}";
+if (msg != "") {
+	alert(msg);
+}
+</script>
 
 
 <title>Insert title here</title>
@@ -40,7 +47,7 @@
 	<div id="fb-div2">
 
 		<!-- 	表单开始 -->
-		<form class="layui-form" action="">
+		<form class="layui-form" action="project-publish" method="post">
 			<!-- 项目名称 -->
 			<div class="layui-form-item">
 				<label class="layui-form-label" style="margin-left: -20px;"><img
@@ -68,14 +75,20 @@
 
 			<div class="layui-form-item">
 				<label class="layui-form-label" style="margin-left: -30px;"><img
-					alt="" src="resource/images/must.png">项目类别:</label><br>
-				<br>
+					alt="" src="resource/images/must.png">项目类别:</label><br> <br>
 				<br>
 				<div class="layui-input-block" style="margin-left: 0px;">
-					<input type="radio" name="category" value="男" title="男" checked=""
-						class="layui-input"> 
-					<input type="radio" name="category"
-						value="女" title="女" class="layui-input">
+					<!-- <input type="radio" name="category.cateName"  value="男" title="男"
+						checked="" class="layui-input"> 
+						<input type="radio" value="女" title="女" class="layui-input"> -->
+					<%--  <s:iterator value="#request.cateList" var="cate">
+						<input type="radio" value="#cate.cateId" title="cate.cateName" class="layui-input">
+					</s:iterator>  --%>
+
+					<s:radio list="%{#request.cateList}" name="category.cateId"
+						listKey="cateId" listValue="cateName" value="1"
+						class="layui-input" title=" "></s:radio>
+
 
 				</div>
 			</div>
@@ -85,15 +98,15 @@
 				<label class="layui-form-label" style="margin-left: -30px;"><img
 					alt="" src="resource/images/must.png">验证日期:</label>
 				<div class="layui-input-block" style="margin-left: 0px;">
-					<input type="text" name="preDeliveryTime" id="date" lay-verify="date"
-						placeholder="yyyy-MM-dd" autocomplete="off" class="layui-input">
+					<input type="text" name="preDeliveryTime" id="date"
+						lay-verify="date" placeholder="yyyy-MM-dd" autocomplete="off"
+						class="layui-input">
 				</div>
 			</div>
 			<!-- 招标书 -->
 			<div class="layui-form-item">
 				<label class="layui-form-label" style="margin-left: -20px;"><img
-					alt="" src="resource/images/must.png">上传招标:</label><br>
-				<br>
+					alt="" src="resource/images/must.png">上传招标:</label><br> <br>
 				<br>
 				<div class="layui-upload">
 
@@ -105,16 +118,16 @@
 					</div>
 				</div>
 			</div>
-			
+
 			<!-- 标书的saveName -->
-			<input type="text" id="rfp" name="rfp"/>
-			
+			<input type="text" id="rfp" name="rfp" />
+
 			<!-- 项目资金 -->
 			<div class="layui-form-item">
 				<label class="layui-form-label" style="margin-left: -20px;"><img
 					alt="" src="resource/images/must.png">项目资金:</label>
 				<div class="layui-input-block" style="margin-left: 0px;">
-					<input type="password" name="password" lay-verify="pass"
+					<input type="text" name="projectFund" lay-verify="pass"
 						placeholder="请输入密码" autocomplete="off" class="layui-input">
 				</div>
 				<div class="layui-form-mid layui-word-aux">请填写6到12位密码</div>
@@ -124,7 +137,7 @@
 				<label class="layui-form-label" style="margin-left: -20px;"><img
 					alt="" src="resource/images/must.png">违约赔率:</label>
 				<div class="layui-input-block" style="margin-left: 0px;">
-					<input type="password" name="compensationRate" lay-verify="pass"
+					<input type="text" name="compensationRate" lay-verify="pass"
 						placeholder="请输入密码" autocomplete="off" class="layui-input">
 				</div>
 				<div class="layui-form-mid layui-word-aux">请填写6到12位密码</div>
@@ -147,7 +160,9 @@
 	</div>
 	<!-- 内容部分结束 -->
 
-
+	<s:radio label="sfd" list="%{#request.cateList}"
+		name="category.cateName" listKey="cateId" listValue="cateName"
+		value="1" class="layui-input"></s:radio>
 
 	<!-- 引入底部 -->
 	<%@ include file="comm-foot.jsp"%>
@@ -210,9 +225,9 @@
 								elem : '#test8',
 								url : 'uploadAction-upload',
 								auto : false,
-								multiple: true,
+								multiple : true,
 								accept : 'file',
-								size : 100*1024,
+								size : 100 * 1024,
 								bindAction : '#test9',
 								done : function(res, index, upload) {
 									//假设code=0代表上传成功

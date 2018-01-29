@@ -21,7 +21,7 @@ public class Project {
 	private Integer deleteFlag;//逻辑删标记   0 未删除   1 被发布者删了
 	private Date endTime;//结束时间 最后操作的时间 包括状态改变  逻辑删等；
 	private Integer compensationRate;//赔率
-	private Double  projectFund;
+	private Double  projectFund;//项目紫荆
 	public Project() {
 		super();
 	}
