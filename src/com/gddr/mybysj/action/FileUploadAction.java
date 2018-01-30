@@ -2,8 +2,14 @@ package com.gddr.mybysj.action;
 
 import java.io.File;
 import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.InputStream;
+import java.net.URLEncoder;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -26,6 +32,28 @@ public class FileUploadAction extends BaseAction {
 	private String fileContentType;
 	private String fileFileName;
 	private FileResponse fileResponse;
+
+	// 文件下载的
+	private InputStream inputStream;
+	private String contentType;
+	private long contentLength;
+	private String contentDisposition;
+
+	public String getContentType() {
+		return contentType;
+	}
+
+	public long getContentLength() {
+		return contentLength;
+	}
+
+	public String getContentDisposition() {
+		return contentDisposition;
+	}
+
+	public InputStream getInputStream() {
+		return inputStream;
+	}
 
 	public File getFile() {
 		return file;
@@ -65,11 +93,25 @@ public class FileUploadAction extends BaseAction {
 		System.out.println(fileContentType);
 		System.out.println(fileFileName);
 		// System.out.println(dir);
-		//保存的名字
+		// 保存的名字
 		String toDir = context.getRealPath("/WEB-INF/upload/");
-		fileResponse=FileUploadTools.upload(file,fileFileName, toDir);
+		fileResponse = FileUploadTools.upload(file, fileFileName, toDir);
 		System.out.println("--------upload-----------");
 		return "upload";
+	}
+
+	/* 节约时间 暂时把文件下载的action也写着这里 */
+	public String downloadFile() throws IOException {
+		response.setContentType("text/hmtl;charset=utf-8");
+
+		String filename = request.getParameter("fileName");
+		System.out.println("filename :" + filename);
+		// 解决空格变+号
+		contentDisposition = "attachment;filename=" + new String(filename.getBytes("gbk"), "iso8859-1");
+		String fileName = context.getRealPath("/WEB-INF/upload/" + filename);
+		inputStream = new FileInputStream(fileName);
+		contentLength = inputStream.available();
+		return "downloadFile";
 	}
 
 	@Override

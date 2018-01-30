@@ -34,13 +34,13 @@ public class ProjectAction extends BaseAction implements ModelDriven<Project> {
 		model.setPublisher(currUser);
 		model.setCreateTime(new Date());
 		model.setDeleteFlag(0);
-		model.setState(0);
-		
+		model.setStatus(0);
+
 		projectService.publishPro(currUser, model);
-		
+
 		response.setContentType("text/hmtl;charset=utf-8");
 		request.setAttribute("tip", "发布成功！我们的工作人员将在24小时内审核");
-		
+
 		System.out.println(model);
 		return "publish";
 	}
@@ -53,6 +53,21 @@ public class ProjectAction extends BaseAction implements ModelDriven<Project> {
 		request.setAttribute("cateList", list);
 
 		return "toPublish";
+	}
+
+	public String showProjectList() {
+		List<Project> list = projectService.getCheckedProject();
+		request.setAttribute("projectList", list);
+		return "showProjectList";
+	}
+
+	public String showDetail() {
+
+		int proId = Integer.parseInt(request.getParameter("proId"));
+		Project project = projectService.getProjectById(proId);
+		request.setAttribute("project", project);
+		System.out.println("-------------"+project);
+		return "showDetail";
 	}
 
 	@Override

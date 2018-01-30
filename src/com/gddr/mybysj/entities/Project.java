@@ -17,7 +17,7 @@ public class Project {
 	private User publisher;
 	private User servicer;
 	private String  rfp;//招标书
-	private Integer state;//状态 01234 待审核  招标中   待开始   进行中    待结算    已完成
+	private Integer status;//状态 01234 待审核  招标中   待开始   进行中    待结算    已完成
 	private Integer deleteFlag;//逻辑删标记   0 未删除   1 被发布者删了
 	private Date endTime;//结束时间 最后操作的时间 包括状态改变  逻辑删等；
 	private Integer compensationRate;//赔率
@@ -37,14 +37,14 @@ public class Project {
 		this.publisher = publisher;
 		this.servicer = servicer;
 		this.rfp = rfp;
-		this.state = state;
+		this.status = state;
 		this.deleteFlag = deleteFlag;
 		this.endTime = endTime;
 		this.compensationRate = compensationRate;
 		this.projectFund = projectFund;
 	}
 	public Project(Integer proId, String proName, String proDesc, Date createTime, Category category,
-			Date preDeliveryTime, User publisher, User servicer, String rfp, Integer state, Integer deleteFlag,
+			Date preDeliveryTime, User publisher, User servicer, String rfp, Integer status, Integer deleteFlag,
 			Date endTime, Integer compensationRate, Double projectFund) {
 		super();
 		this.proId = proId;
@@ -56,7 +56,7 @@ public class Project {
 		this.publisher = publisher;
 		this.servicer = servicer;
 		this.rfp = rfp;
-		this.state = state;
+		this.status = status;
 		this.deleteFlag = deleteFlag;
 		this.endTime = endTime;
 		this.compensationRate = compensationRate;
@@ -116,11 +116,11 @@ public class Project {
 	public void setRfp(String rfp) {
 		this.rfp = rfp;
 	}
-	public Integer getState() {
-		return state;
+	public Integer getStatus() {
+		return status;
 	}
-	public void setState(Integer state) {
-		this.state = state;
+	public void setStatus(Integer status) {
+		this.status = status;
 	}
 	public Integer getDeleteFlag() {
 		return deleteFlag;
@@ -150,7 +150,7 @@ public class Project {
 	public String toString() {
 		return "Project [proId=" + proId + ", proName=" + proName + ", proDesc=" + proDesc + ", createTime="
 				+ createTime + ", category=" + category + ", preDeliveryTime=" + preDeliveryTime + ", publisher="
-				+ publisher + ", servicer=" + servicer + ", rfp=" + rfp + ", state=" + state + ", deleteFlag="
+				+ publisher + ", servicer=" + servicer + ", rfp=" + rfp + ", status=" + status + ", deleteFlag="
 				+ deleteFlag + ", endTime=" + endTime + ", compensationRate=" + compensationRate + ", projectFund="
 				+ projectFund + "]";
 	}

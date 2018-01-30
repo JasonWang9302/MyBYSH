@@ -10,7 +10,7 @@
 <link rel="stylesheet" href="resource/plugins/layui/css/layui.css"
 	media="all">
 <title>Insert title here</title>
-
+<%%>
 </head>
 <body>
 	<!-- 引入导航 -->
@@ -19,33 +19,34 @@
 	<!-- 内容部分开始 -->
 	<!-- 小导航 -->
 	<div id="wzdhDiv">
-		<a style="font-size: 18px;">任务列表 ></a>任务详情
+		<a style="font-size: 18px;" href="javascript:history.back(-1)">任务列表 ></a>任务详情
 	</div>
 	<!-- 上面键鼠 -->
 	<div class="proListItem">
 		<div class="proItemLeft">
-			<font style="font-size: 20px;">CJPC功能模块开发</font>&nbsp;&nbsp;&nbsp; <font
-				style="font-size: 10px">2017-06-20 14:58:19 发布</font> <br> <br>
-			<font Style="font-size: 13px">CJPC功能模块开发 需求1 拼车类型 将以前的 2人拼车
-				3人拼车 4人拼车统一改成拼车，包车保持不变。 管理端可以自由拼车派单 影响范围： 安卓 客户端：创建订单 司机端：回显订单 </font> <br>
-			<br> <font style="font-size: 20px;">微信开发</font>
+			<font style="font-size: 20px;">${request.project.proName}</font>&nbsp;&nbsp;&nbsp; <font
+				style="font-size: 10px">${request.project.createTime} 发布</font> <br> <br>
+			<div class="proDesc">
+				<font Style="font-size: 13px">${request.project.proDesc} </font>
+			</div>
+			<br> <br> <font style="font-size: 20px;">${request.project.category.cateName}</font>
 		</div>
 		<div class="proItemRigth">
-			<font style="font-size: 25px; color: red;">¥ 5000 元</font> <font
-				style="font-size: 30px; text-align: right;">已完成</font>
+			<font style="font-size: 25px; color: red;">¥ ${request.project.projectFund} 元</font>
+			<font style="font-size: 30px; text-align: right;">已完成</font>
 		</div>
 	</div>
 	<!-- 具体详情 -->
 	<div id="projectDetails">
 		<font style="font-size: 18px;">任务详情 </font>
 		<div style="padding: 10px; font-size: 16px;">
-			<font>CJPC功能模块开发</font><br> <font style="font-size: 15px;">描述:</font><br>
-			CJPC功能模块开发 需求1 拼车类型 将以前的 2人拼车 3人拼车 4人拼车统一改成拼车，包车保持不变。 管理端可以自由拼车派单
-			影响范围： 安卓 客户端：创建订单 司机端：回显订单
+			<font>${request.project.category.cateName}</font><br> <font style="font-size: 15px;">描述:</font><br>
+			${request.project.proDesc}
 		</div>
 		<hr />
-		<font style="font-size: 18px;">下载招标书 </font><br>
-		<img  style="padding: 10px;" alt="" src="resource/images/fj.png"><a href="E:\code\NEW_JEE_ECl_WORKSPACE3\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\MyBYSJ\WEB-INF\upload\新建 Microsoft PowerPoint 2007 幻灯片-1801290503181791.pptx">新建 Microsoft PowerPoint 2007 幻灯片-1801290503181791.pptx<a>
+		<font style="font-size: 18px;">下载招标书 </font><br> <img
+			style="padding: 10px;" alt="" src="resource/images/fj.png"><a
+			href="uploadAction-downloadFile?fileName=${request.project.rfp}">${request.project.rfp}<a>
 	</div>
 
 

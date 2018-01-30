@@ -50,6 +50,8 @@
 		<action name="project-*" class="projectAction" method="{1}">
 			<result name="publish" type="chain">project-toPublish</result>
 			<result name="toPublish">/pubpro.jsp</result>
+			<result name="showProjectList">/projectList.jsp</result>
+			<result name="showDetail">/projectDetails.jsp</result>
 		</action>
 	</package>
 	
@@ -71,7 +73,10 @@
 			<result name="upload" type="json">
 				<param name="root">fileResponse</param>
 			</result>
-			<allowed-methods>upload</allowed-methods>
+			<result type="stream" name="downloadFile">
+			<param name="bufferSize">2048</param>
+			</result>
+			<allowed-methods>upload,downloadFile</allowed-methods>
 		</action>
 	</package>
 

@@ -22,7 +22,7 @@ color: #333333;
 }
 /* 列表项左边文字 */
 .proItemLeft{
-	margin: 30px;
+	margin: 20px;
 /* 	background-color: #ff8080; */
 	width: 600px;
 	height: 130px;
@@ -38,7 +38,12 @@ color: #333333;
 	padding: 40px 0px;
 }
 
-
+.proDesc{
+	width: 600px;
+	height: 40px;
+	/* background-color: #ff8040; */
+	overflow: hidden;
+}
 
 
 

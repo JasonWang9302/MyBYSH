@@ -33,8 +33,8 @@
         <property name="rfp" type="java.lang.String">
             <column name="RFP" />
         </property>
-        <property name="state" type="java.lang.Integer">
-            <column name="STATE" />
+        <property name="status" type="java.lang.Integer">
+            <column name="Status" />
         </property>
         <property name="deleteFlag" type="java.lang.Integer">
             <column name="DELETE_FLAG" />

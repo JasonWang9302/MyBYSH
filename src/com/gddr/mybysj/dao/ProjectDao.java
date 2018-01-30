@@ -21,5 +21,6 @@ public interface ProjectDao {
 	
 	// 主要用于服务者个人中心显示 对应状态的项目
 	List<Project> getProjectBySerAndStatus(User user, Integer status);
-
+//
+	Project getProjectById(Integer id);
 }

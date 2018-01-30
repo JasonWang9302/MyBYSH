@@ -59,4 +59,9 @@ public class ProjectServiceImpl implements ProjectService {
 		return projectDao.getProjectBySerAndStatus(user, status);
 	}
 
+	@Override
+	public Project getProjectById(Integer id) {
+		return projectDao.getProjectById(id);
+	}
+
 }

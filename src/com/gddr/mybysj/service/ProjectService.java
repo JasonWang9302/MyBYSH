@@ -28,4 +28,6 @@ public interface ProjectService {
 	// 用于个人中心我的发布显示 ,对应状态的项目
 	List<Project> getProjectBySerAndStatus(User user, Integer status);
 	
+	//
+	Project getProjectById(Integer id);
 }
