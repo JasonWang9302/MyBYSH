@@ -5,12 +5,9 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<!-- 引入基路径设置(内包括layui) -->
+<!-- 引入基路径设置 -->
 <%@ include file="basepath.jsp" %>
-
-
     <title>KIT ADMIN</title>
-
 </head>
 
 <body>
@@ -76,7 +73,7 @@
                     <li class="layui-nav-item layui-nav-itemed">
                         <a href="javascript:;"><i class="fa fa-plug" aria-hidden="true"></i><span>我的发布</span></a>
                         <dl class="layui-nav-child">
-                            <dd><a href="javascript:;" kit-target data-options="{url:'project-showMyPublishDSH',icon:'&#xe658;',title:'Navbar',id:'6'}"><i class="layui-icon">&#xe658;</i><span>待审核</span></a></dd>
+                            <dd><a href="javascript:;" kit-target data-options="{url:'personal/wdfb-dsh.jsp',icon:'&#xe658;',title:'Navbar',id:'6'}"><i class="layui-icon">&#xe658;</i><span>待审核</span></a></dd>
                             <dd><a href="javascript:;" kit-target data-options="{url:'personal/wdfb-zbz.jsp',icon:'&#xe658;',title:'TAB',id:'7'}"><i class="layui-icon">&#xe658;</i><span>招标中</span></a></dd>
                             <dd><a href="javascript:;" kit-target data-options="{url:'personal/wdfb-dks.jsp',icon:'&#xe658;',title:'OneLevel',id:'50'}"><i class="layui-icon">&#xe658;</i><span>待开始</span></a></dd>
                             <dd><a href="javascript:;" kit-target data-options="{url:'personal/wdfb-dys.jsp',icon:'&#xe658;',title:'App',id:'8'}"><i class="layui-icon">&#xe658;</i><span>待验收</span></a></dd>
@@ -130,7 +127,7 @@
         var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");
         document.write(unescape("%3Cspan id='cnzz_stat_icon_1264021086'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s22.cnzz.com/z_stat.php%3Fid%3D1264021086%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));
     </script>
-   
+    
     <script>
         var message;
         layui.config({

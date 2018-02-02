@@ -27,7 +27,8 @@ public class ProjectServiceImpl implements ProjectService {
 	}
 
 	@Override
-	public void logicDel(Project project) {
+	public void logicDel(Integer proId) {
+		Project project=projectDao.getProjectById(proId);
 		project.setDeleteFlag(1);
 		projectDao.update(project);
 	}

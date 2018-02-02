@@ -14,132 +14,145 @@
 </head>
 
 <body>
-	<!-- layui 形式表格的实现  自由受限 暂放弃-->
-		<table class="layui-hide" id="test"></table>       
+		
+
 	<div class="person">
 
-
-		<a class="person-xdh">我的产品</a> > <font>我的项目</font><br>
-	
+		<div class="person-xdh">
+			<a><font>我的发布</font></a> > <font>待审核</font>
+		</div>
 		<div class="content">
+<table class="layui-table" lay-data="{url:'uploadAction-showDSH', id:'idTest'}" lay-filter="demo">
+  <thead>
+    <tr>
+     <!--  <th lay-data="{type:'checkbox', fixed: 'left'}"></th> -->
+    
+    <!--   <th lay-data="{field:'proId', width:80}">项目名称</th> -->
+      <th lay-data="{field:'proName', width:180}">项目名称</th>
+      <th lay-data="{field:'proDesc', width:180, sort: true}">项目描述</th>
+      <th lay-data="{field:'createTime', width:100}">创建时间</th>
+<!--       <th lay-data="{field:'category', width:160}">项目分类</th> 
+ -->     
+    <!--   <th lay-data="{field:'projectFund', width:80, sort: true}">项目资金</th> -->
+     <!--  <th lay-data="{field:'preDeliveryTime', width:80, sort: true}">预定交付时间</th>
+      
+      <th lay-data="{field:'deleteFlag', width:80}">招标书文件</th> -->
+<!--       <th lay-data="{field:'publisher', width:80}">招标书文件</th>
+      <th lay-data="{field:'servicer', width:80}">招标书文件</th> -->
+   <!--    <th lay-data="{field:'rfp', width:80}">招标书文件</th> -->
+      <th lay-data="{field:'guaranteeStatus', width:80}">担保状态</th>
+      <th lay-data="{field:'status', width:135, sort: true}">状态</th>
+<!--       <th lay-data="{field:'endTime', width:135, sort: true}">状态</th> -->
+      <th lay-data="{field:'compensationRate', width:100, sort: true}">赔率</th>
+      <th lay-data="{fixed:'right',title: '操作', width:120, toolbar: '#barDemo'}"></th>
+      
+    </tr>
+  </thead>
+</table>
+
+ 
+<script type="text/html" id="barDemo">
+  <a class="layui-btn layui-btn-primary layui-btn-xs" lay-event="detail">查看</a>
+  <a class="layui-btn layui-btn-xs" lay-event="edit">编辑</a>
+  <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del">删除</a>
+</script>
+               
+          
+
+<!-- 注意：如果你直接复制所有代码到本地，上述js路径需要改成你本地的 -->
+<script>
+layui.use('table', function(){
+  var table = layui.table;
+  var $ = layui.jquery;
+  //监听表格复选框选择
+  table.on('checkbox(demo)', function(obj){
+    console.log(obj)
+  });
+  
+  
+  //监听工具条
+  table.on('tool(demo)', function(obj){
+    var data = obj.data;
+    if(obj.event === 'detail'){
+      layer.msg('ID：'+ data.proId + ' 的查看操作');
+    } else if(obj.event === 'del'){
+      layer.confirm('真的删除行么', function(index){
+       /*  obj.del();
+        layer.close(index); */
+        
+    	  console.log(data);
+          $.ajax({
+              url: "project-logicDelProject",
+              type: "POST",
+              data:{"proId":data.proId},
+              dataType: "json",
+              success: function(data){
+
+                  if(data==1){
+                     //删除这一行
+                      obj.del();
+                     //关闭弹框
+                      layer.close(index);
+                      layer.msg("删除成功", {icon: 6});
+                  }else{
+                      layer.msg("删除失败", {icon: 5});
+                  }
+              }
+          });
+      });
+    } else if(obj.event === 'edit'){
+      layer.alert('编辑行：<br>'+ data.proId);
+      window.location.href = "project-toEditProject?proId="+data.proId; 
+     /*  
+       $.get("user-toLogin", { "proId": data.proId}, function (data) {
+    	   
+    	   window.location.href = "data";
+    	   
+ })
+       */
+      
+      
+    }
+  });
+  
+ /*  var $ = layui.$, active = {
+    getCheckData: function(){ //获取选中数据
+      var checkStatus = table.checkStatus('idTest')
+      ,data = checkStatus.data;
+      layer.alert(JSON.stringify(data));
+    }
+    ,getCheckLength: function(){ //获取选中数目
+      var checkStatus = table.checkStatus('idTest')
+      ,data = checkStatus.data;
+      layer.msg('选中了：'+ data.length + ' 个');
+    }
+    ,isAll: function(){ //验证是否全选
+      var checkStatus = table.checkStatus('idTest');
+      layer.msg(checkStatus.isAll ? '全选': '未全选')
+    }
+  }; */
+  
+  $('.demoTable .layui-btn').on('click', function(){
+    var type = $(this).data('type');
+    active[type] ? active[type].call(this) : '';
+  });
+});
+</script>
 		
 		
 		
-			<!-- Table goes in the document BODY -->
-			<%-- <table class="table-content">
-				<!-- 表头 -->
-				<tr>
-					<th>项目名</th>
-					<th>项目描述</th>
-					<th>创建时间</th>
-					<th>所属类别</th>
-					<th>项目金额</th>
-					<th>违约金</th>
-					<th>预定交付时间</th>
-					<th>操 作</th>
-				</tr>
-
-
-
-
-				<!-- 表体 -->
-				<s:iterator value="#request.projectList">
-					<tr>
-						<td>${proName}</td>
-						<td style="overflow: hidden;width: 40px;height: 30px;"><div style="width: 68px;height: 30px;"> ${proDesc}</div></td>
-						<td>${createTime}</td>
-						<td>${category.cateName}</td>
-						<td>${projectFund}</td>
-						<td>${compensationRate}</td>
-						<td>${preDeliveryTime}</td>
-						<td>查看详情</td>
-					</tr>
-				</s:iterator>
-			</table> --%>
-
-
-
-
-
-
-
-
-
-
+		
+		
+		
+		
+		
+		
+		
+		
+		
 		</div>
 
 	</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-	<a href="uploadAction-showDSH">qwerthgfsdfd</a>
-	<script type="text/html" id="titleTpl">
-  {{d.category.cateName}}
-</script>
-	<script>
-		layui.use('table', function() {
-			var table = layui.table;
-
-			table.render({
-				elem : '#test',
-				url : 'uploadAction-showDSH',
-				cols : [ [ {
-					field : 'proName',
-					width : 135,
-					title : '项目名'
-				}, {
-					field : 'proDesc',
-					width : 150,
-					title : '描述'
-				}, {
-					field : 'createTime',
-					width : 120,
-					title : '创建时间',
-					sort : true
-				}, {
-					field : 'category',
-					width : 80,
-					title : '分类',
-					templet: '<div>{{d.category.cateName}}</div>'
-				}, {
-					field : 'preDeliveryTime',
-					title : '预定交付时间',
-					minWidth : 150
-				}, {
-					field : 'rfp',
-					width : 80,
-					title : '标书文件'
-				}, {
-					field : 'status',
-					width : 80,
-					title : '状态'
-				}
-				, {
-					field : 'compensationRate',
-					width : 135,
-					title : '财富',
-					sort : true
-				}, {
-					field : 'projectFund',
-					width : 135,
-					title : '项目资金',
-					sort : true
-				} ] ],
-				page : false
-			});
-		});
-	</script>
 </body>
 
 </html>

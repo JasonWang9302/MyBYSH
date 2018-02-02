@@ -5,12 +5,12 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title>
-        </title>
+<!-- 引入基路径设置(内包括layui) -->
+<%@ include file="basepath.jsp" %>
+<title></title>
 </head>
 
-<body>
-    还没写 ..
+<body>还没写 ..
 </body>
 
 </html>

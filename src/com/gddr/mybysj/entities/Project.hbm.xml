@@ -48,7 +48,9 @@
         <property name="projectFund" type="java.lang.Double">
             <column name="project_fund" />
         </property>
-        
+        <property name="guaranteeStatus" type="java.lang.Integer">
+            <column name="guarantee_Status" />
+        </property>
         
     </class>
 </hibernate-mapping>

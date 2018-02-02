@@ -52,6 +52,14 @@
 			<result name="toPublish">/pubpro.jsp</result>
 			<result name="showProjectList">/projectList.jsp</result>
 			<result name="showDetail">/projectDetails.jsp</result>
+			
+			<result name="showMyPublishDSH">/personal/wdfb-dsh.jsp</result>
+			<result name="toEditProject">/personal/wdfb-dsh-bj.jsp</result>
+	         <!-- 	  用户异步逻辑删 -->
+			<result type="stream" name="logicDelProject">
+				<param name="contentType">text/html</param>
+				<param name="inputName">inputStream</param>
+			</result>
 		</action>
 	</package>
 	
@@ -73,10 +81,13 @@
 			<result name="upload" type="json">
 				<param name="root">fileResponse</param>
 			</result>
+			<result name="showDSH" type="json">
+				<param name="root">projectDataResponse</param>
+			</result>
 			<result type="stream" name="downloadFile">
 			<param name="bufferSize">2048</param>
 			</result>
-			<allowed-methods>upload,downloadFile</allowed-methods>
+			<allowed-methods>upload,downloadFile,showDSH</allowed-methods>
 		</action>
 	</package>
 

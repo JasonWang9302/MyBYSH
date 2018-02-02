@@ -5,15 +5,12 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-
-    <title>Navbar组件</title>
-    <link rel="stylesheet" href="./resource/plugins/layui/css/layui.css" media="all">
-    <link rel="stylesheet" href="./resource/build/css/doc.css" media="all">
+<!-- 引入基路径设置(内包括layui) -->
+<%@ include file="basepath.jsp"%>
+<title></title>
 </head>
 
-<body>
-   
-    <script src="./resource/plugins/layui/layui.js"></script>
+<body>还没写 ..
 </body>
 
 </html>

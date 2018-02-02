@@ -1,0 +1,100 @@
+/* 去掉浏览器整体样式 */
+* {
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+}
+
+a, img {
+	border: 0;
+}
+
+body {
+	font: 12px/180% Arial, Helvetica, sans-serif, "新宋体";
+	background-color: #f6f6f6;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+}
+
+html {
+	overflow-x: hidden;
+}
+.input {
+	display: block;
+	background-color: #CCCCCC;
+	height: 30px;
+	padding-left: 8px;
+	color: #999999;
+	border: 0;
+}
+
+.textarea {
+	display: block;
+	width: 100%;
+	height: 100px;
+	color: #999999;
+	background-color: #CCCCCC;
+	border: 0;
+	font-size: 14px;
+	padding-left: 8px;
+	margin-top: -30px;
+}
+
+
+
+
+/* 以下是个人中心内容页 整体布局css  开始*/
+.person{
+	width:1050px;
+	height:500px;
+	margin: 20px;
+	padding: 40px;
+}
+/* 小导航 */
+.person-xdh{
+   font-size:20px;
+   
+}
+
+.content{
+	padding: 20px auto;
+	margin: 20px auto;
+
+}
+
+/* 表格样式 */
+/* table.table-content {
+	font-family: verdana, arial, sans-serif;
+	font-size: 15px;
+	color: #333333;
+	border-width: 1px;
+	border-color: #666666;
+	border-collapse: collapse;
+	width: 1000px;
+	margin: 20px auto;
+}
+
+table.table-content th {
+	border-width: 1px;
+	padding: 10px;
+	border-style: solid;
+	border-color: #666666;
+	background-color: #dedede;
+}
+
+table.table-content td {
+	border-width: 1px;
+	padding: 8px;
+	border-style: solid;
+	border-color: #666666;
+	background-color: #ffffff;
+} */
+
+
+
+
+
+/* 以下是个人中心内容页 整体布局css  结束*/

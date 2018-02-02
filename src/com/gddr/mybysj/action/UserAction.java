@@ -42,7 +42,7 @@ public class UserAction extends BaseAction implements ModelDriven<User> {
 	}
 
 	public String toLogin() {
-
+		System.out.println(request.getParameter("proId"));
 		System.out.println("---------toLogin()------------");
 		return "toLogin";
 	}
@@ -81,7 +81,6 @@ public class UserAction extends BaseAction implements ModelDriven<User> {
 
 	public String logout() {
 		session.removeAttribute("currUser");
-		;
 		return "index";
 	}
 

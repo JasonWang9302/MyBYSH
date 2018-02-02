@@ -2,30 +2,34 @@ package com.gddr.mybysj.action;
 
 import java.io.File;
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
-import java.net.URLEncoder;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
-import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
-import org.apache.struts2.ServletActionContext;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 
+import com.gddr.mybysj.entities.Project;
+import com.gddr.mybysj.entities.User;
+import com.gddr.mybysj.service.ProjectService;
 import com.gddr.mybysj.util.FileResponse;
 import com.gddr.mybysj.util.FileUploadTools;
+import com.gddr.mybysj.util.ProjectDataResponse;
 
 @Controller
 public class FileUploadAction extends BaseAction {
 	/**
 	 * 
 	 */
+
+	@Autowired
+	private ProjectService projectService;
+	private ProjectDataResponse projectDataResponse;
+
+	public void setProjectDataResponse(ProjectDataResponse projectDataResponse) {
+		this.projectDataResponse = projectDataResponse;
+	}
+
 	private static final long serialVersionUID = 1L;
 
 	private File file;
@@ -75,6 +79,10 @@ public class FileUploadAction extends BaseAction {
 		return fileFileName;
 	}
 
+	public ProjectDataResponse getProjectDataResponse() {
+		return projectDataResponse;
+	}
+
 	public void setFileFileName(String fileFileName) {
 		this.fileFileName = fileFileName;
 	}
@@ -112,6 +120,23 @@ public class FileUploadAction extends BaseAction {
 		inputStream = new FileInputStream(fileName);
 		contentLength = inputStream.available();
 		return "downloadFile";
+	}
+
+	public String showDSH() {
+
+		User user = (User) session.getAttribute("currUser");
+		projectDataResponse=new ProjectDataResponse();
+		System.out.println(user);
+		List<Project> list=projectService.getProjectByPubAndStatus(user, 0);
+		projectDataResponse.setCode(0);
+		System.out.println(projectDataResponse);
+		projectDataResponse.setMsg("收到了。。。");
+		System.out.println(projectDataResponse);
+		projectDataResponse.setCount(list.size());
+		System.out.println(projectDataResponse);
+		projectDataResponse.setData(list);
+		System.out.println(projectDataResponse);
+		return "showDSH";
 	}
 
 	@Override

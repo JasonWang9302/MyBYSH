@@ -4,7 +4,6 @@ import java.util.Date;
 /**
  * 项目类
  * @author Administrator
- *
  */
 public class Project {
 
@@ -22,30 +21,13 @@ public class Project {
 	private Date endTime;//结束时间 最后操作的时间 包括状态改变  逻辑删等；
 	private Integer compensationRate;//赔率
 	private Double  projectFund;//项目紫荆
+	private Integer guaranteeStatus;//担保状态  ：双方是否交担保金 0 未  1需已 服未 2需未 服已  3已
 	public Project() {
 		super();
 	}
-	public Project(String proName, String proDesc, Date createTime, Category category, Date preDeliveryTime,
-			User publisher, User servicer, String rfp, Integer state, Integer deleteFlag, Date endTime,
-			Integer compensationRate, Double projectFund) {
-		super();
-		this.proName = proName;
-		this.proDesc = proDesc;
-		this.createTime = createTime;
-		this.category = category;
-		this.preDeliveryTime = preDeliveryTime;
-		this.publisher = publisher;
-		this.servicer = servicer;
-		this.rfp = rfp;
-		this.status = state;
-		this.deleteFlag = deleteFlag;
-		this.endTime = endTime;
-		this.compensationRate = compensationRate;
-		this.projectFund = projectFund;
-	}
 	public Project(Integer proId, String proName, String proDesc, Date createTime, Category category,
 			Date preDeliveryTime, User publisher, User servicer, String rfp, Integer status, Integer deleteFlag,
-			Date endTime, Integer compensationRate, Double projectFund) {
+			Date endTime, Integer compensationRate, Double projectFund, Integer guaranteeStatus) {
 		super();
 		this.proId = proId;
 		this.proName = proName;
@@ -61,6 +43,26 @@ public class Project {
 		this.endTime = endTime;
 		this.compensationRate = compensationRate;
 		this.projectFund = projectFund;
+		this.guaranteeStatus = guaranteeStatus;
+	}
+	public Project(String proName, String proDesc, Date createTime, Category category, Date preDeliveryTime,
+			User publisher, User servicer, String rfp, Integer status, Integer deleteFlag, Date endTime,
+			Integer compensationRate, Double projectFund, Integer guaranteeStatus) {
+		super();
+		this.proName = proName;
+		this.proDesc = proDesc;
+		this.createTime = createTime;
+		this.category = category;
+		this.preDeliveryTime = preDeliveryTime;
+		this.publisher = publisher;
+		this.servicer = servicer;
+		this.rfp = rfp;
+		this.status = status;
+		this.deleteFlag = deleteFlag;
+		this.endTime = endTime;
+		this.compensationRate = compensationRate;
+		this.projectFund = projectFund;
+		this.guaranteeStatus = guaranteeStatus;
 	}
 	public Integer getProId() {
 		return proId;
@@ -146,15 +148,20 @@ public class Project {
 	public void setProjectFund(Double projectFund) {
 		this.projectFund = projectFund;
 	}
+	public Integer getGuaranteeStatus() {
+		return guaranteeStatus;
+	}
+	public void setGuaranteeStatus(Integer guaranteeStatus) {
+		this.guaranteeStatus = guaranteeStatus;
+	}
 	@Override
 	public String toString() {
 		return "Project [proId=" + proId + ", proName=" + proName + ", proDesc=" + proDesc + ", createTime="
 				+ createTime + ", category=" + category + ", preDeliveryTime=" + preDeliveryTime + ", publisher="
 				+ publisher + ", servicer=" + servicer + ", rfp=" + rfp + ", status=" + status + ", deleteFlag="
 				+ deleteFlag + ", endTime=" + endTime + ", compensationRate=" + compensationRate + ", projectFund="
-				+ projectFund + "]";
+				+ projectFund + ", guaranteeStatus=" + guaranteeStatus + "]";
 	}
-	
 	
 	
 }

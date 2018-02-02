@@ -13,7 +13,7 @@ public interface ProjectService {
 	void updateProject(Project project);
 	
 	//用户逻辑删
-	void logicDel(Project project);
+	void logicDel(Integer proId);
 	
 	//供管理员得到所有项目
 	List<Project> getAllProject();
