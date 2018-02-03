@@ -10,6 +10,14 @@
 <link rel="stylesheet" type="text/css"
 	href="resource/css/person-comm.css" />
 <link rel="stylesheet" type="text/css" href="resource/css/wdfb-dsh.css" />
+<script type="text/javascript">
+var msg = "${requestScope.tipMessage}";
+if (msg != "") {
+	alert(msg);
+}
+
+</script>
+
 <title>Navbar组件</title>
 </head>
 

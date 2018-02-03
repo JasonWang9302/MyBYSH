@@ -19,11 +19,21 @@ import com.opensymphony.xwork2.ModelDriven;
 
 @Controller
 public class ProjectAction extends BaseAction implements ModelDriven<Project> {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	@Autowired
 	private ProjectService projectService;
 	@Autowired
 	private CategoryService categoryService;
 	private Project model;
+
+	private Integer proId;
+
+	public void setProId(Integer proId) {
+		this.proId = proId;
+	}
 
 	// ajax
 	private InputStream inputStream;
@@ -97,16 +107,32 @@ public class ProjectAction extends BaseAction implements ModelDriven<Project> {
 		System.out.println("logicDel...Proid:" + proId);
 		projectService.logicDel(proId);
 		inputStream = new ByteArrayInputStream("1".getBytes("UTF-8"));
-
 		return "logicDelProject";
 	}
-	/* 用户待审核编辑 */
 
+	/* 用户待审核 去 编辑 */
 	public String toEditProject() {
-        Integer proId=Integer.parseInt(request.getParameter("proId"));
-        Project project=projectService.getProjectById(proId);
+		List<Category> list = categoryService.getAll();
+		request.setAttribute("cateList", list);
+		Integer proId = Integer.parseInt(request.getParameter("proId"));
+		Project project = projectService.getProjectById(proId);
 		request.setAttribute("project", project);
 		return "toEditProject";
+	}
+
+	/* 用户待审核 做 编辑 */
+
+	public void prepareUpdateProject() {
+		model = projectService.getProjectById(proId);
+		System.out.println(model);
+	}
+
+	public String updateProject() {
+		System.out.println(model);
+		projectService.updateProject(model);
+		response.setContentType("text/hmtl;charset=utf-8");
+		request.setAttribute("tipMessage", "修改成功！请等待审核");
+		return "updateProject";
 	}
 
 	@Override

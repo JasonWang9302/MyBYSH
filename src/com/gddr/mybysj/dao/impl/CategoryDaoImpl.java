@@ -15,6 +15,7 @@ public class CategoryDaoImpl extends BaseDao implements CategoryDao {
 	public List<Category> getAll() {
 		String hql = "From Category";
 		List<Category> list = getSession().createQuery(hql).list();
+		System.out.println("getAll"+list);
 		return list;
 	}
 

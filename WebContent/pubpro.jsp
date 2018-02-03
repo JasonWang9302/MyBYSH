@@ -16,11 +16,11 @@
 }
 </style>
 <script type="text/javascript">
-/* 注册成功的提示 */
-var msg = "${requestScope.tip}";
-if (msg != "") {
-	alert(msg);
-}
+	/* 注册成功的提示 */
+	var msg = "${requestScope.tip}";
+	if (msg != "") {
+		alert(msg);
+	}
 </script>
 
 
@@ -85,10 +85,14 @@ if (msg != "") {
 						<input type="radio" value="#cate.cateId" title="cate.cateName" class="layui-input">
 					</s:iterator>  --%>
 
-					<s:radio list="%{#request.cateList}" name="category.cateId"
+					<%-- <s:radio list="%{#request.cateList}" name="category.cateId"
 						listKey="cateId" listValue="cateName" value="1"
-						class="layui-input" title=" "></s:radio>
-
+						class="layui-input" title=" "></s:radio> --%>
+					<s:iterator value="%{#request.cateList}" var="pic">
+						<input type="radio" name="category.cateId" value="${pic.cateId}"
+							title="${pic.cateName}" class="layui-input"
+							<c:if test="${cateId eq 1}">checked</c:if>>
+					</s:iterator>
 
 				</div>
 			</div>
@@ -192,11 +196,11 @@ if (msg != "") {
 							//自定义验证规则
 							form.verify({
 								title : function(value) {
-									if (value.length < 5) {
-										return '标题至少得5个字符啊';
+									if (value.length < 2) {
+										return '标题至少得2个字符啊';
 									}
 								},
-								pass : [ /(.+){6,12}$/, '密码必须6到12位' ],
+								pass : [ /(.+){1,12}$/, '金额必须1到12位' ],
 								content : function(value) {
 									layedit.sync(editIndex);
 								}
