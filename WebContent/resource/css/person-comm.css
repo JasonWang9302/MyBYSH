@@ -11,7 +11,7 @@ a, img {
 
 body {
 	font: 12px/180% Arial, Helvetica, sans-serif, "新宋体";
-	background-color: #f6f6f6;
+	background-color: #FFF;
 }
 
 * {
@@ -52,6 +52,7 @@ html {
 	height:500px;
 	margin: 20px;
 	padding: 40px;
+	background-color: #FFF;
 }
 /* 小导航 */
 .person-xdh{
@@ -62,36 +63,7 @@ html {
 .content{
 	padding: 20px auto;
 	margin: 20px auto;
-
 }
-
-/* 表格样式 */
-/* table.table-content {
-	font-family: verdana, arial, sans-serif;
-	font-size: 15px;
-	color: #333333;
-	border-width: 1px;
-	border-color: #666666;
-	border-collapse: collapse;
-	width: 1000px;
-	margin: 20px auto;
-}
-
-table.table-content th {
-	border-width: 1px;
-	padding: 10px;
-	border-style: solid;
-	border-color: #666666;
-	background-color: #dedede;
-}
-
-table.table-content td {
-	border-width: 1px;
-	padding: 8px;
-	border-style: solid;
-	border-color: #666666;
-	background-color: #ffffff;
-} */
 
 
 

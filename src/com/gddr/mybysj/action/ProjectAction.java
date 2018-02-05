@@ -28,8 +28,12 @@ public class ProjectAction extends BaseAction implements ModelDriven<Project> {
 	@Autowired
 	private CategoryService categoryService;
 	private Project model;
-
 	private Integer proId;
+	//返回json
+	private ProjectDataResponse projectDataResponse;
+	public void setProjectDataResponse(ProjectDataResponse projectDataResponse) {
+		this.projectDataResponse = projectDataResponse;
+	}
 
 	public void setProId(Integer proId) {
 		this.proId = proId;
@@ -56,6 +60,7 @@ public class ProjectAction extends BaseAction implements ModelDriven<Project> {
 		model.setCreateTime(new Date());
 		model.setDeleteFlag(0);
 		model.setStatus(0);
+		model.setGuaranteeStatus(0);
 
 		projectService.publishPro(currUser, model);
 
@@ -133,6 +138,33 @@ public class ProjectAction extends BaseAction implements ModelDriven<Project> {
 		response.setContentType("text/hmtl;charset=utf-8");
 		request.setAttribute("tipMessage", "修改成功！请等待审核");
 		return "updateProject";
+	}
+
+	
+	
+	/*个人中心部分*/
+	 /* 相似方法 抽取通用代码 临时写在这 有时间整理到service层*/
+	public void showByStatus(Integer status){
+		User user = (User) session.getAttribute("currUser");
+		projectDataResponse=new ProjectDataResponse();
+		List<Project> list=projectService.getProjectByPubAndStatus(user, status);
+		projectDataResponse.setCode(0);
+		projectDataResponse.setMsg("收到了。。。");
+		projectDataResponse.setCount(list.size());
+		projectDataResponse.setData(list);
+	}
+	public String showDSH() {
+        showByStatus(0);//未审核的
+		return "showDSH";
+	}
+	public String showZBZ() {
+		showByStatus(1);//审核通过  招标中
+		return "showZBZ";
+	}
+	
+	
+	public ProjectDataResponse getProjectDataResponse() {
+		return projectDataResponse;
 	}
 
 	@Override

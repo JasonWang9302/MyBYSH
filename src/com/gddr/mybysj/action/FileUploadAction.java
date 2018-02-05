@@ -24,11 +24,11 @@ public class FileUploadAction extends BaseAction {
 
 	@Autowired
 	private ProjectService projectService;
-	private ProjectDataResponse projectDataResponse;
+/*	private ProjectDataResponse projectDataResponse;
 
 	public void setProjectDataResponse(ProjectDataResponse projectDataResponse) {
 		this.projectDataResponse = projectDataResponse;
-	}
+	}*/
 
 	private static final long serialVersionUID = 1L;
 
@@ -79,9 +79,9 @@ public class FileUploadAction extends BaseAction {
 		return fileFileName;
 	}
 
-	public ProjectDataResponse getProjectDataResponse() {
+/*	public ProjectDataResponse getProjectDataResponse() {
 		return projectDataResponse;
-	}
+	}*/
 
 	public void setFileFileName(String fileFileName) {
 		this.fileFileName = fileFileName;
@@ -122,7 +122,7 @@ public class FileUploadAction extends BaseAction {
 		return "downloadFile";
 	}
 
-	public String showDSH() {
+	/*public String showDSH() {
 
 		User user = (User) session.getAttribute("currUser");
 		projectDataResponse=new ProjectDataResponse();
@@ -137,7 +137,7 @@ public class FileUploadAction extends BaseAction {
 		projectDataResponse.setData(list);
 		System.out.println(projectDataResponse);
 		return "showDSH";
-	}
+	}*/
 
 	@Override
 	public void prepare() throws Exception {

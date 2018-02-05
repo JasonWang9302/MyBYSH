@@ -78,19 +78,9 @@
 					alt="" src="resource/images/must.png">项目类别:</label><br> <br>
 				<br>
 				<div class="layui-input-block" style="margin-left: 0px;">
-					<!-- <input type="radio" name="category.cateName"  value="男" title="男"
-						checked="" class="layui-input"> 
-						<input type="radio" value="女" title="女" class="layui-input"> -->
-					<%--  <s:iterator value="#request.cateList" var="cate">
-						<input type="radio" value="#cate.cateId" title="cate.cateName" class="layui-input">
-					</s:iterator>  --%>
-
-					<%-- <s:radio list="%{#request.cateList}" name="category.cateId"
-						listKey="cateId" listValue="cateName" value="1"
-						class="layui-input" title=" "></s:radio> --%>
-					<s:iterator value="%{#request.cateList}" var="pic">
-						<input type="radio" name="category.cateId" value="${pic.cateId}"
-							title="${pic.cateName}" class="layui-input"
+					<s:iterator value="%{#request.cateList}" var="cate">
+						<input type="radio" name="category.cateId" value="${cate.cateId}"
+							title="${cate.cateName}" class="layui-input"
 							<c:if test="${cateId eq 1}">checked</c:if>>
 					</s:iterator>
 

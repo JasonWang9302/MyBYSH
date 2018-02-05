@@ -30,7 +30,7 @@ if (msg != "") {
 			<a><font>我的发布</font></a> > <font>待审核</font>
 		</div>
 		<div class="content">
-<table class="layui-table" lay-data="{url:'uploadAction-showDSH', id:'idTest'}" lay-filter="demo">
+<table class="layui-table" lay-data="{url:'wdfb-showDSH', id:'idTest'}" lay-filter="demo">
   <thead>
     <tr>
      <!--  <th lay-data="{type:'checkbox', fixed: 'left'}"></th> -->

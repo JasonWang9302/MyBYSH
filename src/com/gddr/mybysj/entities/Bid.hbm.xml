@@ -14,14 +14,25 @@
         <many-to-one name="servicer" class="com.gddr.mybysj.entities.User">
             <column name="SERVICER_id" />
         </many-to-one>
-        <property name="bidDoc" type="java.lang.Integer" >
+        <property name="bidDoc" type="java.lang.String" >
             <column name="BID_DOC" />
         </property>
         <property name="status" type="java.lang.Integer">
             <column name="STATUS" />
         </property>
+        <property name="bidReason" type="java.lang.String">
+            <column name="bid_reason" />
+        </property>
+        <property name="contactNumber" type="java.lang.String">
+            <column name="contact_number" />
+        </property>
         <property name="deleteFlag" type="java.lang.Integer">
             <column name="DELETE_FLAG" />
         </property>
+        <property name="bidTime" type="java.util.Date">
+            <column name="bid_time" />
+        </property>
+        
+        
     </class>
 </hibernate-mapping>

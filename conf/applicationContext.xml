@@ -60,6 +60,8 @@
 	</bean>
 	<bean id="projectAction" class="com.gddr.mybysj.action.ProjectAction" scope="prototype">
 	</bean>
+	<bean id="bidAction" class="com.gddr.mybysj.action.BidAction" scope="prototype">
+	</bean>
 
 
 </beans>
