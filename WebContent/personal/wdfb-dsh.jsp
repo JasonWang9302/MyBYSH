@@ -28,6 +28,8 @@ if (msg != "") {
 
 		<div class="person-xdh">
 			<a><font>我的发布</font></a> > <font>待审核</font>
+			
+			<a href="wdfb-showZBZ">ceshi</a>
 		</div>
 		<div class="content">
 <table class="layui-table" lay-data="{url:'wdfb-showDSH', id:'idTest'}" lay-filter="demo">

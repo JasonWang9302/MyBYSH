@@ -10,5 +10,8 @@ public interface UserService {
 	
 	//验证用户名是否可用 可用true
 	Boolean verifyUserName(String userName);
+	
+	
+	User getUserById(Integer id);
 
 }

@@ -30,4 +30,9 @@ public interface ProjectService {
 	
 	//
 	Project getProjectById(Integer id);
+	
+	/*
+	public List getProjectWithBidCountById(Integer id);*/
+	
+    void chooseServicer(Integer proId,Integer userId);
 }

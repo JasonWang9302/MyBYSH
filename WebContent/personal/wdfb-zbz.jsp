@@ -21,7 +21,7 @@
 </head>
 
 <body>
-
+<a href="bid-showBidList">heheh</a>
 
 	<div class="person">
 
@@ -63,13 +63,9 @@
 
 			<script type="text/html" id="barDemo">
   <a class="layui-btn layui-btn-primary layui-btn-xs" lay-event="detail">查看</a>
-  <a class="layui-btn layui-btn-xs" lay-event="edit">编辑</a>
-  <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del">删除</a>
+  <a class="layui-btn layui-btn-xs" lay-event="edit">去选标</a>
 </script>
-
-
-
-			<!-- 注意：如果你直接复制所有代码到本地，上述js路径需要改成你本地的 -->
+<!--   <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del">删除</a> -->
 			<script>
 				layui
 						.use(
@@ -140,11 +136,21 @@
 																						});
 																			});
 														} else if (obj.event === 'edit') {
-															layer
-																	.alert('编辑行：<br>'
-																			+ data.proId);
-															window.location.href = "project-toEditProject?proId="
-																	+ data.proId;
+															layer.alert('编辑行：<br>'+ data.proId);
+															/* window.location.href = "project-toEditProject?proId="
+																	+ data.proId; */
+																	//弹窗
+																	layer.open({
+																		type : 2,
+																		title : '投标列表',
+																		/* shade : [ 0.3, '#000' ], */
+																		maxmin : false, //开启最大化最小化按钮
+																		area : [ '900px', '450px' ],
+																		content : 'bid-showBidList?proId='+data.proId
+																	});
+																	
+																	
+																	
 															/*  
 															  $.get("user-toLogin", { "proId": data.proId}, function (data) {
 															   

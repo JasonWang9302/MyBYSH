@@ -1,5 +1,7 @@
 package com.gddr.mybysj.service.impl;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -16,6 +18,11 @@ public class BidServiceImpl implements BidService {
 	public void addBid(Bid bid) {
 
 		bidDao.addBid(bid);
+	}
+
+	@Override
+	public List<Bid> showBidList(Integer proId) {
+		return bidDao.getBidListByProId(proId);
 	}
 
 }

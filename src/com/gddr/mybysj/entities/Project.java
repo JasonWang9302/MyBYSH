@@ -6,6 +6,42 @@ import java.util.Date;
  * @author Administrator
  */
 public class Project {
+	//不存在的字段  为了填充投标数 、进度汇报数的显示  尝试    不行的话记得删除
+	private Integer countView;
+		public Integer getCountView() {
+		return countView;
+	}
+	public void setCountView(Integer countView) {
+		this.countView = countView;
+	}
+	public Project(Integer countView, Integer proId, String proName, String proDesc, Date createTime, Category category,
+			Date preDeliveryTime, User publisher, User servicer, String rfp, Integer status, Integer deleteFlag,
+			Date endTime, Integer compensationRate, Double projectFund, Integer guaranteeStatus) {
+		super();
+		this.countView = countView;
+		this.proId = proId;
+		this.proName = proName;
+		this.proDesc = proDesc;
+		this.createTime = createTime;
+		this.category = category;
+		this.preDeliveryTime = preDeliveryTime;
+		this.publisher = publisher;
+		this.servicer = servicer;
+		this.rfp = rfp;
+		this.status = status;
+		this.deleteFlag = deleteFlag;
+		this.endTime = endTime;
+		this.compensationRate = compensationRate;
+		this.projectFund = projectFund;
+		this.guaranteeStatus = guaranteeStatus;
+	}
+
+
+
+
+
+
+
 
 	private Integer proId;
 	private String proName;
@@ -156,11 +192,11 @@ public class Project {
 	}
 	@Override
 	public String toString() {
-		return "Project [proId=" + proId + ", proName=" + proName + ", proDesc=" + proDesc + ", createTime="
-				+ createTime + ", category=" + category + ", preDeliveryTime=" + preDeliveryTime + ", publisher="
-				+ publisher + ", servicer=" + servicer + ", rfp=" + rfp + ", status=" + status + ", deleteFlag="
-				+ deleteFlag + ", endTime=" + endTime + ", compensationRate=" + compensationRate + ", projectFund="
-				+ projectFund + ", guaranteeStatus=" + guaranteeStatus + "]";
+		return "Project [countView=" + countView + ", proId=" + proId + ", proName=" + proName + ", proDesc=" + proDesc
+				+ ", createTime=" + createTime + ", category=" + category + ", preDeliveryTime=" + preDeliveryTime
+				+ ", publisher=" + publisher + ", servicer=" + servicer + ", rfp=" + rfp + ", status=" + status
+				+ ", deleteFlag=" + deleteFlag + ", endTime=" + endTime + ", compensationRate=" + compensationRate
+				+ ", projectFund=" + projectFund + ", guaranteeStatus=" + guaranteeStatus + "]";
 	}
 	
 	

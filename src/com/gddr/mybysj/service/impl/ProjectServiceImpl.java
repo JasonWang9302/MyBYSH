@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.gddr.mybysj.dao.ProjectDao;
+import com.gddr.mybysj.dao.UserDao;
 import com.gddr.mybysj.entities.Project;
 import com.gddr.mybysj.entities.User;
 import com.gddr.mybysj.service.ProjectService;
@@ -15,6 +16,8 @@ import com.gddr.mybysj.service.ProjectService;
 public class ProjectServiceImpl implements ProjectService {
 	@Autowired
 	private ProjectDao projectDao;
+	@Autowired
+	private UserDao userDao;
 
 	@Override
 	public void publishPro(User publisher, Project project) {
@@ -64,5 +67,24 @@ public class ProjectServiceImpl implements ProjectService {
 	public Project getProjectById(Integer id) {
 		return projectDao.getProjectById(id);
 	}
+
+	@Override
+	public void chooseServicer(Integer proId, Integer userId) {
+		        System.out.println("chooserServicer.......chooserServicer.......chooserServicer.......");
+		        //把此项目servicer 投标者
+				Project project=projectDao.getProjectById(proId);
+				System.out.println("mmmm.............."+project);
+				User servicer=userDao.getUserById(userId);
+				project.setServicer(servicer);
+				//把此项目status设成2 已选标 待开始
+				project.setStatus(2);
+				projectDao.update(project);
+				System.out.println(project);
+	}
+
+	/*@Override
+	public List getProjectWithBidCountById(Integer id) {
+		return projectDao.getProjectWithBidCountById(id);
+	}*/
 
 }

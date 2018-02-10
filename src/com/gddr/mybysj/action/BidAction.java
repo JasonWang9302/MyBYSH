@@ -1,6 +1,7 @@
 package com.gddr.mybysj.action;
 
 import java.util.Date;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -10,6 +11,7 @@ import com.gddr.mybysj.entities.Project;
 import com.gddr.mybysj.entities.User;
 import com.gddr.mybysj.service.BidService;
 import com.gddr.mybysj.service.ProjectService;
+import com.gddr.mybysj.util.ProjectDataResponse;
 import com.opensymphony.xwork2.ModelDriven;
 
 @Controller
@@ -19,6 +21,20 @@ public class BidAction extends BaseAction implements ModelDriven<Bid> {
 	@Autowired
 	private ProjectService projectService;
 	private Bid model;
+	//返回json
+		private ProjectDataResponse projectDataResponse;
+		public void setProjectDataResponse(ProjectDataResponse projectDataResponse) {
+			this.projectDataResponse = projectDataResponse;
+		}
+	
+	
+	
+	public ProjectDataResponse getProjectDataResponse() {
+			return projectDataResponse;
+		}
+
+
+
 	/*去填写竞标信息*/
     public String toBid(){
     	System.out.println("hehehhe"+request.getParameter("proId"));
@@ -52,13 +68,28 @@ public class BidAction extends BaseAction implements ModelDriven<Bid> {
     }
     
     
+    //显示此项目竞标者列表
+    public String showBidList(){
+    	Integer proId=Integer.parseInt(request.getParameter("proId"));
+    	request.setAttribute("proId", proId);
+    	
+    	projectDataResponse=new ProjectDataResponse();
+    	List<Bid> list=bidService.showBidList(proId);
+		projectDataResponse.setCode(0);
+		projectDataResponse.setMsg("收到了。。。");
+		projectDataResponse.setCount(list.size());
+		projectDataResponse.setData(list);
+		System.out.println(projectDataResponse);
+    	return "showBidList";
+    }
+    
     
     
     
 	public void setModel(Bid model) {
 		this.model = model;
 	}
-
+    
 	@Override 
 	public Bid getModel() {
 		// TODO Auto-generated method stub

@@ -59,8 +59,26 @@ public class ProjectDaoImpl extends BaseDao implements ProjectDao {
 	@Override
 	public Project getProjectById(Integer id) {
 		String hql="From Project p left outer join fetch p.category left outer join fetch p.publisher left outer join fetch p.servicer where  p.proId=?";
-		Project proList=(Project) getSession().createQuery(hql).setInteger(0, id).uniqueResult();
-		return proList;
+		Project project=(Project) getSession().createQuery(hql).setInteger(0, id).uniqueResult();
+		return project;
 	}
+	
+	
+	
+	//
+	/*public List getProjectWithBidCountById(Integer id){
+   String hql="select count(b.project.proId),p from Project p,Bid b where p.proId=b.project.proId and p.proId=? group by b.project.proId";		
+     //  String hql="select Count(b.project.proId) from Bid b where b.project.proId=? group by b.project.proId";		
+      //  String hql="select  count(b.project_id),p.* from t_project p  join t_bid b where p.PRO_ID=b.PROJECT_id and p.pro_id=? GROUP BY b.PROJECT_id;";		
+		
+		List<Object> list=getSession().createQuery(hql).setInteger(0, id).list();
+		for (Object object : list) {
+             
+             System.out.println(object);
+         }
+		return list;
+	}*/
+	
+	
 	
 }

@@ -55,6 +55,7 @@
 
 			<result name="showMyPublishDSH">/personal/wdfb-dsh.jsp</result>
 			<result name="toEditProject">/personal/wdfb-dsh-bj.jsp</result>
+			<result name="chooseServicer">/personal/showBidList.jsp</result>
 			<!-- 用户异步逻辑删 -->
 			<result type="stream" name="logicDelProject">
 				<param name="contentType">text/html</param>
@@ -67,9 +68,9 @@
 
 		<!-- 竞标 -->
 		<action name="bid-*" class="bidAction" method="{1}">
-         <result name="toBid">/bidIframe.jsp</result>
-         <result name="doBid">/bidIframe.jsp</result>
-
+			<result name="toBid">/bidIframe.jsp</result>
+			<result name="doBid">/bidIframe.jsp</result>
+			<result name="showBidList">/personal/showBidList.jsp</result>
 		</action>
 
 	</package>
@@ -99,22 +100,26 @@
 			</result>
 			<allowed-methods>upload,downloadFile,showDSH</allowed-methods>
 		</action>
-		
-		
-         <!--           配合layui  个人中心需要返回json的 -->
+
+
+		<!-- 配合layui 个人中心需要返回json的 -->
 		<action name="wdfb-*" class="projectAction" method="{1}">
-		
-		<result name="showDSH" type="json">
+			<result name="showDSH" type="json">
 				<param name="root">projectDataResponse</param>
 			</result>
-		
-		<result name="showZBZ" type="json">
+			<result name="showZBZ" type="json">
 				<param name="root">projectDataResponse</param>
 			</result>
-		<allowed-methods>showDSH,showZBZ</allowed-methods>
+			<allowed-methods>showDSH,showZBZ</allowed-methods>
 		</action>
-		
-		
+		<action name="jsonBid-*" class="bidAction" method="{1}">
+		<!-- 	<result name="showBidList" type="chain">project-toPublish</result> -->
+			<result name="showBidList" type="json">
+			<param name="root">projectDataResponse</param>
+			</result>
+			<allowed-methods>showBidList</allowed-methods>
+		</action>
+
 	</package>
 
 

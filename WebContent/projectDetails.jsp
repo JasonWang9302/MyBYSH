@@ -70,7 +70,7 @@
 							var $ = layui.jquery, upload = layui.upload;
 
 							$("#ceshi").on("click", function() {
-
+                                 //弹窗
 								layer.open({
 									type : 2,
 									title : '请上传您的标书及联系电话参与竞标!',

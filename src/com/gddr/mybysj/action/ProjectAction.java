@@ -9,11 +9,15 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 
+import com.gddr.mybysj.dao.impl.ProjectDaoImpl;
+import com.gddr.mybysj.entities.Bid;
 import com.gddr.mybysj.entities.Category;
 import com.gddr.mybysj.entities.Project;
 import com.gddr.mybysj.entities.User;
+import com.gddr.mybysj.service.BidService;
 import com.gddr.mybysj.service.CategoryService;
 import com.gddr.mybysj.service.ProjectService;
+import com.gddr.mybysj.service.UserService;
 import com.gddr.mybysj.util.ProjectDataResponse;
 import com.opensymphony.xwork2.ModelDriven;
 
@@ -27,6 +31,8 @@ public class ProjectAction extends BaseAction implements ModelDriven<Project> {
 	private ProjectService projectService;
 	@Autowired
 	private CategoryService categoryService;
+	@Autowired
+	private BidService bidService;
 	private Project model;
 	private Integer proId;
 	//返回json
@@ -74,8 +80,9 @@ public class ProjectAction extends BaseAction implements ModelDriven<Project> {
 	/* 去发布 */
 	public String toPublish() {
 		System.out.println("----------toPublish-----------");
+		
 		List<Category> list = categoryService.getAll();
-		System.out.println(list);
+		//System.out.println(list);
 		request.setAttribute("cateList", list);
 
 		return "toPublish";
@@ -152,6 +159,7 @@ public class ProjectAction extends BaseAction implements ModelDriven<Project> {
 		projectDataResponse.setMsg("收到了。。。");
 		projectDataResponse.setCount(list.size());
 		projectDataResponse.setData(list);
+		System.out.println(projectDataResponse);
 	}
 	public String showDSH() {
         showByStatus(0);//未审核的
@@ -159,8 +167,33 @@ public class ProjectAction extends BaseAction implements ModelDriven<Project> {
 	}
 	public String showZBZ() {
 		showByStatus(1);//审核通过  招标中
+	
+	/*	projectDataResponse=new ProjectDataResponse();
+		List list=projectService.getProjectWithBidCountById(10);
+		projectDataResponse.setCode(0);
+		projectDataResponse.setMsg("收到了。。。");
+		projectDataResponse.setCount(list.size());
+		projectDataResponse.setData(list);*/
+		
+		
+		
 		return "showZBZ";
 	}
+	
+	/*选标*/
+	public String chooseServicer(){
+		Integer userId=Integer.parseInt(request.getParameter("userId"));
+		Integer proId=Integer.parseInt(request.getParameter("proId"));
+	//System.out.println("proId:...................."+proId+"userId:"+userId);
+		projectService.getProjectById(proId);
+	//	System.out.println("-------");
+		projectService.chooseServicer(proId, userId);
+		return "chooseServicer";
+	}
+	
+	
+	
+	
 	
 	
 	public ProjectDataResponse getProjectDataResponse() {

@@ -23,4 +23,10 @@ public interface ProjectDao {
 	List<Project> getProjectBySerAndStatus(User user, Integer status);
 //
 	Project getProjectById(Integer id);
+	
+	
+	
+	
+	//带有已投标数的新实体
+/*	public List getProjectWithBidCountById(Integer id);*/
 }

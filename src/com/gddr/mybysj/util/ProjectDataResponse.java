@@ -7,7 +7,7 @@ public class ProjectDataResponse {
 	private int code;
 	private String msg;
 	private int count;
-	private List<Project> data;
+	private List data;
 	public int getCode() {
 		return code;
 	}
@@ -26,10 +26,10 @@ public class ProjectDataResponse {
 	public void setCount(int count) {
 		this.count = count;
 	}
-	public List<Project> getData() {
+	public List getData() {
 		return data;
 	}
-	public void setData(List<Project> data) {
+	public void setData(List data) {
 		this.data = data;
 	}
 	@Override

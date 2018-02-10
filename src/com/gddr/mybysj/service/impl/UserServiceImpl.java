@@ -42,4 +42,10 @@ public class UserServiceImpl implements UserService {
 		return false;
 	}
 
+	@Override
+	public User getUserById(Integer id) {
+		
+		return userDao.getUserById(id);
+	}
+
 }
