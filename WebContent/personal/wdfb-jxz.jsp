@@ -29,7 +29,7 @@
 		</div>
 		<div class="content">
 			<table class="layui-table"
-				lay-data="{url:'wdrw-showJXZ2', id:'idTest'}"
+				lay-data="{url:'wdfb-showJXZ1', id:'idTest'}"
 				lay-filter="demo">
 				<thead>
 					<tr>
@@ -83,7 +83,14 @@
 													function(obj) {
 														var data = obj.data;
 														if (obj.event === 'del') {
-															window.location.href = "pgre-toPgReport?proId="+data.proId;
+															layer
+																	.msg('ID：'
+																			+ data.proId
+																			+ ' 的提交进度汇报操作');
+															
+															
+															
+															
 														} else if (obj.event === 'edit') {
 																	//写操作
 															layer.alert('编辑行：<br>'+ data.proId);
@@ -93,7 +100,7 @@
 																/* shade : [ 0.3, '#000' ], */
 																maxmin : false, //开启最大化最小化按钮
 																area : [ '900px', '450px' ],
-																content : 'pgre-showPgReportList?proId='+data.proId
+																content : 'bid-showBidList?proId='+data.proId
 															});
 																												
 														}

@@ -32,7 +32,7 @@ if (msg != "") {
 			<a href="wdfb-showZBZ">ceshi</a>
 		</div>
 		<div class="content">
-<table class="layui-table" lay-data="{url:'wdfb-showDSH', id:'idTest'}" lay-filter="demo">
+<table class="layui-table" lay-data="{url:'wdfb-showDSH1', id:'idTest'}" lay-filter="demo">
   <thead>
     <tr>
      <!--  <th lay-data="{type:'checkbox', fixed: 'left'}"></th> -->
@@ -111,7 +111,6 @@ layui.use('table', function(){
           });
       });
     } else if(obj.event === 'edit'){
-      layer.alert('编辑行：<br>'+ data.proId);
       window.location.href = "project-toEditProject?proId="+data.proId; 
      /*  
        $.get("user-toLogin", { "proId": data.proId}, function (data) {
@@ -148,20 +147,7 @@ layui.use('table', function(){
   });
 });
 </script>
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
 		</div>
-
 	</div>
 </body>
 

@@ -50,7 +50,7 @@ public class ProjectDaoImpl extends BaseDao implements ProjectDao {
 
 	@Override
 	public List<Project> getProjectBySerAndStatus(User user, Integer status) {
-		String hql="From Project p left outer join fetch p.category left outer join fetch p.publisher left outer join fetch p.servicer where servicer=? and Status=?";
+		String hql="From Project p left outer join fetch p.category left outer join fetch p.publisher left outer join fetch p.servicer where p.servicer=? and Status=?";
 		List<Project> proList=getSession().createQuery(hql).setEntity(0, user).setInteger(1, status).list();
 		return proList;
 	}

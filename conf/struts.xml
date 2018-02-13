@@ -73,6 +73,20 @@
 			<result name="showBidList">/personal/showBidList.jsp</result>
 		</action>
 
+		<!-- 担保 -->
+		<action name="dealing-*" class="dealingAction" method="{1}">
+			<result name="toPayAdvance">/personal/wdfb-dks-payAdvance.jsp</result>
+			<result name="payAdvance">/personal/wdfb-dks-payAdvance.jsp</result>
+			<result name="toPayMargin">/personal/wdrw-dks-payMargin.jsp</result>
+			<result name="payMargin">/personal/wdrw-dks-payMargin.jsp</result>
+		</action>
+
+		<!-- 进度汇报 -->
+		<action name="pgre-*" class="pgReportAction" method="{1}">
+			<result name="toPgReport">/personal/wdrw-jxz-pgre.jsp</result>
+			<result name="doPgReport">/personal/wdrw-jxz.jsp</result>
+			<allowed-methods>toPgReport,doPgReport</allowed-methods>
+		</action>
 	</package>
 
 
@@ -100,26 +114,59 @@
 			</result>
 			<allowed-methods>upload,downloadFile,showDSH</allowed-methods>
 		</action>
-
-
 		<!-- 配合layui 个人中心需要返回json的 -->
+		<!-- 我的发布 -->
 		<action name="wdfb-*" class="projectAction" method="{1}">
-			<result name="showDSH" type="json">
+			<result name="showDSH1" type="json">
 				<param name="root">projectDataResponse</param>
 			</result>
-			<result name="showZBZ" type="json">
+			<result name="showZBZ1" type="json">
 				<param name="root">projectDataResponse</param>
 			</result>
-			<allowed-methods>showDSH,showZBZ</allowed-methods>
+			<result name="showDKS1" type="json">
+				<param name="root">projectDataResponse</param>
+			</result>
+			<result name="showJXZ1" type="json">
+				<param name="root">projectDataResponse</param>
+			</result>
+			<result name="showDYS1" type="json">
+				<param name="root">projectDataResponse</param>
+			</result>
+			<result name="showYWC1" type="json">
+				<param name="root">projectDataResponse</param>
+			</result>
+			<allowed-methods>showDSH1,showZBZ1,showDKS1,showJXZ1,showDYS1,showYWC1</allowed-methods>
 		</action>
+		<!-- 我的任务 -->
+		<action name="wdrw-*" class="projectAction" method="{1}">
+			<result name="showDSH2" type="json">
+				<param name="root">projectDataResponse</param>
+			</result>
+			<result name="showZBZ2" type="json">
+				<param name="root">projectDataResponse</param>
+			</result>
+			<result name="showDKS2" type="json">
+				<param name="root">projectDataResponse</param>
+			</result>
+			<result name="showJXZ2" type="json">
+				<param name="root">projectDataResponse</param>
+			</result>
+			<result name="showDJS2" type="json">
+				<param name="root">projectDataResponse</param>
+			</result>
+			<result name="showYWC2" type="json">
+				<param name="root">projectDataResponse</param>
+			</result>
+			<allowed-methods>showDSH2,showZBZ2,showDKS2,showJXZ2,showDJS2,showYWC2</allowed-methods>
+		</action>
+
 		<action name="jsonBid-*" class="bidAction" method="{1}">
-		<!-- 	<result name="showBidList" type="chain">project-toPublish</result> -->
+			<!-- <result name="showBidList" type="chain">project-toPublish</result> -->
 			<result name="showBidList" type="json">
-			<param name="root">projectDataResponse</param>
+				<param name="root">projectDataResponse</param>
 			</result>
 			<allowed-methods>showBidList</allowed-methods>
 		</action>
-
 	</package>
 
 

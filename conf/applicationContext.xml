@@ -62,6 +62,12 @@
 	</bean>
 	<bean id="bidAction" class="com.gddr.mybysj.action.BidAction" scope="prototype">
 	</bean>
+	
+	<bean id="dealingAction" class="com.gddr.mybysj.action.DealingAction" scope="prototype">
+	</bean>
+	
+	<bean id="pgReportAction" class="com.gddr.mybysj.action.ProgressReportAction" scope="prototype">
+	</bean>
 
 
 </beans>

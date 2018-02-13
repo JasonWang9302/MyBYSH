@@ -30,7 +30,7 @@
 		</div>
 		<div class="content">
 			<table class="layui-table"
-				lay-data="{url:'wdfb-showZBZ', id:'idTest'}"
+				lay-data="{url:'wdfb-showZBZ1', id:'idTest'}"
 				lay-filter="demo">
 				<thead>
 					<tr>
@@ -98,10 +98,8 @@
 																				/*  obj.del();
 																				 layer.close(index); */
 
-																				console
-																						.log(data);
-																				$
-																						.ajax({
+																				console.log(data);
+																				$.ajax({
 																							url : "project-logicDelProject",
 																							type : "POST",
 																							data : {
@@ -137,9 +135,6 @@
 																			});
 														} else if (obj.event === 'edit') {
 															layer.alert('编辑行：<br>'+ data.proId);
-															/* window.location.href = "project-toEditProject?proId="
-																	+ data.proId; */
-																	//弹窗
 																	layer.open({
 																		type : 2,
 																		title : '投标列表',
@@ -161,24 +156,6 @@
 
 														}
 													});
-
-									/*  var $ = layui.$, active = {
-									   getCheckData: function(){ //获取选中数据
-									     var checkStatus = table.checkStatus('idTest')
-									     ,data = checkStatus.data;
-									     layer.alert(JSON.stringify(data));
-									   }
-									   ,getCheckLength: function(){ //获取选中数目
-									     var checkStatus = table.checkStatus('idTest')
-									     ,data = checkStatus.data;
-									     layer.msg('选中了：'+ data.length + ' 个');
-									   }
-									   ,isAll: function(){ //验证是否全选
-									     var checkStatus = table.checkStatus('idTest');
-									     layer.msg(checkStatus.isAll ? '全选': '未全选')
-									   }
-									 }; */
-
 									$('.demoTable .layui-btn')
 											.on(
 													'click',

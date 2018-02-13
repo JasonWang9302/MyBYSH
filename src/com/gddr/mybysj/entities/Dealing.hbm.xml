@@ -20,6 +20,9 @@
         <property name="dealingTime" type="java.util.Date">
             <column name="DEALING_TIME" />
         </property>
+        <property name="status" type="java.lang.Integer">
+            <column name="status" />
+        </property>
         <many-to-one name="payer" class="com.gddr.mybysj.entities.User">
             <column name="PAYER_id" />
         </many-to-one>

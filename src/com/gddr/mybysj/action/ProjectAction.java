@@ -151,33 +151,73 @@ public class ProjectAction extends BaseAction implements ModelDriven<Project> {
 	
 	/*个人中心部分*/
 	 /* 相似方法 抽取通用代码 临时写在这 有时间整理到service层*/
-	public void showByStatus(Integer status){
+	/*role 1 发布者   2服务者*/
+	public void showByStatus(int role,Integer status){
 		User user = (User) session.getAttribute("currUser");
 		projectDataResponse=new ProjectDataResponse();
-		List<Project> list=projectService.getProjectByPubAndStatus(user, status);
+		List<Project> list=null;
+		if(role==1){
+			list=projectService.getProjectByPubAndStatus(user, status);
+		}
+		if(role==2){
+			list=projectService.getProjectBySerAndStatus(user, status);
+			System.out.println("role2,,,"+list);
+		}
 		projectDataResponse.setCode(0);
 		projectDataResponse.setMsg("收到了。。。");
 		projectDataResponse.setCount(list.size());
 		projectDataResponse.setData(list);
 		System.out.println(projectDataResponse);
 	}
-	public String showDSH() {
-        showByStatus(0);//未审核的
-		return "showDSH";
+	//我的发布
+	public String showDSH1() {
+        showByStatus(1,0);//未审核的
+		return "showDSH1";
 	}
-	public String showZBZ() {
-		showByStatus(1);//审核通过  招标中
-	
-	/*	projectDataResponse=new ProjectDataResponse();
-		List list=projectService.getProjectWithBidCountById(10);
-		projectDataResponse.setCode(0);
-		projectDataResponse.setMsg("收到了。。。");
-		projectDataResponse.setCount(list.size());
-		projectDataResponse.setData(list);*/
-		
-		
-		
-		return "showZBZ";
+	public String showZBZ1() {
+		showByStatus(1,1);//审核通过  招标中
+		return "showZBZ1";
+	}
+	public String showDKS1() {
+		showByStatus(1,2);//招完标 待交担保 待开始
+		return "showDKS1";
+	}
+	public String showJXZ1() {
+		showByStatus(1,3);//交完担保 进行中
+		return "showJXZ1";
+	}
+	public String showDYS1() {
+		showByStatus(1,4);//待验收
+		return "showDYS1";
+	}
+	public String showYWC1() {
+		showByStatus(1,5);//已完成
+		return "showYWC1";
+	}
+	//我的任务
+	public String showDSH2() {
+        showByStatus(2,0);//未审核的
+		return "showDSH2";
+	}
+	public String showZBZ2() {
+		showByStatus(2,1);//审核通过  招标中
+		return "showZBZ2";
+	}
+	public String showDKS2() {
+		showByStatus(2,2);//已选标
+		return "showDKS2";
+	}
+	public String showJXZ2() {
+		showByStatus(2,3);//交完担保 进行中
+		return "showJXZ2";
+	}
+	public String showDJS2() {
+		showByStatus(2,4);//待结算
+		return "showDJS2";
+	}
+	public String showYWC2() {
+		showByStatus(2,5);//已完成
+		return "showYWC2";
 	}
 	
 	/*选标*/

@@ -8,6 +8,9 @@
             <column name="ADMIN_ID" />
             <generator class="native" />
         </id>
+        <property name="adminName" type="java.lang.String">
+            <column name="admin_name" />
+        </property>
         <property name="password" type="java.lang.String">
             <column name="PASSWORD" />
         </property>
