@@ -85,7 +85,8 @@
 		<action name="pgre-*" class="pgReportAction" method="{1}">
 			<result name="toPgReport">/personal/wdrw-jxz-pgre.jsp</result>
 			<result name="doPgReport">/personal/wdrw-jxz.jsp</result>
-			<allowed-methods>toPgReport,doPgReport</allowed-methods>
+			<result name="toShowPgReList">/personal/showPgReList.jsp</result>
+			<allowed-methods>toPgReport,doPgReport,toShowPgReList</allowed-methods>
 		</action>
 	</package>
 
@@ -166,6 +167,12 @@
 				<param name="root">projectDataResponse</param>
 			</result>
 			<allowed-methods>showBidList</allowed-methods>
+		</action>
+		<!-- 进度汇报 -->
+		<action name="jsonPgRe-*" class="pgReportAction" method="{1}">
+			<result name="showPgReportList" type="json">
+				<param name="root">projectDataResponse</param>
+			</result>
 		</action>
 	</package>
 

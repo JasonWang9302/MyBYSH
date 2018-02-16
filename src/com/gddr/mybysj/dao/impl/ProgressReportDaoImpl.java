@@ -18,7 +18,7 @@ public class ProgressReportDaoImpl extends BaseDao implements ProgressReportDao 
 
 	@Override
 	public List<ProgressReport> getProgressReportListByProId(Integer proId) {
-		String hql = "From ProgressReport where project.proId=?";
+		String hql = "From ProgressReport p left outer join fetch p.project left outer join fetch p.project.category left outer join fetch p.project.publisher left outer join fetch p.project.servicer where p.project.proId=?";
 		List<ProgressReport> pgreList = getSession().createQuery(hql).setInteger(0, proId).list();
 		return pgreList;
 	}

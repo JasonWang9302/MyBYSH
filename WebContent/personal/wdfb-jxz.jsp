@@ -36,13 +36,13 @@
 						<!--  <th lay-data="{type:'checkbox', fixed: 'left'}"></th> -->
 						<!--   <th lay-data="{field:'proId', width:80}">项目名称</th> -->
 						<th lay-data="{field:'proName', width:130}">项目名称</th>
-						<th lay-data="{field:'servicer', width:120,templet:'<div>{{d.servicer.userName}}</div>'}">服务者</th>
-						<th lay-data="{field:'createTime', width:130}">创建时间</th>
-						<th lay-data="{field:'guaranteeStatus', width:160,templet: '#dbztTpl'}">担保状态</th>
+						<th lay-data="{field:'servicer', width:100,templet:'<div>{{d.servicer.userName}}</div>'}">服务者</th>
+						<th lay-data="{field:'createTime', width:120}">创建时间</th>
+						<th lay-data="{field:'guaranteeStatus', width:100,templet: '#dbztTpl'}">担保状态</th>
 						<th lay-data="{field:'status', width:135, sort: true}">状态</th>
-						<th lay-data="{field:'compensationRate', width:100, sort: true}">赔率</th>
+						<th lay-data="{field:'compensationRate', width:80, sort: true}">赔率</th>
 						<th
-							lay-data="{fixed:'right',title: '操作', width:120, toolbar: '#barDemo'}"></th>
+							lay-data="{fixed:'right',title: '操作', width:360, toolbar: '#barDemo'}"></th>
 					</tr>
 				</thead>
 			</table>
@@ -60,9 +60,9 @@
 
 			<script type="text/html" id="barDemo">
   <a class="layui-btn layui-btn-primary layui-btn-xs" lay-event="detail">查看</a>
-  <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del">提交进度汇报</a>
   <a class="layui-btn layui-btn-xs" lay-event="edit">查看进度汇报</a>
 </script>
+<!--   <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del">提交进度汇报</a> -->
 <!--   <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del">删除</a> -->
 			<script>
 				layui
@@ -83,24 +83,16 @@
 													function(obj) {
 														var data = obj.data;
 														if (obj.event === 'del') {
-															layer
-																	.msg('ID：'
-																			+ data.proId
-																			+ ' 的提交进度汇报操作');
-															
-															
-															
-															
+															/* window.location.href = "pgre-toPgReport?proId="+data.proId; */
 														} else if (obj.event === 'edit') {
 																	//写操作
-															layer.alert('编辑行：<br>'+ data.proId);
 															layer.open({
 																type : 2,
-																title : '投标列表',
+																title : '进度汇报列表',
 																/* shade : [ 0.3, '#000' ], */
 																maxmin : false, //开启最大化最小化按钮
 																area : [ '900px', '450px' ],
-																content : 'bid-showBidList?proId='+data.proId
+																content : 'pgre-toShowPgReList?proId='+data.proId
 															});
 																												
 														}

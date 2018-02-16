@@ -45,7 +45,6 @@
 			<div class="layui-form-mid layui-word-aux">请填写6到12位密码</div>
 		</div>
 
-
 		<div class="layui-form-item">
 			<div class="layui-input-block">
 				<button class="layui-btn" lay-submit="" lay-filter="demo1">立即提交</button>
