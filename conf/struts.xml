@@ -75,10 +75,14 @@
 
 		<!-- 担保 -->
 		<action name="dealing-*" class="dealingAction" method="{1}">
+			<result name="toQRYS">/personal/wdfb-dys-qrys.jsp</result>
 			<result name="toPayAdvance">/personal/wdfb-dks-payAdvance.jsp</result>
 			<result name="payAdvance">/personal/wdfb-dks-payAdvance.jsp</result>
 			<result name="toPayMargin">/personal/wdrw-dks-payMargin.jsp</result>
 			<result name="payMargin">/personal/wdrw-dks-payMargin.jsp</result>
+			<result name="qrys">/personal/wdfb-dys-qrys.jsp</result>
+			<result name="cw">/personal/wdfb-dys-qrys.jsp</result>
+			<allowed-methods>toQRYS,toPayAdvance,payAdvance,toPayMargin,payMargin,qrys,cw</allowed-methods>
 		</action>
 
 		<!-- 进度汇报 -->

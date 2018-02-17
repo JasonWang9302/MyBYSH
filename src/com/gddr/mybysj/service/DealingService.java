@@ -10,4 +10,6 @@ public interface DealingService {
 	  void addDealing(Project project, String dealingName, Double dealingAmount,User payer, User payee);
 	  
 	  void deleteDealing(Dealing dealing);
+	  
+	  Dealing getDealingByProIdAndName(Integer proId,String dealName);
 }

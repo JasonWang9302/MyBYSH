@@ -13,12 +13,12 @@ public class User {
 	private String introduction;
 	private Double balance;
 	private String payPassword;
-	private Integer grades;// 评分
+	private Double grades;// 评分
 	public User() {
 		super();
 	}
 	public User(String userName, String password, String phone, String email, String introduction, Double balance,
-			String payPassword, Integer grades) {
+			String payPassword, Double grades) {
 		super();
 		this.userName = userName;
 		this.password = password;
@@ -30,7 +30,7 @@ public class User {
 		this.grades = grades;
 	}
 	public User(Integer userId, String userName, String password, String phone, String email, String introduction,
-			Double balance, String payPassword, Integer grades) {
+			Double balance, String payPassword, Double grades) {
 		super();
 		this.userId = userId;
 		this.userName = userName;
@@ -90,10 +90,10 @@ public class User {
 	public void setPayPassword(String payPassword) {
 		this.payPassword = payPassword;
 	}
-	public Integer getGrades() {
+	public Double getGrades() {
 		return grades;
 	}
-	public void setGrades(Integer grades) {
+	public void setGrades(Double grades) {
 		this.grades = grades;
 	}
 	@Override

@@ -16,7 +16,7 @@ public class Project {
 	}
 	public Project(Integer countView, Integer proId, String proName, String proDesc, Date createTime, Category category,
 			Date preDeliveryTime, User publisher, User servicer, String rfp, Integer status, Integer deleteFlag,
-			Date endTime, Integer compensationRate, Double projectFund, Integer guaranteeStatus) {
+			Date endTime, Double compensationRate, Double projectFund, Integer guaranteeStatus) {
 		super();
 		this.countView = countView;
 		this.proId = proId;
@@ -55,7 +55,7 @@ public class Project {
 	private Integer status;//状态 01234 待审核  招标中   待开始   进行中    待结算    已完成
 	private Integer deleteFlag;//逻辑删标记   0 未删除   1 被发布者删了
 	private Date endTime;//结束时间 最后操作的时间 包括状态改变  逻辑删等；
-	private Integer compensationRate;//赔率
+	private Double compensationRate;//赔率
 	private Double  projectFund;//项目紫荆
 	private Integer guaranteeStatus;//担保状态  ：双方是否交担保金 0 未  1需已 服未 2需未 服已  3已
 	public Project() {
@@ -63,7 +63,7 @@ public class Project {
 	}
 	public Project(Integer proId, String proName, String proDesc, Date createTime, Category category,
 			Date preDeliveryTime, User publisher, User servicer, String rfp, Integer status, Integer deleteFlag,
-			Date endTime, Integer compensationRate, Double projectFund, Integer guaranteeStatus) {
+			Date endTime, Double compensationRate, Double projectFund, Integer guaranteeStatus) {
 		super();
 		this.proId = proId;
 		this.proName = proName;
@@ -83,7 +83,7 @@ public class Project {
 	}
 	public Project(String proName, String proDesc, Date createTime, Category category, Date preDeliveryTime,
 			User publisher, User servicer, String rfp, Integer status, Integer deleteFlag, Date endTime,
-			Integer compensationRate, Double projectFund, Integer guaranteeStatus) {
+			Double compensationRate, Double projectFund, Integer guaranteeStatus) {
 		super();
 		this.proName = proName;
 		this.proDesc = proDesc;
@@ -172,10 +172,10 @@ public class Project {
 	public void setEndTime(Date endTime) {
 		this.endTime = endTime;
 	}
-	public Integer getCompensationRate() {
+	public Double getCompensationRate() {
 		return compensationRate;
 	}
-	public void setCompensationRate(Integer compensationRate) {
+	public void setCompensationRate(Double compensationRate) {
 		this.compensationRate = compensationRate;
 	}
 	public Double getProjectFund() {

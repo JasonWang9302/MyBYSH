@@ -27,6 +27,15 @@ public class DealingAction extends BaseAction implements ModelDriven<Dealing> {
 	@Autowired
 	private UserService userService;
 	private Integer zfPassword;
+	private String pf;
+
+	public String getPf() {
+		return pf;
+	}
+
+	public void setPf(String pf) {
+		this.pf = pf;
+	}
 
 	public Integer getZfPassword() {
 		return zfPassword;
@@ -35,6 +44,41 @@ public class DealingAction extends BaseAction implements ModelDriven<Dealing> {
 	public void setZfPassword(Integer zfPassword) {
 		this.zfPassword = zfPassword;
 	}
+	//需求方去验收支付
+	public String qrys() {
+		System.out.println("payAdvance.."+request.getParameter("proId"));
+		Integer proId=Integer.parseInt(request.getParameter("proId"));
+		Project project=projectService.getProjectById(proId);
+		User user=project.getServicer();
+		User pt=userService.getUserByName("平台账户");
+		request.setAttribute("project", project);
+		if(zfPassword.equals(Integer.parseInt(user.getPayPassword()))){
+			//之前项目金平台担保的记录状态跟新 保证金退还 已在service层写了  在此只写平台转钱到服务者就行
+			dealingService.addDealing(project, "发布者确认验收", project.getProjectFund(), pt, user);
+			
+			User servicer=project.getServicer();
+			Double grades=servicer.getGrades()+Double.parseDouble(pf);
+			servicer.setGrades(grades);
+			userService.saveOrUpdate(servicer);
+			request.setAttribute("paySuccessTip", "已验收！");
+			System.out.println("完成");
+			return "qrys";
+		}
+		else{
+			request.setAttribute("payFailTip", "密码错误！");
+			return "cw";
+		}
+	}
+	
+	//需求方去验收支付
+	public String toQRYS() {
+		Integer proId = Integer.parseInt(request.getParameter("proId"));
+		Project project = projectService.getProjectById(proId);
+		System.out.println("............................." + project);
+		request.setAttribute("project", project);
+		return "toQRYS";
+	}
+	
 
 	// 需求方去缴纳预付金
 	public String toPayAdvance() {
@@ -63,7 +107,7 @@ public class DealingAction extends BaseAction implements ModelDriven<Dealing> {
 		User user=(User) session.getAttribute("currUser");
 		User pt=userService.getUserByName("平台账户");
 		if(zfPassword.equals(Integer.parseInt(user.getPayPassword()))){
-			dealingService.addDealing(project, "预付项目金", project.getProjectFund(), user, pt);
+			dealingService.addDealing(project, "项目金平台担保", project.getProjectFund(), user, pt);
 			request.setAttribute("paySuccessTip", "支付成功！");
 			System.out.println("完成");
 			return "payAdvance";
@@ -81,7 +125,7 @@ public class DealingAction extends BaseAction implements ModelDriven<Dealing> {
 		User user=(User) session.getAttribute("currUser");
 		User pt=userService.getUserByName("平台账户");
 		if(zfPassword.equals(Integer.parseInt(user.getPayPassword()))){
-			dealingService.addDealing(project, "保证金", project.getProjectFund(), user, pt);
+			dealingService.addDealing(project, "保证金平台担保", project.getProjectFund(), user, pt);
 			request.setAttribute("paySuccessTip", "支付成功！");
 			System.out.println("完成");
 			return "payMargin";

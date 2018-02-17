@@ -42,7 +42,7 @@
         <property name="endTime" type="java.util.Date">
             <column name="END_TIME" />
         </property>
-        <property name="compensationRate" type="java.lang.Integer">
+        <property name="compensationRate" type="java.lang.Double">
             <column name="compensation_rate" />
         </property>
         <property name="projectFund" type="java.lang.Double">

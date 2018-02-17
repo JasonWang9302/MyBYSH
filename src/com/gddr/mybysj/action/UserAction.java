@@ -33,7 +33,7 @@ public class UserAction extends BaseAction implements ModelDriven<User> {
 	}
 
 	public String doReg() throws IOException {
-		model.setGrades(5);
+		model.setGrades(5.0);
 		if (userService.userRegister(model)) {
 			response.setContentType("text/hmtl;charset=utf-8");
 			request.setAttribute("tipMessage", "注册成功！请您登陆");

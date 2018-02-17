@@ -29,7 +29,7 @@
         <property name="payPassword" type="java.lang.String">
             <column name="PAY_PASSWORD" />
         </property>
-        <property name="grades" type="java.lang.Integer">
+        <property name="grades" type="java.lang.Double">
             <column name="GRADES" />
         </property>
     </class>

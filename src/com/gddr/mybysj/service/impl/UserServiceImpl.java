@@ -53,4 +53,9 @@ public class UserServiceImpl implements UserService {
 		return userDao.getUserByName(name);
 	}
 
+	@Override
+	public void saveOrUpdate(User user) {
+		userDao.addOrUpdate(user);
+	}
+
 }

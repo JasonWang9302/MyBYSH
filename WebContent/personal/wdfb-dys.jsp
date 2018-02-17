@@ -60,7 +60,8 @@
 
 			<script type="text/html" id="barDemo">
   <a class="layui-btn layui-btn-primary layui-btn-xs" lay-event="detail">查看</a>
-  <a class="layui-btn layui-btn-xs" lay-event="edit">查看进度汇报</a>
+  <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="edit">查看进度汇报</a>
+<a class="layui-btn  layui-btn-xs" lay-event="del">通过验收</a>
 </script>
 <!--   <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del">提交进度汇报</a> -->
 <!--   <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del">删除</a> -->
@@ -82,8 +83,20 @@
 													'tool(demo)',
 													function(obj) {
 														var data = obj.data;
+														/* 通过验收 */
 														if (obj.event === 'del') {
-															/* window.location.href = "pgre-toPgReport?proId="+data.proId; */
+
+															layer.open({
+																type : 2,
+																title : '确定验收',
+																shade : [ 0.3, '#000' ],
+																//maxmin : false, //开启最大化最小化按钮
+																area : [ '550px', '350px' ],
+																content : 'dealing-toQRYS?proId='+data.proId
+															});  
+																
+															
+															
 														} else if (obj.event === 'edit') {
 																	//写操作
 															layer.open({
