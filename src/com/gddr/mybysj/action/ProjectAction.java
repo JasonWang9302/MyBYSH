@@ -121,6 +121,14 @@ public class ProjectAction extends BaseAction implements ModelDriven<Project> {
 		inputStream = new ByteArrayInputStream("1".getBytes("UTF-8"));
 		return "logicDelProject";
 	}
+	/* 用户逻辑删项目 */
+	public String servicerLogicDelProject() throws UnsupportedEncodingException {
+		Integer proId = Integer.parseInt(request.getParameter("proId"));
+		System.out.println("logicDel...Proid:" + proId);
+		projectService.servicerLogicDel(proId);
+		inputStream = new ByteArrayInputStream("1".getBytes("UTF-8"));
+		return "servicerLogicDelProject";
+	}
 
 	/* 用户待审核 去 编辑 */
 	public String toEditProject() {
@@ -195,13 +203,21 @@ public class ProjectAction extends BaseAction implements ModelDriven<Project> {
 		return "showYWC1";
 	}
 	//我的任务
-	public String showDSH2() {
+	/*public String showDSH2() {
         showByStatus(2,0);//未审核的
 		return "showDSH2";
-	}
-	public String showZBZ2() {
-		showByStatus(2,1);//审核通过  招标中
-		return "showZBZ2";
+	}*/
+	public String showTBZ2() {
+		User user = (User) session.getAttribute("currUser");
+		projectDataResponse=new ProjectDataResponse();
+		List<Bid> list=null;
+		list=bidService.getBidListByServicer(user);
+		projectDataResponse.setCode(0);
+		projectDataResponse.setMsg("收到了。。。");
+		projectDataResponse.setCount(list.size());
+		projectDataResponse.setData(list);
+		System.out.println(projectDataResponse);
+		return "showTBZ2";
 	}
 	public String showDKS2() {
 		showByStatus(2,2);//已选标

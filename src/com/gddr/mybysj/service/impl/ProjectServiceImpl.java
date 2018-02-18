@@ -29,10 +29,17 @@ public class ProjectServiceImpl implements ProjectService {
 		projectDao.addProject(project);
 	}
 
+	//发布者对项目的逻辑删
 	@Override
 	public void logicDel(Integer proId) {
 		Project project=projectDao.getProjectById(proId);
 		project.setDeleteFlag(1);
+		projectDao.update(project);
+	}
+	//服务者对项目的逻辑删
+	public void servicerLogicDel(Integer proId) {
+		Project project=projectDao.getProjectById(proId);
+		project.setDeleteFlag(2);
 		projectDao.update(project);
 	}
 

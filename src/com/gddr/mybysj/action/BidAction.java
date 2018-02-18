@@ -1,5 +1,8 @@
 package com.gddr.mybysj.action;
 
+import java.io.ByteArrayInputStream;
+import java.io.InputStream;
+import java.io.UnsupportedEncodingException;
 import java.util.Date;
 import java.util.List;
 
@@ -21,6 +24,13 @@ public class BidAction extends BaseAction implements ModelDriven<Bid> {
 	@Autowired
 	private ProjectService projectService;
 	private Bid model;
+	// ajax
+	private InputStream inputStream;
+
+	public InputStream getInputStream() {
+		return inputStream;
+	}
+	
 	//返回json
 		private ProjectDataResponse projectDataResponse;
 		public void setProjectDataResponse(ProjectDataResponse projectDataResponse) {
@@ -43,7 +53,19 @@ public class BidAction extends BaseAction implements ModelDriven<Bid> {
     }
  
     
-    
+    //逻辑删除、撤销 投标
+    public String logicDeleteBid(){
+    	Integer bidId=Integer.parseInt(request.getParameter("bidId"));
+    	Bid bid=bidService.getBidById(bidId);
+    	bid.setDeleteFlag(1);
+    	bidService.updateBid(bid);
+    	try {
+			inputStream = new ByteArrayInputStream("1".getBytes("UTF-8"));
+		} catch (UnsupportedEncodingException e) {
+			e.printStackTrace();
+		}
+    	return "logicDeleteBid";
+    }
     
     
  

@@ -31,6 +31,8 @@ public interface ProjectService {
 	//
 	Project getProjectById(Integer id);
 	
+	//服务者对项目的逻辑删
+	void servicerLogicDel(Integer proId);
 	/*
 	public List getProjectWithBidCountById(Integer id);*/
 	

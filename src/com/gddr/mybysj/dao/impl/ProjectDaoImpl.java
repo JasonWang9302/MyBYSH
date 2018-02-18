@@ -39,7 +39,7 @@ public class ProjectDaoImpl extends BaseDao implements ProjectDao {
 		return proList;
 	}
 
-
+	//delect flay 1 发布者删除的标记
 	@Override
 	public List<Project> getProjectByPubAndStatus(User user, Integer status) {
 		String hql="From Project p left outer join fetch p.category left outer join fetch p.publisher left outer join fetch p.servicer  where p.publisher=? and Status=? and p.deleteFlag != ?";
@@ -47,11 +47,11 @@ public class ProjectDaoImpl extends BaseDao implements ProjectDao {
 		return proList;
 	}
 
-
+	//delect flay 1 服务者删除的标记
 	@Override
 	public List<Project> getProjectBySerAndStatus(User user, Integer status) {
-		String hql="From Project p left outer join fetch p.category left outer join fetch p.publisher left outer join fetch p.servicer where p.servicer=? and Status=?";
-		List<Project> proList=getSession().createQuery(hql).setEntity(0, user).setInteger(1, status).list();
+		String hql="From Project p left outer join fetch p.category left outer join fetch p.publisher left outer join fetch p.servicer where p.servicer=? and Status=? and p.deleteFlag != ?";
+		List<Project> proList=getSession().createQuery(hql).setEntity(0, user).setInteger(1, status).setInteger(2, 2).list();
 		return proList;
 	}
 
