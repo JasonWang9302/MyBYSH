@@ -89,6 +89,17 @@ public class ProjectServiceImpl implements ProjectService {
 				System.out.println(project);
 	}
 
+	@Override
+	public List<Project> getProjectWithPage(Integer first, Integer count) {
+		return projectDao.getProjectWithPage(first, count);
+	}
+
+	@Override
+	public List<Project> getAllProjectUnchecked() {
+		// TODO Auto-generated method stub
+		return projectDao.getAllProjectUnchecked();
+	}
+
 	/*@Override
 	public List getProjectWithBidCountById(Integer id) {
 		return projectDao.getProjectWithBidCountById(id);

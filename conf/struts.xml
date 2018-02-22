@@ -34,7 +34,9 @@
 		<action name="index">
 			<result>/index.jsp</result>
 		</action>
-
+        <action name="admin">
+			<result>/admin/adminLogin.jsp</result>
+		</action>
 		<action name="user-*" class="userAction" method="{1}">
 			<result name="toLogin">/login.jsp</result>
 			<result name="index">/index.jsp</result>
@@ -100,6 +102,16 @@
 			<result name="toShowPgReList">/personal/showPgReList.jsp</result>
 			<allowed-methods>toPgReport,doPgReport,toShowPgReList</allowed-methods>
 		</action>
+		
+		
+		
+		<!-- 管理员 -->
+		<action name="admin-*" class="adminAction" method="{1}">
+		    <result name="adminLogin">/admin/admin-index.jsp</result>
+		    <result name="toAdminLogin">/admin/adminLogin.jsp</result>
+		</action>
+		
+		
 	</package>
 
 
@@ -148,7 +160,11 @@
 			<result name="showYWC1" type="json">
 				<param name="root">projectDataResponse</param>
 			</result>
-			<allowed-methods>showDSH1,showZBZ1,showDKS1,showJXZ1,showDYS1,showYWC1</allowed-methods>
+			<!-- 管理员得到未审核的 先写这 -->
+			<result name="showAllUnchecked" type="json">
+				<param name="root">projectDataResponse</param>
+			</result>
+			<allowed-methods>showDSH1,showZBZ1,showDKS1,showJXZ1,showDYS1,showYWC1,showAllUnchecked</allowed-methods>
 		</action>
 		<!-- 我的任务 -->
 		<action name="wdrw-*" class="projectAction" method="{1}">
@@ -167,6 +183,7 @@
 			<result name="showYWC2" type="json">
 				<param name="root">projectDataResponse</param>
 			</result>
+			
 			<allowed-methods>showTBZ2,showDKS2,showJXZ2,showDJS2,showYWC2</allowed-methods>
 		</action>
 
@@ -176,6 +193,14 @@
 				<param name="root">projectDataResponse</param>
 			</result>
 			<allowed-methods>showBidList</allowed-methods>
+		</action>
+		<!-- 分页需反悔的json project -->
+		<action name="jsonProject-*" class="projectAction" method="{1}">
+			<!-- <result name="showBidList" type="chain">project-toPublish</result> -->
+			<result name="showProjectListByPage" type="json">
+				<param name="root">projectDataResponse</param>
+			</result>
+			<allowed-methods>showProjectListByPage</allowed-methods>
 		</action>
 		<!-- 进度汇报 -->
 		<action name="jsonPgRe-*" class="pgReportAction" method="{1}">

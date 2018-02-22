@@ -51,6 +51,23 @@ public class ProjectAction extends BaseAction implements ModelDriven<Project> {
 	public InputStream getInputStream() {
 		return inputStream;
 	}
+	
+	//显示所有待审核项目
+    public String showAllUnchecked(){
+    	projectDataResponse=new ProjectDataResponse();
+		List<Project> list=null;
+		list=projectService.getAllProjectUnchecked();
+		projectDataResponse.setCode(0);
+		projectDataResponse.setMsg("收到了。。。");
+		projectDataResponse.setCount(list.size());
+		projectDataResponse.setData(list);
+		System.out.println(projectDataResponse);
+		
+		return "showAllUnchecked";
+	}
+	
+	
+	
 
 	public void preparePublish() {
 		System.out.println("---------preparePublish-----------");
@@ -91,9 +108,35 @@ public class ProjectAction extends BaseAction implements ModelDriven<Project> {
 	public String showProjectList() {
 		List<Project> list = projectService.getCheckedProject();
 		request.setAttribute("projectList", list);
+		request.setAttribute("count", list.size());
 		return "showProjectList";
 	}
 
+	public String showProjectListByPage() {
+		//User user = (User) session.getAttribute("currUser");
+		projectDataResponse=new ProjectDataResponse();
+		List<Project> list=null;
+		
+		Integer curr=Integer.parseInt(request.getParameter("curr"));
+		/*if(curr==1){
+			
+		}*/
+		
+		Integer limit=Integer.parseInt(request.getParameter("limit"));
+		Integer first=(curr-1)*limit;
+		System.out.println(limit+" "+first);
+		list=projectService.getProjectWithPage(first, limit);
+		//list=projectService.getProjectWithPage(2, 4);
+		projectDataResponse.setCode(0);
+		projectDataResponse.setMsg("收到了。。。");
+		projectDataResponse.setCount(list.size());
+		projectDataResponse.setData(list);
+		System.out.println(projectDataResponse);
+		return "showProjectListByPage";
+	}
+	
+	
+	
 	public String showDetail() {
 
 		int proId = Integer.parseInt(request.getParameter("proId"));

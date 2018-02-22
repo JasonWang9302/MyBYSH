@@ -37,4 +37,10 @@ public interface ProjectService {
 	public List getProjectWithBidCountById(Integer id);*/
 	
     void chooseServicer(Integer proId,Integer userId);
+    
+    
+    List<Project> getProjectWithPage(Integer first,Integer count);
+    
+    
+    List<Project> getAllProjectUnchecked();
 }

@@ -2,6 +2,7 @@ package com.gddr.mybysj.dao.impl;
 
 import java.util.List;
 
+import org.hibernate.Query;
 import org.springframework.stereotype.Repository;
 
 import com.gddr.mybysj.dao.BaseDao;
@@ -35,7 +36,7 @@ public class ProjectDaoImpl extends BaseDao implements ProjectDao {
 	public List<Project> getCheckedProject() {
 		String hql="From Project p left outer join fetch p.category left outer join fetch p.publisher left outer join fetch p.servicer where status>0 and p.deleteFlag!=?";
 		List<Project> proList=getSession().createQuery(hql).setInteger(0, 1).list();
-		System.out.println(proList);
+		System.out.println("checkedeProject........"+proList.size());
 		return proList;
 	}
 
@@ -61,6 +62,27 @@ public class ProjectDaoImpl extends BaseDao implements ProjectDao {
 		String hql="From Project p left outer join fetch p.category left outer join fetch p.publisher left outer join fetch p.servicer where  p.proId=?";
 		Project project=(Project) getSession().createQuery(hql).setInteger(0, id).uniqueResult();
 		return project;
+	}
+
+
+	@Override
+	public List<Project> getProjectWithPage(Integer first, Integer count) {
+		String hql="From Project p left outer join fetch p.category left outer join fetch p.publisher left outer join fetch p.servicer where status>0 and p.deleteFlag!=?";
+		Query q=getSession().createQuery(hql).setInteger(0, 1);
+		System.out.println("withpage..."+q.list().size());
+	    q.setFirstResult(first);//设置起始行
+	    q.setMaxResults(count);//每页条数
+	    List<Project> proList=q.list();
+		return proList;
+	}
+
+
+	@Override
+	public List<Project> getAllProjectUnchecked() {
+		String hql="From Project p left outer join fetch p.category left outer join fetch p.publisher left outer join fetch p.servicer where status=1 and p.deleteFlag=?";
+		List<Project> proList=getSession().createQuery(hql).setInteger(0,0).list();
+		System.out.println(proList);
+		return proList;
 	}
 	
 	

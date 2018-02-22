@@ -68,6 +68,8 @@
 	
 	<bean id="pgReportAction" class="com.gddr.mybysj.action.ProgressReportAction" scope="prototype">
 	</bean>
+	<bean id="adminAction" class="com.gddr.mybysj.action.AminAction" scope="prototype">
+	</bean>
 
 
 </beans>
