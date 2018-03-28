@@ -16,9 +16,9 @@ color: #333333;
 .proListItem:HOVER{
 	background-color: #FFF;
 	width: 1004px;
-	height: 184px;
-    border: 1px solid #dadada;
-	margin:14px auto;
+/* 	height: 184px; */
+   /*  border: 1px solid #dadada; */
+/* 	margin:14px auto; */
 }
 /* 列表项左边文字 */
 .proItemLeft{
@@ -31,12 +31,13 @@ color: #333333;
 /* 右边价钱 状态 */
 .proItemRigth{
 /* 	background-color: #80ff00; */
-	width:220px;
+	width:230px;
 	height:60px;
-	margin: 30px 0px;
+	margin: 25px 0px;
 	float: right;
 	padding: 40px 0px;
 }
+
 
 .proDesc{
 	width: 600px;

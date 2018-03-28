@@ -25,7 +25,7 @@
 	<div class="person">
 
 		<div class="person-xdh">
-			<a><font>我的发布</font></a> > <font>待验收</font>
+			<a><font>我的任务</font></a> > <font>已完成</font>
 		</div>
 		<div class="content">
 			<table class="layui-table"
@@ -36,13 +36,14 @@
 						<!--  <th lay-data="{type:'checkbox', fixed: 'left'}"></th> -->
 						<!--   <th lay-data="{field:'proId', width:80}">项目名称</th> -->
 						<th lay-data="{field:'proName', width:130}">项目名称</th>
-						<th lay-data="{field:'servicer', width:100,templet:'<div>{{d.servicer.userName}}</div>'}">服务者</th>
+						<th lay-data="{field:'publisher', width:100,templet:'<div>{{d.publisher.userName}}</div>'}">需求者</th>
 						<th lay-data="{field:'createTime', width:120}">创建时间</th>
-						<th lay-data="{field:'guaranteeStatus', width:100,templet: '#dbztTpl'}">担保状态</th>
-						<th lay-data="{field:'status', width:135, sort: true}">状态</th>
-						<th lay-data="{field:'compensationRate', width:80, sort: true}">赔率</th>
+						<th lay-data="{field:'endTime', width:100}">验收时间</th>
+						<th lay-data="{field:'compensationRate', width:80, sort: true}">赔付</th>
+						<th lay-data="{field:'projectFund', width:80, sort: true}">酬金</th>
+					    <th lay-data="{field:'preDeliveryTime', width:120, sort: true}">预定交付时间</th>
 						<th
-							lay-data="{fixed:'right',title: '操作', width:360, toolbar: '#barDemo'}"></th>
+							lay-data="{fixed:'right',title: '操作', width:300, toolbar: '#barDemo'}"></th>
 					</tr>
 				</thead>
 			</table>
@@ -60,7 +61,7 @@
 
 			<script type="text/html" id="barDemo">
   <a class="layui-btn layui-btn-primary layui-btn-xs" lay-event="detail">查看</a>
-  <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="edit">查看进度汇报</a>
+  <a class="layui-btn layui-btn-xs" lay-event="edit">进度汇报记录</a>
 <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del">删除</a>
 </script>
 <!--   <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del">提交进度汇报</a> -->
@@ -85,7 +86,7 @@
 														var data = obj.data;
 														/* 通过验收 */
 														if (obj.event === 'del') {
-															      layer.confirm('真的删除行么', function(index){
+															      layer.confirm('真的删除此项目记录么', function(index){
 															       /*  obj.del();
 															        layer.close(index); */
 															        

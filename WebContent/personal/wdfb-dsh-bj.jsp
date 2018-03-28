@@ -12,7 +12,7 @@
 <link rel="stylesheet" type="text/css"
 	href="resource/css/person-comm.css" />
 <link rel="stylesheet" type="text/css" href="resource/css/wdfb-dsh.css" />
-<title>Navbar组件</title>
+<title>编辑</title>
 </head>
 
 <body>
@@ -33,9 +33,7 @@
 		
 		
             <!--  项目id隐藏域 -->
-		<input type="hidden" name="proId" lay-verify="required"
-						value="${project.proId}" placeholder="请输入" autocomplete="off"
-						class="layui-input">
+		     <input type="hidden" name="proId" value="${project.proId}" class="layui-input">
 		
 			<!-- 项目名称 -->
 			<div class="layui-form-item">
@@ -80,14 +78,14 @@
 
 					<div class="layui-input-block" style="margin-left: 0px;">
 						<button type="button" class="layui-btn layui-btn-normal"
-							id="test8">选择文件</button>原始文件：${project.rfp}
-						<button type="button" class="layui-btn" id="test9">开始上传</button>
+							id="test8">选择文件</button><font id="yswj">原始文件：${project.rfp}</font>
+						<button type="button" class="layui-btn" id="test9"> 上传 </button>
 					</div>
 				</div>
 			</div>
 
 			<!-- 标书的saveName -->
-			<input type="text" id="rfp" name="rfp" value="${project.rfp}" />
+			<input type="hidden" id="rfp" name="rfp" value="${project.rfp}" />
 
 			<!-- 项目资金 -->
 			<div class="layui-form-item">
@@ -203,6 +201,10 @@
 										if (res.code == 0) {
 											//do something （比如将res返回的图片链接保存到表单的隐藏域）
 											console.log(res.data[0].src);
+											/* $("#test8").val()==""; */
+											$("#yswj").remove();
+											//$("#test9").remove();
+										/* 	alert($("#test9")); */
 											$("#test8").after(res.msg);
 											//为rfp隐藏域赋值
 											$("#rfp").val(res.data[0].src);

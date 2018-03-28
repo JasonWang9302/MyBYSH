@@ -27,7 +27,7 @@
 		<font>项目名：&nbsp;&nbsp;&nbsp;${project.proName}</font><br>
 		<%-- 您需要缴纳保证金<font style="color: red; font-size: 10;">${project.projectFund}元</font><br>输入支付密码完成担保。 --%>
 
-	</div>${project.proId}
+	</div><%-- ${project.proId} --%>
 	<%-- <input type="text" name="project.proId" value="${project.proId}" /> --%>
 	<form class="layui-form"
 		action="dealing-qrys?proId=${project.proId}" method="post"
@@ -62,7 +62,7 @@
 
 		<div class="layui-form-item" style="margin-left: 80px;">
 			<div class="layui-input-block">
-				<button class="layui-btn" lay-submit="" lay-filter="demo1">确认验收</button>
+				<button class="layui-btn" lay-submit="" style="margin:20px" lay-filter="demo1">确认验收</button>
 			</div>
 		</div>
 	</form>
@@ -108,7 +108,7 @@
 										return '标题至少得5个字符啊';
 									}
 								},
-								pass : [ /(.+){6,12}$/, '密码必须6到12位' ],
+								pass : [ /(.+){4,12}$/, '密码必须4到12位' ],
 								content : function(value) {
 									layedit.sync(editIndex);
 								}

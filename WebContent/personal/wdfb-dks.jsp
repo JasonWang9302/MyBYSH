@@ -21,10 +21,7 @@
 </head>
 
 <body>
-<a href="bid-showBidList">heheh</a>
-
 	<div class="person">
-
 		<div class="person-xdh">
 			<a><font>我的发布</font></a> > <font>待开始</font>
 		</div>
@@ -42,19 +39,19 @@
 						<th lay-data="{field:'createTime', width:130}">创建时间</th>
 						<!--       <th lay-data="{field:'category', width:160}">项目分类</th> 
  -->
-						<!--   <th lay-data="{field:'projectFund', width:80, sort: true}">项目资金</th> -->
-						<!--  <th lay-data="{field:'preDeliveryTime', width:80, sort: true}">预定交付时间</th>
+						  <th lay-data="{field:'projectFund', width:80, sort: true}">酬金</th>
+					 <th lay-data="{field:'preDeliveryTime', width:120, sort: true}">预定交付时间</th>
       
-      <th lay-data="{field:'deleteFlag', width:80}">招标书文件</th> -->
+      <!--<th lay-data="{field:'deleteFlag', width:80}">招标书文件</th> -->
 						<!--       <th lay-data="{field:'publisher', width:80}">招标书文件</th>
       <th lay-data="{field:'servicer', width:80}">招标书文件</th> -->
 						<!--    <th lay-data="{field:'rfp', width:80}">招标书文件</th> -->
 						<th lay-data="{field:'guaranteeStatus', width:160,templet: '#dbztTpl'}">担保状态</th>
-						<th lay-data="{field:'status', width:135, sort: true}">状态</th>
+						<!-- <th lay-data="{field:'status', width:135, sort: true}">状态</th> -->
 						<!--       <th lay-data="{field:'endTime', width:135, sort: true}">状态</th> -->
-						<th lay-data="{field:'compensationRate', width:100, sort: true}">赔率</th>
+						<th lay-data="{field:'compensationRate', width:100, sort: true}">保证金</th>
 						<th
-							lay-data="{fixed:'right',title: '操作', width:120, toolbar: '#barDemo'}"></th>
+							lay-data="{fixed:'right',title: '操作', width:200, toolbar: '#barDemo'}"></th>
 					</tr>
 				</thead>
 			</table>
@@ -94,10 +91,7 @@
 													function(obj) {
 														var data = obj.data;
 														if (obj.event === 'detail') {
-															layer
-																	.msg('ID：'
-																			+ data.proId
-																			+ ' 的查看操作');
+															window.location.href='uploadAction-downloadFile?fileName='+data.rfp;
 														} else if (obj.event === 'del') {
 															layer
 																	.confirm(
@@ -179,7 +173,7 @@
 																		  btn: ['是','否'] //按钮
 																		}, function(){
 																			
-																			layer.msg('', {icon: 1});
+																			/* layer.msg('', {icon: 1}); */
 																			layer.open({
 																				type : 2,
 																				title : '缴纳押金',

@@ -21,7 +21,7 @@
 </head>
 
 <body>
-<a href="bid-showBidList">heheh</a>
+<!-- <a href="bid-showBidList">heheh</a> -->
 
 	<div class="person">
 
@@ -34,27 +34,22 @@
 				lay-filter="demo">
 				<thead>
 					<tr>
-						<!--  <th lay-data="{type:'checkbox', fixed: 'left'}"></th> -->
-
-						<!--   <th lay-data="{field:'proId', width:80}">项目名称</th> -->
-						<th lay-data="{field:'proName', width:180}">项目名称</th>
-						<th lay-data="{field:'proDesc', width:180, sort: true}">项目描述</th>
-						<th lay-data="{field:'createTime', width:100}">创建时间</th>
-						<!--       <th lay-data="{field:'category', width:160}">项目分类</th> 
- -->
-						<!--   <th lay-data="{field:'projectFund', width:80, sort: true}">项目资金</th> -->
-						<!--  <th lay-data="{field:'preDeliveryTime', width:80, sort: true}">预定交付时间</th>
+						 <!--   <th lay-data="{field:'proId', width:80}">项目名称</th> -->
+      <th lay-data="{field:'proName', width:150}">项目名称</th>
+      <th lay-data="{field:'proDesc', width:150}">描述</th>
+      <th lay-data="{field:'createTime', width:120}">创建时间</th>
+<!--       <th lay-data="{field:'category', width:160}">项目分类</th> 
+ -->     
+      <th lay-data="{field:'projectFund', width:80}">酬金</th>
+      <th lay-data="{field:'preDeliveryTime', width:120}">预定交付时间</th>
       
-      <th lay-data="{field:'deleteFlag', width:80}">招标书文件</th> -->
-						<!--       <th lay-data="{field:'publisher', width:80}">招标书文件</th>
-      <th lay-data="{field:'servicer', width:80}">招标书文件</th> -->
-						<!--    <th lay-data="{field:'rfp', width:80}">招标书文件</th> -->
-						<th lay-data="{field:'guaranteeStatus', width:80}">担保状态</th>
-						<th lay-data="{field:'status', width:135, sort: true}">状态</th>
-						<!--       <th lay-data="{field:'endTime', width:135, sort: true}">状态</th> -->
-						<th lay-data="{field:'compensationRate', width:100, sort: true}">赔率</th>
+      <th lay-data="{field:'rfp', width:80}">招标书文件</th>
+ <!--      <th lay-data="{field:'guaranteeStatus', width:80}">担保状态</th>
+      <th lay-data="{field:'status', width:135, sort: true}">状态</th> -->
+<!--       <th lay-data="{field:'endTime', width:135, sort: true}">状态</th> -->
+      <th lay-data="{field:'compensationRate', width:100}">赔付</th>
 						<th
-							lay-data="{fixed:'right',title: '操作', width:120, toolbar: '#barDemo'}"></th>
+							lay-data="{fixed:'right',title: '操作', width:220, toolbar: '#barDemo'}"></th>
 
 					</tr>
 				</thead>
@@ -62,7 +57,7 @@
 
 
 			<script type="text/html" id="barDemo">
-  <a class="layui-btn layui-btn-primary layui-btn-xs" lay-event="detail">查看</a>
+  <a class="layui-btn layui-btn-primary layui-btn-xs" lay-event="detail">下载招标书</a>
   <a class="layui-btn layui-btn-xs" lay-event="edit">去选标</a>
 </script>
 <!--   <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del">删除</a> -->
@@ -73,11 +68,6 @@
 								function() {
 									var table = layui.table;
 									var $ = layui.jquery;
-									//监听表格复选框选择
-									table.on('checkbox(demo)', function(obj) {
-										console.log(obj)
-									});
-
 									//监听工具条
 									table
 											.on(
@@ -85,56 +75,9 @@
 													function(obj) {
 														var data = obj.data;
 														if (obj.event === 'detail') {
-															layer
-																	.msg('ID：'
-																			+ data.proId
-																			+ ' 的查看操作');
-														} else if (obj.event === 'del') {
-															layer
-																	.confirm(
-																			'真的删除行么',
-																			function(
-																					index) {
-																				/*  obj.del();
-																				 layer.close(index); */
-
-																				console.log(data);
-																				$.ajax({
-																							url : "project-logicDelProject",
-																							type : "POST",
-																							data : {
-																								"proId" : data.proId
-																							},
-																							dataType : "json",
-																							success : function(
-																									data) {
-
-																								if (data == 1) {
-																									//删除这一行
-																									obj
-																											.del();
-																									//关闭弹框
-																									layer
-																											.close(index);
-																									layer
-																											.msg(
-																													"删除成功",
-																													{
-																														icon : 6
-																													});
-																								} else {
-																									layer
-																											.msg(
-																													"删除失败",
-																													{
-																														icon : 5
-																													});
-																								}
-																							}
-																						});
-																			});
+															window.location.href='uploadAction-downloadFile?fileName='+data.rfp;
 														} else if (obj.event === 'edit') {
-															layer.alert('编辑行：<br>'+ data.proId);
+														/* 	layer.alert('编辑行：<br>'+ data.proId); */
 																	layer.open({
 																		type : 2,
 																		title : '投标列表',
@@ -143,7 +86,6 @@
 																		area : [ '900px', '450px' ],
 																		content : 'bid-showBidList?proId='+data.proId
 																	});
-																	
 																	
 																	
 															/*  

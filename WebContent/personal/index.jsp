@@ -9,7 +9,7 @@
 <%@ include file="basepath.jsp" %>
 
 
-    <title>KIT ADMIN</title>
+    <title>个人中心</title>
 
 </head>
 
@@ -45,7 +45,7 @@
 
         <div class="layui-side layui-bg-black kit-side">
             <div class="layui-side-scroll">
-                <div class="kit-side-fold"><i class="fa fa-navicon" aria-hidden="true">换个图标</i></div>
+                <div class="kit-side-fold"><!-- <i class="fa fa-navicon" aria-hidden="true" >&#xe60f;</i> --><i class="layui-icon" style="font-size: 30px; color: #b3b4b7">&#xe65f;</i>  </div>
                 <!-- 左侧导航区域（可配合layui已有的垂直导航） -->
                 <ul class="layui-nav layui-nav-tree" lay-filter="kitNavbar" kit-navbar>
                     
@@ -53,20 +53,7 @@
                         <a class="" href="javascript:;"><i class="fa fa-plug" aria-hidden="true"></i><span> 账号管理</span></a>
                         <dl class="layui-nav-child">
                             <dd>
-                                <a href="javascript:;" kit-target data-options="{url:'personal/test.jsp',icon:'&#xe6c6;',title:'表格',id:'1'}">
-                                    <i class="layui-icon">&#xe6c6;</i><span>密码修改</span></a>
-                            </dd>
-                            <dd>
-                                 <a href="javascript:;" data-url="personal/nav.jsp" data-icon="&#xe628;" data-title="导航栏" kit-target data-id='3'><i class="layui-icon">&#xe628;</i><span> 导航栏</span></a>
-                            </dd>
-                            <dd>
-                                <a href="javascript:;" data-url="personal/nav.jsp" data-icon="&#xe628;" data-title="导航栏" kit-target data-id='3'><i class="layui-icon">&#xe628;</i><span> 导航栏</span></a>
-                            </dd>
-                            <dd>
-                                <a href="javascript:;" data-url="personal/nav.jsp" data-icon="&#xe614;" data-title="列表四" kit-target data-id='4'><i class="layui-icon">&#xe614;</i><span> 列表四</span></a>
-                            </dd>
-                            <dd>
-                                <a href="javascript:;" kit-target data-options="{url:'https://www.baidu.com',icon:'&#xe658;',title:'百度一下',id:'5'}"><i class="layui-icon">&#xe658;</i><span> 百度一下</span></a>
+                                <a href="javascript:;" kit-target data-options="{url:'user-showMyInfo',icon:'&#xe658;',title:'我的信息',id:'12'}"><i class="layui-icon">&#xe658;</i><span>我的信息</span></a>
                             </dd>
                         </dl>
                     </li>
@@ -76,12 +63,12 @@
                     <li class="layui-nav-item layui-nav-itemed">
                         <a href="javascript:;"><i class="fa fa-plug" aria-hidden="true"></i><span>我的发布</span></a>
                         <dl class="layui-nav-child">
-                            <dd><a href="javascript:;" kit-target data-options="{url:'project-showMyPublishDSH',icon:'&#xe658;',title:'Navbar',id:'1'}"><i class="layui-icon">&#xe658;</i><span>待审核</span></a></dd>
-                            <dd><a href="javascript:;" kit-target data-options="{url:'personal/wdfb-zbz.jsp',icon:'&#xe658;',title:'zbz',id:'2'}"><i class="layui-icon">&#xe658;</i><span>招标中</span></a></dd>
-                            <dd><a href="javascript:;" kit-target data-options="{url:'personal/wdfb-dks.jsp',icon:'&#xe658;',title:'dks',id:'3'}"><i class="layui-icon">&#xe658;</i><span>待开始</span></a></dd>
-                            <dd><a href="javascript:;" kit-target data-options="{url:'personal/wdfb-jxz.jsp',icon:'&#xe658;',title:'jxz',id:'11'}"><i class="layui-icon">&#xe658;</i><span>进行中</span></a></dd>
-                            <dd><a href="javascript:;" kit-target data-options="{url:'personal/wdfb-dys.jsp',icon:'&#xe658;',title:'dys',id:'4'}"><i class="layui-icon">&#xe658;</i><span>待验收</span></a></dd>
-                            <dd><a href="javascript:;" kit-target data-options="{url:'personal/wdfb-ywc.jsp',icon:'&#xe658;',title:'ywc',id:'5'}"><i class="layui-icon">&#xe658;</i><span>已完成</span></a></dd>
+                            <dd><a href="javascript:;" kit-target data-options="{url:'project-showMyPublishDSH',icon:'&#xe658;',title:'待审核',id:'1'}"><i class="layui-icon">&#xe658;</i><span>待审核</span></a></dd>
+                            <dd><a href="javascript:;" kit-target data-options="{url:'personal/wdfb-zbz.jsp',icon:'&#xe658;',title:'招标中',id:'2'}"><i class="layui-icon">&#xe658;</i><span>招标中</span></a></dd>
+                            <dd><a href="javascript:;" kit-target data-options="{url:'personal/wdfb-dks.jsp',icon:'&#xe658;',title:'待开始',id:'3'}"><i class="layui-icon">&#xe658;</i><span>待开始</span></a></dd>
+                            <dd><a href="javascript:;" kit-target data-options="{url:'personal/wdfb-jxz.jsp',icon:'&#xe658;',title:'进行中',id:'11'}"><i class="layui-icon">&#xe658;</i><span>进行中</span></a></dd>
+                            <dd><a href="javascript:;" kit-target data-options="{url:'personal/wdfb-dys.jsp',icon:'&#xe658;',title:'待验收',id:'4'}"><i class="layui-icon">&#xe658;</i><span>待验收</span></a></dd>
+                            <dd><a href="javascript:;" kit-target data-options="{url:'personal/wdfb-ywc.jsp',icon:'&#xe658;',title:'已完成',id:'5'}"><i class="layui-icon">&#xe658;</i><span>已完成</span></a></dd>
                         </dl>
                     </li>
 					
@@ -91,11 +78,11 @@
 					  <li class="layui-nav-item layui-nav-itemed">
                         <a href="javascript:;"><i class="fa fa-plug" aria-hidden="true"></i><span>我的任务</span></a>
                         <dl class="layui-nav-child">
-                            <dd><a href="javascript:;" kit-target data-options="{url:'personal/wdrw-tbz.jsp',icon:'&#xe658;',title:'tbz',id:'6'}"><i class="layui-icon">&#xe658;</i><span>投标中</span></a></dd>
-                            <dd><a href="javascript:;" kit-target data-options="{url:'personal/wdrw-dks.jsp',icon:'&#xe658;',title:'dks',id:'7'}"><i class="layui-icon">&#xe658;</i><span>待开始</span></a></dd>
-							<dd><a href="javascript:;" kit-target data-options="{url:'personal/wdrw-jxz.jsp',icon:'&#xe658;',title:'jxz',id:'8'}"><i class="layui-icon">&#xe658;</i><span>进行中</span></a></dd>
-                            <dd><a href="javascript:;" kit-target data-options="{url:'personal/wdrw-djs.jsp',icon:'&#xe658;',title:'djs',id:'9'}"><i class="layui-icon">&#xe658;</i><span>待结算</span></a></dd>
-                            <dd><a href="javascript:;" kit-target data-options="{url:'personal/wdrw-ywc.jsp',icon:'&#xe658;',title:'ywc',id:'10'}"><i class="layui-icon">&#xe658;</i><span>已完成</span></a></dd>
+                            <dd><a href="javascript:;" kit-target data-options="{url:'personal/wdrw-tbz.jsp',icon:'&#xe658;',title:'投标中',id:'6'}"><i class="layui-icon">&#xe658;</i><span>投标中</span></a></dd>
+                            <dd><a href="javascript:;" kit-target data-options="{url:'personal/wdrw-dks.jsp',icon:'&#xe658;',title:'待开始',id:'7'}"><i class="layui-icon">&#xe658;</i><span>待开始</span></a></dd>
+							<dd><a href="javascript:;" kit-target data-options="{url:'personal/wdrw-jxz.jsp',icon:'&#xe658;',title:'进行中',id:'8'}"><i class="layui-icon">&#xe658;</i><span>进行中</span></a></dd>
+                            <dd><a href="javascript:;" kit-target data-options="{url:'personal/wdrw-djs.jsp',icon:'&#xe658;',title:'待结算',id:'9'}"><i class="layui-icon">&#xe658;</i><span>待结算</span></a></dd>
+                            <dd><a href="javascript:;" kit-target data-options="{url:'personal/wdrw-ywc.jsp',icon:'&#xe658;',title:'已完成',id:'10'}"><i class="layui-icon">&#xe658;</i><span>已完成</span></a></dd>
                         </dl>
                       </li>
                       
@@ -103,7 +90,7 @@
 					
 					
 					 <li class="layui-nav-item">
-                         <a href="javascript:;" kit-target data-options="{url:'personal/ddd.jsp',icon:'&#xe658;',title:'Ddd',id:'8'}"><i class="layui-icon">&#xe658;</i><span>留言板</span></a>
+                         <a href="javascript:;" kit-target data-options="{url:'personal/ddd.jsp',icon:'&#xe658;',title:'Ddd',id:'111'}"><i class="layui-icon">&#xe658;</i><span>留言板</span></a>
 				     </li>
 					
 										

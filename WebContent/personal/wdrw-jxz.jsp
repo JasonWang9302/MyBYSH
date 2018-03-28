@@ -25,7 +25,7 @@
 	<div class="person">
 
 		<div class="person-xdh">
-			<a><font>我的发布</font></a> > <font>进行中</font>
+			<a><font>我的任务</font></a> > <font>进行中</font>
 		</div>
 		<div class="content">
 			<table class="layui-table"
@@ -60,7 +60,7 @@
 
 			<script type="text/html" id="barDemo">
   <a class="layui-btn layui-btn-primary layui-btn-xs" lay-event="detail">查看</a>
-  <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del">提交进度汇报</a>
+  <a class="layui-btn  layui-btn-xs" lay-event="del">提交进度汇报</a>
   <a class="layui-btn layui-btn-xs" lay-event="edit">查看进度汇报</a>
 </script>
 <!--   <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del">删除</a> -->

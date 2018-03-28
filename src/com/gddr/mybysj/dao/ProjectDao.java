@@ -31,4 +31,8 @@ public interface ProjectDao {
 /*	public List getProjectWithBidCountById(Integer id);*/
 	//分页得到项目  first本页起始行   count本页显示多少条
 	List<Project> getProjectWithPage(Integer first,Integer count);
+	
+	
+	
+	List<Project> getProjectWithPageByRequirement(Integer first,Integer count,Integer cateId,Integer status,String keyword);
 }

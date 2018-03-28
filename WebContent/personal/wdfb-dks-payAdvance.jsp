@@ -23,31 +23,50 @@
 <body>
 	<!-- 引入导航 -->
 	<!-- 内容部分开始 -->
-	<div style="padding: 20px;">
-		<font>项目名：${project.proName}</font><br> 您需要缴纳保证金<font
-			style="color: red; font-size: 10;">${project.compensationRate}元</font><br>输入支付密码完成担保。
+	<%-- <div style="padding: 20px;">
+		<font>项目名：${project.proName}</font><br> 您需要缴纳押金 <font
+			style="color: red; font-size: 10;">${project.compensationRate}元</font>到平台完成担保
 
-	</div>
+	</div> --%>
 	<%-- <input type="text" name="project.proId" value="${project.proId}" /> --%>
+	<br><br>
 	<form class="layui-form"
 		action="dealing-payAdvance?proId=${project.proId}" method="post"
 		style="margin-left: -20px; padding-right: 10px;">
 		<!--  项目id隐藏域 -->
-		<input type="text" name="project.proId" lay-verify="required"
-			value="${request.project.proId}" placeholder="请输入" autocomplete="off"
-			class="layui-input">
+		
+	<%-- 	<input type="text" name="project.proId" lay-verify="required"
+			value="${request.project.proId}" class="layui-input"> --%>
+			
+			<div class="layui-form-item">
+			<label class="layui-form-label">项目名</label>
+			<div class="layui-input-inline">
+				<input type="text" name="zfPassword" disabled="disabled" value="${project.proName}"
+					 class="layui-input">
+			</div>
+		</div>
+		
+		
+		<div class="layui-form-item">
+			<label class="layui-form-label">代缴押金</label>
+			<div class="layui-input-inline">
+				<input type="text" name="d" value="${project.projectFund}" disabled="disabled" class="layui-input">
+			</div>
+			<!-- <div class="layui-form-mid layui-word-aux">交付平台完成担保</div> -->
+		</div>
+		
+			
 		<div class="layui-form-item">
 			<label class="layui-form-label">支付密码</label>
 			<div class="layui-input-inline">
 				<input type="password" name="zfPassword" lay-verify="pass"
-					placeholder="请输入密码" autocomplete="off" class="layui-input">
+					placeholder="请输入支付密码"  class="layui-input">
 			</div>
-			<div class="layui-form-mid layui-word-aux">请填写6到12位密码</div>
 		</div>
 
 		<div class="layui-form-item">
 			<div class="layui-input-block">
-				<button class="layui-btn" lay-submit="" lay-filter="demo1">立即提交</button>
+				<button class="layui-btn" style="margin-left: 20px;" lay-filter="demo1">确定</button>
 			</div>
 		</div>
 	</form>

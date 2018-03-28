@@ -27,6 +27,58 @@ public class UserAction extends BaseAction implements ModelDriven<User> {
 		return inputStream;
 	}
 
+	public void prepareUpdateMyInfo() {
+		model = (User) session.getAttribute("currUser");
+	}
+
+	public String updateMyInfo() {
+		System.out.println("model2222:" + model);
+		
+		try {
+			userService.saveOrUpdate(model);
+			session.setAttribute("currUser", model);
+			response.setContentType("text/hmtl;charset=utf-8");
+			request.setAttribute("saveSuccessTipMessage", "已更新");
+			return "updateMyInfo";
+		} catch (Exception e) {
+			e.printStackTrace();
+			return null;
+		}
+		
+	}
+
+	// 模拟充值,若成功一步返回最新余额 供页面异步更新
+	public String recharge() throws UnsupportedEncodingException {
+
+		User user = (User) session.getAttribute("currUser");
+		Double CZJE = Double.parseDouble(request.getParameter("CZJE"));
+		Double Balance = user.getBalance();
+		Double ZXYE = CZJE + Balance;
+		user.setBalance(ZXYE);
+		try {
+			userService.saveOrUpdate(user);
+			inputStream = new ByteArrayInputStream(ZXYE.toString().getBytes("UTF-8"));
+		} catch (Exception e) {
+			inputStream = new ByteArrayInputStream("-1".getBytes("UTF-8"));
+			e.printStackTrace();
+		}
+
+		return "recharge";
+	}
+
+	// 去模拟充值jsp
+	public String toRecharge() {
+
+		return "toRecharge";
+	}
+
+	/* 查看个人信息 */
+	public String showMyInfo() {
+		User myInfo = (User) session.getAttribute("currUser");
+		request.setAttribute("myInfo", myInfo);
+		return "showMyInfo";
+	}
+
 	/* 用户注册 */
 	public void prepareDoReg() {
 		model = new User();
@@ -34,6 +86,7 @@ public class UserAction extends BaseAction implements ModelDriven<User> {
 
 	public String doReg() throws IOException {
 		model.setGrades(5.0);
+		model.setBalance(0.0);
 		if (userService.userRegister(model)) {
 			response.setContentType("text/hmtl;charset=utf-8");
 			request.setAttribute("tipMessage", "注册成功！请您登陆");

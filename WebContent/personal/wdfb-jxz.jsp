@@ -38,11 +38,13 @@
 						<th lay-data="{field:'proName', width:130}">项目名称</th>
 						<th lay-data="{field:'servicer', width:100,templet:'<div>{{d.servicer.userName}}</div>'}">服务者</th>
 						<th lay-data="{field:'createTime', width:120}">创建时间</th>
-						<th lay-data="{field:'guaranteeStatus', width:100,templet: '#dbztTpl'}">担保状态</th>
-						<th lay-data="{field:'status', width:135, sort: true}">状态</th>
+						<th lay-data="{field:'guaranteeStatus', width:150,templet: '#dbztTpl'}">担保状态</th>
+						<!-- <th lay-data="{field:'status', width:135, sort: true}">状态</th> -->
+						 <th lay-data="{field:'projectFund', width:80, sort: true}">酬金</th>
+					 <th lay-data="{field:'preDeliveryTime', width:120, sort: true}">预定交付时间</th>
 						<th lay-data="{field:'compensationRate', width:80, sort: true}">赔率</th>
 						<th
-							lay-data="{fixed:'right',title: '操作', width:360, toolbar: '#barDemo'}"></th>
+							lay-data="{fixed:'right',title: '操作', width:230, toolbar: '#barDemo'}"></th>
 					</tr>
 				</thead>
 			</table>
@@ -82,8 +84,8 @@
 													'tool(demo)',
 													function(obj) {
 														var data = obj.data;
-														if (obj.event === 'del') {
-															/* window.location.href = "pgre-toPgReport?proId="+data.proId; */
+														if (obj.event === 'detail') {
+															window.location.href='uploadAction-downloadFile?fileName='+data.rfp;
 														} else if (obj.event === 'edit') {
 																	//写操作
 															layer.open({

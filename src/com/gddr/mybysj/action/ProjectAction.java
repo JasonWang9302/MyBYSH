@@ -35,6 +35,11 @@ public class ProjectAction extends BaseAction implements ModelDriven<Project> {
 	private BidService bidService;
 	private Project model;
 	private Integer proId;
+	
+	
+	/*private Integer cateId;
+	
+	private Integer status;*/
 	//返回json
 	private ProjectDataResponse projectDataResponse;
 	public void setProjectDataResponse(ProjectDataResponse projectDataResponse) {
@@ -102,6 +107,11 @@ public class ProjectAction extends BaseAction implements ModelDriven<Project> {
 		//System.out.println(list);
 		request.setAttribute("cateList", list);
 
+		if(session.getAttribute("currUser")==null){
+			
+			return "toLogin";
+		}
+		
 		return "toPublish";
 	}
 
@@ -118,20 +128,33 @@ public class ProjectAction extends BaseAction implements ModelDriven<Project> {
 		List<Project> list=null;
 		
 		Integer curr=Integer.parseInt(request.getParameter("curr"));
-		/*if(curr==1){
-			
-		}*/
-		
 		Integer limit=Integer.parseInt(request.getParameter("limit"));
-		Integer first=(curr-1)*limit;
+		Integer cateId=null;
+		Integer status=null;
+		if(!request.getParameter("cateId").equals("-1")){
+			 cateId=Integer.parseInt(request.getParameter("cateId"));
+		}
+		if(!request.getParameter("status").equals("-1")){
+			status=Integer.parseInt(request.getParameter("status"));
+		}
+
+		String keyWord=request.getParameter("keyWord");
+		System.out.println("cateId:"+request.getAttribute("cateId"));
+	    Integer first=(curr-1)*limit;
 		System.out.println(limit+" "+first);
-		list=projectService.getProjectWithPage(first, limit);
-		//list=projectService.getProjectWithPage(2, 4);
+		
+		list=projectService.getProjectWithPageByRequirement(first, limit, cateId, status, keyWord);
+		
 		projectDataResponse.setCode(0);
 		projectDataResponse.setMsg("收到了。。。");
-		projectDataResponse.setCount(list.size());
 		projectDataResponse.setData(list);
+		
 		System.out.println(projectDataResponse);
+		//不分页情况下看此条件下有多少数据 传到前台供算总页码
+		list=projectService.getProjectWithPageByRequirement(null, null, cateId, status, keyWord);
+		projectDataResponse.setCount(list.size());
+		request.setAttribute("count", list.size());
+		System.out.println(request.getAttribute("count"));
 		return "showProjectListByPage";
 	}
 	
@@ -164,7 +187,7 @@ public class ProjectAction extends BaseAction implements ModelDriven<Project> {
 		inputStream = new ByteArrayInputStream("1".getBytes("UTF-8"));
 		return "logicDelProject";
 	}
-	/* 用户逻辑删项目 */
+	/* 服务方逻辑删项目  完成记录中的删除*/
 	public String servicerLogicDelProject() throws UnsupportedEncodingException {
 		Integer proId = Integer.parseInt(request.getParameter("proId"));
 		System.out.println("logicDel...Proid:" + proId);
@@ -291,6 +314,19 @@ public class ProjectAction extends BaseAction implements ModelDriven<Project> {
 	}
 	
 	
+	
+	
+	
+	//管理员审核需求
+	public String adminCheckProject() throws UnsupportedEncodingException {
+		Integer proId = Integer.parseInt(request.getParameter("proId"));
+	    Project project=projectService.getProjectById(proId);
+		project.setStatus(1);
+		projectService.updateProject(project);
+		inputStream = new ByteArrayInputStream("1".getBytes("UTF-8"));
+		System.out.println(project);
+		return "adminCheckProject";
+	}
 	
 	
 	

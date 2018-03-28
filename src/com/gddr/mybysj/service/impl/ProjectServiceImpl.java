@@ -100,6 +100,12 @@ public class ProjectServiceImpl implements ProjectService {
 		return projectDao.getAllProjectUnchecked();
 	}
 
+	@Override
+	public List<Project> getProjectWithPageByRequirement(Integer first, Integer count, Integer cateId, Integer status,
+			String keyword) {
+		return projectDao.getProjectWithPageByRequirement(first,count,cateId,status,keyword);
+	}
+
 	/*@Override
 	public List getProjectWithBidCountById(Integer id) {
 		return projectDao.getProjectWithBidCountById(id);

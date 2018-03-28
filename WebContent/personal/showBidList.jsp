@@ -28,12 +28,12 @@
 				<thead>
 					<tr>
 						<th lay-data="{field:'servicer', width:80,templet:'<div>{{d.servicer.userName}}</div>'}">投标者</th>
-						<th lay-data="{field:'f', width:80,templet:'<div>{{d.servicer.grades}}</div>', sort: true}">服务者评分</th>
-						<th lay-data="{field:'bidDoc', width:150,templet:'#titleTpl'}">标书下载</th>
-						<th lay-data="{field:'bidReason', width:180, sort: true}">竞标理由</th>
-						<th lay-data="{field:'contactNumber', width:120, sort: true}">联系电话</th>
+						<th lay-data="{field:'f', width:110,templet:'<div>{{d.servicer.grades}}</div>', sort: true}">服务者评分</th>
+						<th lay-data="{field:'bidDoc', width:130,templet:'#titleTpl'}">标书下载</th>
+						<th lay-data="{field:'bidReason', width:120}">竞标理由</th>
+						<th lay-data="{field:'contactNumber', width:120}">联系电话</th>
 						<th lay-data="{field:'bidTime', width:100}">投标时间</th>
-						<th lay-data="{fixed:'right',title: '操作', width:70, toolbar: '#barDemo'}"></th>
+						<th lay-data="{fixed:'right',title: '操作', width:220, toolbar: '#barDemo'}"></th>
 					</tr>
 				</thead>
 			</table>
@@ -41,7 +41,7 @@
     <a href="uploadAction-downloadFile?fileName={{d.bidDoc}}" class="layui-table-link">{{d.bidDoc}}</a>
 </script>
 <script type="text/html" id="barDemo">
-  <a class="layui-btn layui-btn-primary layui-btn-xs" lay-event="detail">查看</a>
+  <a class="layui-btn layui-btn-primary layui-btn-xs" lay-event="detail">查看标书</a>
   <a class="layui-btn layui-btn-xs" lay-event="edit">选他中标</a>
 </script>
 			<script>
@@ -64,7 +64,7 @@
 														var data = obj.data;
 														if (obj.event === 'detail') {
 															//查看操作
-															
+															window.location.href='uploadAction-downloadFile?fileName='+data.bidDoc;
 														} else if (obj.event === 'del') {
 															
 														//删除操作
@@ -81,10 +81,10 @@
 																	//刷新
 																 	window.parent.location.reload();
 																}, function(){
-																  layer.msg('也可以这样', {
+																  /* layer.msg('也可以这样', {
 																    time: 20000, //20s后自动关闭
 																    btn: ['明白了', '知道了']
-																  });
+																  }); */
 																});
 														}
 													});

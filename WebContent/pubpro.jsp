@@ -38,7 +38,7 @@
 		style="background-image: url('resource/images/xmfbzs.png');">
 		<div id="fbwz">
 			<font size="6px" color="#434343">发布您的项目需求</font><br> <br> <br>
-			<font size="4px">你有独特的想法吗？你有与众不同的项目吗？您需要我们的帮助吗？<br>说出你的需求，我们帮您实现！
+			<font size="4px">你有独特的想法吗？你有与众不同的项目吗？您需要大众的帮助吗？<br>说出你的需求，我们帮您实现！
 			</font>
 		</div>
 	</div>
@@ -54,7 +54,7 @@
 					alt="" src="resource/images/must.png">项目名称：</label>
 				<div class="layui-input-block" style="margin-left: 0px;">
 					<input type="text" name="proName" lay-verify="required"
-						placeholder="请输入" autocomplete="off" class="layui-input">
+						placeholder="请输入项目名称" autocomplete="off" class="layui-input">
 				</div>
 			</div>
 
@@ -114,7 +114,7 @@
 			</div>
 
 			<!-- 标书的saveName -->
-			<input type="text" id="rfp" name="rfp" />
+			<input type="hidden" id="rfp" name="rfp" />
 
 			<!-- 项目资金 -->
 			<div class="layui-form-item">
@@ -122,41 +122,38 @@
 					alt="" src="resource/images/must.png">项目资金:</label>
 				<div class="layui-input-block" style="margin-left: 0px;">
 					<input type="text" name="projectFund" lay-verify="pass"
-						placeholder="请输入密码" autocomplete="off" class="layui-input">
+						placeholder="请输入项目酬金" autocomplete="off" class="layui-input">
 				</div>
-				<div class="layui-form-mid layui-word-aux">请填写6到12位密码</div>
+				<!-- <div class="layui-form-mid layui-word-aux">项目酬金</div> -->
 			</div>
 			<!-- 赔偿倍率 -->
 			<div class="layui-form-item">
 				<label class="layui-form-label" style="margin-left: -20px;"><img
-					alt="" src="resource/images/must.png">违约赔率:</label>
+					alt="" src="resource/images/must.png">违约赔付:</label>
 				<div class="layui-input-block" style="margin-left: 0px;">
-					<input type="text" name="compensationRate" lay-verify="pass"
-						placeholder="请输入密码" autocomplete="off" class="layui-input">
+					<input type="text" name="compensationRate" placeholder="请输入违约赔付金" autocomplete="off" class="layui-input">
 				</div>
-				<div class="layui-form-mid layui-word-aux">请填写6到12位密码</div>
+				<div class="layui-form-mid layui-word-aux">用于工期担保</div>
 			</div>
 			<!-- 其他描述-->
 			<div class="layui-form-item layui-form-text">
 				<label class="layui-form-label" style="margin-left: -30px;"><img
 					alt="" src="resource/images/must.png">其他描述</label>
 				<div class="layui-input-block" style="margin-left: 0px;">
-					<textarea placeholder="请输入内容" name="proDesc" class="layui-textarea"></textarea>
+					<textarea placeholder="请对项目进行简单描述" name="proDesc" class="layui-textarea"></textarea>
 				</div>
 			</div>
 
 			<div class="layui-form-item">
-				<button class="layui-btn" lay-submit="" lay-filter="demo2">跳转式提交</button>
+				<button class="layui-btn" lay-submit="" lay-filter="demo2">发  布</button>
 			</div>
 		</form>
 		<!-- 	表单结束 -->
 
 	</div>
 	<!-- 内容部分结束 -->
+<br>
 
-	<s:radio label="sfd" list="%{#request.cateList}"
-		name="category.cateName" listKey="cateId" listValue="cateName"
-		value="1" class="layui-input"></s:radio>
 
 	<!-- 引入底部 -->
 	<%@ include file="comm-foot.jsp"%>

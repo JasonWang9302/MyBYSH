@@ -68,7 +68,7 @@
 		<div class="layui-form-item layui-form-text">
 			<label class="layui-form-label">竞标理由</label>
 			<div class="layui-input-block">
-				<textarea placeholder="请输入内容" name="bidReason" class="layui-textarea"></textarea>
+				<textarea placeholder="请输入内容" name="bidReason" class="layui-textarea">${currUser.introduction}</textarea>
 			</div>
 		</div>
 

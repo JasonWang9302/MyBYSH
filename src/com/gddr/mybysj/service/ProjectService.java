@@ -43,4 +43,7 @@ public interface ProjectService {
     
     
     List<Project> getAllProjectUnchecked();
+    
+    
+    List<Project> getProjectWithPageByRequirement(Integer first,Integer count,Integer cateId,Integer status,String keyword);
 }
