@@ -9,13 +9,13 @@
 <%@ include file="basepath.jsp" %>
 
 
-    <title>后台管理</title>
+    <title></title>
 </head>
 <body>
     <div class="layui-layout layui-layout-admin kit-layout-admin">
 <!--  最上面那一栏 -->
         <div class="layui-header">
-            <div class="layui-logo">后台管理</div>
+            <div class="layui-logo"></div>
             <div class="layui-logo kit-logo-mobile">K</div>
            <!--  <ul class="layui-nav layui-layout-left kit-nav">
                 <li class="layui-nav-item"><a href="index">首页</a></li>
@@ -37,7 +37,7 @@
 
         <div class="layui-side layui-bg-black kit-side">
             <div class="layui-side-scroll">
-                <div class="kit-side-fold"><i class="fa fa-navicon" aria-hidden="true">换个图标</i></div>
+                <div class="kit-side-fold"><i class="fa fa-navicon" aria-hidden="true"></i></div>
                 <!-- 左侧导航区域（可配合layui已有的垂直导航） -->
                 <ul class="layui-nav layui-nav-tree" lay-filter="kitNavbar" kit-navbar>
                     

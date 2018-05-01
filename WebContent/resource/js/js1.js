@@ -56,6 +56,10 @@
 	}
 }
 	
+	
+	
+	
+	
 	function nav(imgid){
 		switch(imgid){
 //			导航
@@ -104,7 +108,7 @@
 	
 	function nav1(imgid){
 		switch(imgid){
-			case navimg1: imgid.src="resource/img/navimg_12.png";
+			case navimg1: imgid.src="resource/img/navimg_11.png";
 			           break;
 		    case navimg2: imgid.src="resource/img/navimg_21.png";
 			           break;

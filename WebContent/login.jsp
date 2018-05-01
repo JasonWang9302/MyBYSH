@@ -55,7 +55,7 @@
 		<div class="header">
 			<div class="switch" id="switch">
 				<a class="switch_btn_focus" id="switch_qlogin"
-					href="javascript:void(0);" tabindex="7">快速登录</a> <a
+					href="javascript:void(0);" tabindex="7">登录</a> <a
 					class="switch_btn" id="switch_login" href="javascript:void(0);"
 					tabindex="8">快速注册</a>
 				<div class="switch_bottom" id="switch_bottom"
@@ -81,17 +81,17 @@
 							<input type="hidden" name="did" value="0" /> <input
 								type="hidden" name="to" value="log" />
 							<div class="uinArea" id="uinArea">
-								<label class="input-tips" for="u">帐号：</label>
-								<div class="inputOuter" id="uArea">
+								<label class="input-tips" for="u">账号：</label>
+								<div class="inputOuter"   id="uArea">
 
-									<input type="text" id="u" name="userName" class="inputstyle" />
+									<input type="text" id="u" placeholder="请输入用户名或手机号" name="userName" class="inputstyle" />
 								</div>
 							</div>
 							<div class="pwdArea" id="pwdArea">
 								<label class="input-tips" for="p">密码：</label>
 								<div class="inputOuter" id="pArea">
 
-									<input type="password" id="p" name="password"
+									<input type="password" id="p" placeholder="请输入密码" name="password"
 										class="inputstyle" />
 								</div>
 							</div>
@@ -108,13 +108,6 @@
 			</div>
 			<!--登录end-->
 		</div>
-
-
-
-
-
-
-
 
 
 		<!--注册-->
@@ -158,19 +151,15 @@
 						<li>
 							<div class="inputArea">
 								<input type="button" id="reg"
-									style="margin-top: 10px; margin-left: 85px;"
-									class="button_blue" value="同意协议并注册" />
+									style="margin-top: 10px; margin-left: 120px;"
+									class="button_blue" value="      注 册      " />
 							</div>
 
 						</li>
 						<div class="cl"></div>
 					</ul>
 				</form>
-
-
 			</div>
-
-
 		</div>
 		<!--注册end-->
 	</div>

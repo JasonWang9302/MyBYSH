@@ -7,20 +7,11 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title></title>
-
-
- 
-
-
-
-
 <link rel="stylesheet" type="text/css" href="resource/css/index.css" />
 <script src="resource/plugins/layui/layui.js"></script>
- 
 <script>
 layui.use('element', function(){
 	  var element = layui.element; //导航的hover效果、二级菜单等功能，需要依赖element模块
-	  
 	  //监听导航点击
 	  element.on('nav(demo)', function(elem){
 	    //console.log(elem)
@@ -28,19 +19,10 @@ layui.use('element', function(){
 	  });
 	});
 </script>
-
-
-
-
-
-
 <script type="text/javascript" src="resource/js/js1.js" /></script>
 <!--轮播js-->
 <script type="text/javascript" src="resource/js/jquery.js" /></script>
-
 </head>
-
-
 <body>
 <!-- 引入导航 -->
 <%@ include file="comm-nav.jsp" %>
@@ -67,22 +49,18 @@ layui.use('element', function(){
 	<script type="text/javascript">
 		banner()
 	</script>
-
-
-
 	<!--work-->
 	<div class="workq">
 		<div class="box1">
 			<img id="tit" src="resource/img/worktit.png" />
 			<ul class="work_img">
-				<li><a href="anli.jsp"><img src="resource/img/workimg.jpg" /></a></li>
-				<li><a href="anli.jsp"><img src="resource/img/working2.jpg" /></a></li>
-				<li><a href="anli.jsp"><img src="resource/img/working4.jpg" /></a></li>
-				<li><a href="anli.jsp"><img src="resource/img/working4.jpg" /></a></li>
+				<li><a href="#"><img src="resource/img/workimg.jpg" /></a></li>
+				<li><a href="#"><img src="resource/img/working2.jpg" /></a></li>
+				<li><a href="#"><img src="resource/img/working4.jpg" /></a></li>
+				<li><a href="#"><img src="resource/img/working4.jpg" /></a></li>
 			</ul>
 		</div>
 	</div>
-
 	<!--about us-->
 	<div class="as1">
 		<div class="as2">
@@ -90,28 +68,24 @@ layui.use('element', function(){
 				<p>天忢众包成立于2017年12月， 一直专注于互联网品牌建设及IT资源匹配，架起软件需求方与服务者的一座桥梁，
 					业务类型涉及WEB视觉、交互设计、程 序开发及电子消费类产品等。</p>
 			</div>
-
 			<div class="as_right">
-				<a class="a1" href="server.jsp"><img id="as1"
+				<a class="a1" href="#"><img id="as1"
 					onMouseOver="nav(this)" onMouseOut="nav1(this)"
-					src="resource/img/as_img11.png" /></a> <a class="a2" href="server.jsp"><img
+					src="resource/img/as_img11.png" /></a> <a class="a2"><img
 					id="as2" onMouseOver="nav(this)" onMouseOut="nav1(this)"
-					src="resource/img/as_img21.png" /></a> <a class="a2" href="server.jsp"><img
+					src="resource/img/as_img21.png" /></a> <a class="a2" ><img
 					id="as3" onMouseOver="nav(this)" onMouseOut="nav1(this)"
-					src="resource/img/as_img31.png" /></a> <a class="a2" href="server.jsp"><img
+					src="resource/img/as_img31.png" /></a> <a class="a2"><img
 					id="as4" onMouseOver="nav(this)" onMouseOut="nav1(this)"
 					src="resource/img/as_img41.png" /></a>
-
 			</div>
-
 		</div>
 	</div>
-
 	<div class="xwq">
 		<div class="xw">
 			<img class="xw_img" src="resource/img/lb.gif" />
 			<div class="xw1">
-				<a href="xinwen.jsp">
+				<a href="#">
 					<div class="xw1_img">
 						<img class="" src="resource/img/xw_img1.jpg" />
 					</div>
@@ -124,7 +98,7 @@ layui.use('element', function(){
 			</div>
 
 			<div class="xw2">
-				<a href="xinwenziyemian.jsp">
+				<a >
 					<div class="xw1_img">
 						<img class="" src="resource/img/working5.jpg" />
 					</div>
@@ -137,16 +111,9 @@ layui.use('element', function(){
 			</div>
 		</div>
 	</div>
-
-
-
 	<!--底部开始-->
 		<!-- 引入底部 -->
 <%@ include file="comm-foot.jsp" %>
 	<!--底部结束-->
-
-
-
-
 </body>
 </html>

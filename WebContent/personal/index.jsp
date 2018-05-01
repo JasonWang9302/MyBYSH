@@ -89,9 +89,9 @@
 					  
 					
 					
-					 <li class="layui-nav-item">
+					 <%-- <li class="layui-nav-item">
                          <a href="javascript:;" kit-target data-options="{url:'personal/ddd.jsp',icon:'&#xe658;',title:'Ddd',id:'111'}"><i class="layui-icon">&#xe658;</i><span>留言板</span></a>
-				     </li>
+				     </li> --%>
 					
 										
                   

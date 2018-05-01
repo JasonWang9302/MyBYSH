@@ -79,11 +79,6 @@
 								function() {
 									var table = layui.table;
 									var $ = layui.jquery;
-									//监听表格复选框选择
-									table.on('checkbox(demo)', function(obj) {
-										console.log(obj)
-									});
-
 									//监听工具条
 									table
 											.on(
@@ -137,16 +132,12 @@
 																						});
 																			});
 														} else if (obj.event === 'edit') {
-															//layer.alert('编辑行：<br>'+ data.proId);
-															/* window.location.href = "project-toEditProject?proId="
-																	+ data.proId; */
 																	//双方都为支付
 																	if(data.guaranteeStatus==0){
 																		//询问框
 																		layer.confirm('无法启动：双方未完成担保<br/>去缴纳预付金？', {
 																		  btn: ['是','否'] //按钮
 																		}, function(){
-																			
 																			layer.msg('', {icon: 1});
 																			layer.open({
 																				type : 2,
@@ -156,15 +147,7 @@
 																				area : [ '300px', '350px' ],
 																				content : 'dealing-toPayAdvance?proId='+data.proId
 																			});  
-																			
-																			
-																			
-																			
 																		}, function(){
-																		 /*  layer.msg('也可以这样', {
-																		    time: 20000, //20s后自动关闭
-																		    btn: ['明白了', '知道了']
-																		  }); */
 																		});
 																		//只有发布者未支付
 																	}else if(data.guaranteeStatus==1){
@@ -172,7 +155,6 @@
 																		layer.confirm('您未完成项目资金平台托管<br/>是否去缴纳项目资金？', {
 																		  btn: ['是','否'] //按钮
 																		}, function(){
-																			
 																			/* layer.msg('', {icon: 1}); */
 																			layer.open({
 																				type : 2,
@@ -183,10 +165,6 @@
 																				content : 'dealing-toPayAdvance?proId='+data.proId
 																			});  
 																		}, function(){
-																		 /*  layer.msg('也可以这样', {
-																		    time: 20000, //20s后自动关闭
-																		    btn: ['明白了', '知道了']
-																		  }); */
 																		});
 																		//服务者未支付
 																	}else if(data.guaranteeStatus==2){

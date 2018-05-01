@@ -86,10 +86,10 @@
 														var data = obj.data;
 														/* 通过验收 */
 														if (obj.event === 'del') {
-															      layer.confirm('真的删除行么', function(index){
+															      layer.confirm('真的删除此项目么', function(index){
 															       /*  obj.del();
 															        layer.close(index); */
-															        已升
+															    
 															    	  console.log(data);
 															          $.ajax({
 															              url: "project-logicDelProject",

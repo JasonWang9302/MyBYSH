@@ -48,7 +48,7 @@
 <div class="work_content">
 		<div class="box02">
 			<ul>
-				<li> <a href="anli.jsp"> <div id="">
+				<li> <a > <div id="">
 					<img src="resource/img/work_img1.jpg"/><br />
 						<span class="title1">
 							<b>新疆西昆仑骨明胶有限公司</b> 
@@ -59,7 +59,7 @@
 				</div></a>
 				</li>
 				<li class="center_li">
-					<a href="anli.jsp"> <div id="">
+					<a > <div id="">
 					<img src="resource/img/work_img2.jpg"/><br />
 						<span class="title1">
 							<b>深圳市春风旅行社分社</b> 
@@ -70,7 +70,7 @@
 				</div></a>
 				</li>
 				<li>
-					<a href="anli.jsp"> <div id="">
+					<a > <div id="">
 					<img src="resource/img/work_img3.jpg"/><br />
 						<span class="title1">
 							<b>巴楚天宇科技有限公司</b> 
@@ -88,7 +88,7 @@
 		<!--第二行-->
 		<div class="box02">
 			<ul>
-				<li> <a href="anli.jsp"> <div id="">
+				<li> <a > <div id="">
 					<img src="resource/img/work_img4.jpg"/><br />
 						<span class="title1">
 							<b>深圳市春风旅行社南山总社</b> 
@@ -99,7 +99,7 @@
 				</div></a>
 				</li>
 				<li class="center_li">
-					<a href="anli.jsp"> <div id="">
+					<a > <div id="">
 					<img src="resource/img/ttt2.jpg"/><br />
 						<span class="title1">
 							<b>英吾斯坦乡19村PPT</b> 
@@ -109,14 +109,13 @@
 						</span>
 				</div></a>		
 				</li>
-				<li>
-					<a href="anli.jsp"> <div id="">
-					<img src="resource/img/work_img6.jpg"/><br />
+				<li> <a > <div id="">
+					<img src="resource/img/work_img1.jpg"/><br />
 						<span class="title1">
-							<b>FLASHMTV-爱情苦酒</b> 
+							<b>新疆西昆仑骨明胶有限公司</b> 
 						</span><br />
 						<span class="title2">
-							日期：2017-01-02
+							日期：2017-01-01
 						</span>
 				</div></a>
 				</li>
@@ -128,7 +127,7 @@
 	<!--第三行-->
 			<div class="box02">
 			<ul>
-				<li> <a href="anli.jsp"> <div id="">
+				<li> <a > <div id="">
 					<img src="resource/img/work_img7.jpg"/><br />
 						<span class="title1">
 							<b>喀什民间手工艺品中心</b> 
@@ -139,7 +138,7 @@
 				</div></a>
 				</li>
 				<li class="center_li">
-					<a href="anli.jsp"> <div id="">
+					<a > <div id="">
 					<img src="resource/img/work_img8.jpg"/><br />
 						<span class="title1">
 							<b>同城装修网-商城</b> 
@@ -150,7 +149,7 @@
 				</div></a>		
 				</li>
 				<li>
-					<a href="anli.jsp"> <div id="">
+					<a > <div id="">
 					<img src="resource/img/work_img9.jpg"/><br />
 						<span class="title1">
 							<b>喀什鑫能热力设备</b> 
@@ -164,10 +163,10 @@
 	</div>
 	
 	<div class="box03">
-	<a href="work.jsp"><input type="button" name="" id="" value="1" /></a>
-	<a href="work2.jsp"><input type="button" name="" id="" value="2" /></a>
-	<a href="work2.jsp"><input type="button" name="" id="" value="下一页" /> </a>
-	<a href="work2.jsp"><input type="button" name="" id="" value="尾页" /></a>
+	<a ><input type="button" name="" id="" value="1" /></a>
+	<a ><input type="button" name="" id="" value="2" /></a>
+	<a ><input type="button" name="" id="" value="下一页" /> </a>
+	<a ><input type="button" name="" id="" value="尾页" /></a>
 	</div>
 	
 	

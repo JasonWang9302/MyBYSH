@@ -90,7 +90,7 @@
 			<div class="layui-form-item">
 
 				<label class="layui-form-label" style="margin-left: -30px;"><img
-					alt="" src="resource/images/must.png">验证日期:</label>
+					alt="" src="resource/images/must.png">完成日期:</label>
 				<div class="layui-input-block" style="margin-left: 0px;">
 					<input type="text" name="preDeliveryTime" id="date"
 						lay-verify="date" placeholder="yyyy-MM-dd" autocomplete="off"

@@ -47,7 +47,7 @@ public class ProjectDaoImpl extends BaseDao implements ProjectDao {
 		return proList;
 	}
 
-	// delect flay 1 服务者删除的标记
+	// delect flay 2 服务者删除的标记
 	@Override
 	public List<Project> getProjectBySerAndStatus(User user, Integer status) {
 		String hql = "From Project p left outer join fetch p.category left outer join fetch p.publisher left outer join fetch p.servicer where p.servicer=? and Status=? and p.deleteFlag != ?";
@@ -97,12 +97,16 @@ public class ProjectDaoImpl extends BaseDao implements ProjectDao {
 		String hql = "From Project p left outer join fetch p.category left outer join fetch p.publisher left outer join fetch p.servicer where status>0 and p.deleteFlag!=? and (p.proName like ? or p.proDesc like ?)";
 		Query q =null;
 		if(cateId!=null){
-			hql=hql+" and p.category.cateId=? order by p.createTime desc";
-			q = getSession().createQuery(hql).setInteger(0, 1).setString(1, "%" + keyword + "%").setString(2, "%" + keyword + "%").setInteger(3, cateId);
+			hql=hql+" and p.category.cateId=?";
 			if(status!=null){
-				hql=hql+" and p.status=?";
+				hql=hql+" and p.status=?  order by p.createTime desc";
 				q= getSession().createQuery(hql).setInteger(0, 1).setString(1, "%" + keyword + "%").setString(2, "%" + keyword + "%").setInteger(3, cateId).setInteger(4, status);	
 			}
+			else{
+				hql=hql+" order by p.createTime desc";
+				q = getSession().createQuery(hql).setInteger(0, 1).setString(1, "%" + keyword + "%").setString(2, "%" + keyword + "%").setInteger(3, cateId);
+			}
+			
 		}
 		else if(status!=null){
 				hql=hql+" and p.status=? order by p.createTime desc";
@@ -120,13 +124,6 @@ public class ProjectDaoImpl extends BaseDao implements ProjectDao {
 		System.out.println("proList.size():" + proList.size());
 		return proList;
 	}
-	
-	
-	
-	
-	
-	
-
 	@Override
 	public List<Project> getAllProjectUnchecked() {
 		String hql = "From Project p left outer join fetch p.category left outer join fetch p.publisher left outer join fetch p.servicer where status=0 and p.deleteFlag=?";
@@ -134,7 +131,6 @@ public class ProjectDaoImpl extends BaseDao implements ProjectDao {
 		System.out.println(proList);
 		return proList;
 	}
-
 	//
 	/*
 	 * public List getProjectWithBidCountById(Integer id){ String

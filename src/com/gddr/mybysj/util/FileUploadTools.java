@@ -20,7 +20,9 @@ public class FileUploadTools{
 		FileInputStream in = null;
 		//返回对应json的对象
 		FileResponse result=new  FileResponse();
+		
 		List<Map<String, String>> list = new ArrayList<Map<String, String>>();
+		//map 封装到返回信息里  src 地址
 		Map<String, String> map = new HashMap<>();
 		
 		File dir=new File(toDir);
@@ -45,10 +47,8 @@ public class FileUploadTools{
 			while ((len = in.read(buffer)) != -1) {
 				out.write(buffer, 0, len);
 			}
-
 			if (out != null) {
 				out.close();
-
 			}
 			if (in != null) {
 				in.close();
@@ -68,7 +68,6 @@ public class FileUploadTools{
 			return result;
 		} catch (IOException e) {
 			e.printStackTrace();
-			
 			//上传失败   code:0
 			result.setCode(1);
 			result.setMsg("文件"+fileName+"上传失败！请检查文件是否存在重新上传！");

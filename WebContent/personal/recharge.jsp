@@ -75,13 +75,6 @@
 						    }
 						    
 						  });
-						
-						
-						
-						
-						
-						
-						
 						form.on('submit(ch)', function(data){
 							    /* layer.alert(JSON.stringify(data.field), {
 							      title: '最终的提交信息'

@@ -42,7 +42,7 @@
 			</div>
 			
 			
-			<!-- 	第三块   登录-->
+			<!-- 	第三块   登录    -->
 			<div id="login">
 				
 					<s:if test="#session.currUser==null">
@@ -51,12 +51,11 @@
 						</div>
 					</s:if>
 					
-					
 					<s:else>
 						<%-- <a style="size: 30px;" href="personal/index.jsp">${session.currUser.userName}</a> --%>
 						<ul class="layui-nav" id="yh">
 							<li class="layui-nav-item" lay-unselect=""><a
-								href="javascript:;"  style="color:#3d3d3d"><img src="http://t.cn/RCzsdCq"
+								href="javascript:;"  style="color:#3d3d3d"><img src="resource/img/tximg.jpg"
 									class="layui-nav-img">${session.currUser.userName}</a>
 								<dl class="layui-nav-child">
 									<dd>
@@ -74,20 +73,18 @@
 			
 			</div>
 			<!-- 	第三块   登录-->
-			
-			
-			
-			
+			<!-- 导航条 -->
 			<div class="dh">
 				<ul>
-					<li><a href="index.jsp"><img id="navimg1"
-							src="resource/img/navimg_12.png" /></a></li>
+					<li><a href="index.jsp"><img id="navimg1" onMouseOver="nav(this)"
+							onMouseOut="nav1(this)"
+							src="resource/img/navimg_11.png" /></a></li>
 					<li><a href="project-toPublish"><img onMouseOver="nav(this)"
-							onMouseOut="nav1(this)" id="navimg3"
-							src="resource/img/navimg_31.png" /></a></li>
-					<li><a href="project-showProjectList"><img onMouseOver="nav(this)"
 							onMouseOut="nav1(this)" id="navimg4"
 							src="resource/img/navimg_41.png" /></a></li>
+					<li><a href="project-showProjectList"><img onMouseOver="nav(this)"
+							onMouseOut="nav1(this)" id="navimg3"
+							src="resource/img/navimg_31.png" /></a></li>
 					<li><a href="work.jsp"><img onMouseOver="nav(this)"
 							onMouseOut="nav1(this)" id="navimg2"
 							src="resource/img/navimg_21.png" /></a></li>
@@ -96,14 +93,6 @@
 							src="resource/img/navimg_61.png" /></a></li>
 				</ul>
 			</div>
-
-
-
-
-			
-
-
-
 		</div>
 	</div>
 </body>

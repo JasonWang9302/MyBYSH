@@ -243,6 +243,7 @@ public class ProjectAction extends BaseAction implements ModelDriven<Project> {
 		projectDataResponse.setData(list);
 		System.out.println(projectDataResponse);
 	}
+	
 	//我的发布
 	public String showDSH1() {
         showByStatus(1,0);//未审核的
@@ -285,6 +286,7 @@ public class ProjectAction extends BaseAction implements ModelDriven<Project> {
 		System.out.println(projectDataResponse);
 		return "showTBZ2";
 	}
+	//我的任务
 	public String showDKS2() {
 		showByStatus(2,2);//已选标
 		return "showDKS2";

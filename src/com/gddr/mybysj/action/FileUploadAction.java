@@ -95,20 +95,23 @@ public class FileUploadAction extends BaseAction {
 		this.fileResponse = fileResponse;
 	}
 
+	
+	//上传
 	public String upload() throws IOException {
 
 		System.out.println(file);
 		System.out.println(fileContentType);
 		System.out.println(fileFileName);
 		// System.out.println(dir);
-		// 保存的名字
+		// 保存的地址
 		String toDir = context.getRealPath("/WEB-INF/upload/");
+		
 		fileResponse = FileUploadTools.upload(file, fileFileName, toDir);
 		System.out.println("--------upload-----------");
 		return "upload";
 	}
 
-	/* 节约时间 暂时把文件下载的action也写着这里 */
+	/* 节约时间 暂时把文件下载的action也写着这里 */ //下载
 	public String downloadFile() throws IOException {
 		response.setContentType("text/hmtl;charset=utf-8");
 
@@ -122,22 +125,6 @@ public class FileUploadAction extends BaseAction {
 		return "downloadFile";
 	}
 
-	/*public String showDSH() {
-
-		User user = (User) session.getAttribute("currUser");
-		projectDataResponse=new ProjectDataResponse();
-		System.out.println(user);
-		List<Project> list=projectService.getProjectByPubAndStatus(user, 0);
-		projectDataResponse.setCode(0);
-		System.out.println(projectDataResponse);
-		projectDataResponse.setMsg("收到了。。。");
-		System.out.println(projectDataResponse);
-		projectDataResponse.setCount(list.size());
-		System.out.println(projectDataResponse);
-		projectDataResponse.setData(list);
-		System.out.println(projectDataResponse);
-		return "showDSH";
-	}*/
 
 	@Override
 	public void prepare() throws Exception {
